@@ -2,7 +2,6 @@
 @section('card')
 
 <?php
- $mysqli = new mysqli("localhost", "u232615251_larav", "|RjzY?2^nLB7", "u232615251_larav");
 if ($mysqli->connect_errno) {
     echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
