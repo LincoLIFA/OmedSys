@@ -1,5 +1,5 @@
 <?php
- $link = new mysqli("localhost", "u232615251_larav", "|RjzY?2^nLB7", "u232615251_larav");
+
 if ($link->connect_errno) {
     echo "Fallo al conectar a MySQL: (" . $link->connect_errno . ") " . $link->connect_error;
 }
