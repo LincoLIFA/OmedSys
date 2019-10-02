@@ -2,7 +2,8 @@
 @section('card')
 
 <?php
-if ($mysqli->connect_errno) { $link = new mysqli("localhost", "root", "", "Laravel");
+$mysqli = new mysqli("localhost", "root", "", "laravel");
+if ($mysqli->connect_errno) { 
     echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
   $sql=$mysqli->query("select * from `events`  ");

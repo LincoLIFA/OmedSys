@@ -8,52 +8,48 @@
          <meta name="csrf-token" content="{{csrf_token() }}"  />
         
        <!-- App favicon -->
-        <link rel="shortcut icon"  href="{{asset('public/images/logo.png')}}"/>
+        <link rel="shortcut icon"  href="{{asset('images/logo.png')}}"/>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
         <!-- fullcalendar party css -->
-        <link  href="{{asset('public/fullcalendar4/packages/core/main.css')}}" rel="stylesheet"/>
-        <link  href="{{asset('public/fullcalendar4/packages/daygrid/main.css')}}" rel="stylesheet"/>
-        <link  href="{{asset('public/fullcalendar4/packages/timegrid/main.css')}}" rel="stylesheet"/>
-        <link  href="{{asset('public/fullcalendar4/packages/list/main.css')}}" rel="stylesheet"/>
-        <link  href="{{asset('public/fullcalendar4/packages/timeline/main.min.css')}}" rel='stylesheet' />
-        <link  href="{{asset('public/fullcalendar4/packages/resource-timeline/main.min.css')}}" rel='stylesheet' />
+        <link  href="{{asset('fullcalendar4/packages/core/main.css')}}" rel="stylesheet"/>
+        <link  href="{{asset('fullcalendar4/packages/daygrid/main.css')}}" rel="stylesheet"/>
+        <link  href="{{asset('fullcalendar4/packages/timegrid/main.css')}}" rel="stylesheet"/>
+        <link  href="{{asset('fullcalendar4/packages/list/main.css')}}" rel="stylesheet"/>
+        <link  href="{{asset('fullcalendar4/packages/timeline/main.min.css')}}" rel='stylesheet' />
+        <link  href="{{asset('fullcalendar4/packages/resource-timeline/main.min.css')}}" rel='stylesheet' />
         
-        <script src="{{asset('public/fullcalendar4/packages/core/main.js')}}"></script>
-        <script src="{{asset('public/fullcalendar4/packages/interaction/main.js')}}"></script>
-        <script src="{{asset('public/fullcalendar4/packages/daygrid/main.js')}}"></script>
-        <script src="{{asset('public/fullcalendar4/packages/timegrid/main.min.js')}}"></script>
-        <script src="{{asset('public/fullcalendar4/packages/list/main.js')}}"></script>
-        <script src="{{asset('public/fullcalendar4/packages/timeline/main.min.js')}}"></script>
+        <script src="{{asset('fullcalendar4/packages/core/main.js')}}"></script>
+        <script src="{{asset('fullcalendar4/packages/interaction/main.js')}}"></script>
+        <script src="{{asset('fullcalendar4/packages/daygrid/main.js')}}"></script>
+        <script src="{{asset('fullcalendar4/packages/timegrid/main.min.js')}}"></script>
+        <script src="{{asset('fullcalendar4/packages/list/main.js')}}"></script>
+        <script src="{{asset('fullcalendar4/packages/timeline/main.min.js')}}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/es.js" integrity="sha256-bETP3ndSBCorObibq37vsT+l/vwScuAc9LRJIQyb068=" crossorigin="anonymous"></script>
 
         
-        <script src="{{asset('public/fullcalendar4/packages/resource-common/main.js')}}"></script>
-        <script src="{{asset('public/fullcalendar4/packages/resource-timeline/main.js')}}"></script>  
+        <script src="{{asset('fullcalendar4/packages/resource-common/main.js')}}"></script>
+        <script src="{{asset('fullcalendar4/packages/resource-timeline/main.js')}}"></script>  
               
    
          
-        <link  href="{{asset('public/plugins/bootstrap/css/vendor/responsive.bootstrap4.css')}}" rel="stylesheet" type="text/css" />
-         <link  href="{{asset('public/fullcalendar/packages/core/main.css')}}" rel="stylesheet" type="text/css" />
-        <link href="{{asset('public/plugins/bootstrap/css/vendor/dataTables.bootstrap4.css')}}" rel="stylesheet" type="text/css" />
+        <link  href="{{asset('plugins/bootstrap/css/vendor/responsive.bootstrap4.css')}}" rel="stylesheet" type="text/css" />
+         <link  href="{{asset('fullcalendar/packages/core/main.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('plugins/bootstrap/css/vendor/dataTables.bootstrap4.css')}}" rel="stylesheet" type="text/css" />
         
         
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
-	   <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-	   <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+	    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 	
-
-
-
-
-
-        
         <!-- third party css end -->
         <!-- App css -->
        
-        <link href="{{asset('public/plugins/bootstrap/css/vendor/app.min.css')}}" rel="stylesheet" type="text/css" />
-        <link href="{{asset('public/fullcalendar/packages/daygrid/main.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('plugins/bootstrap/css/vendor/app.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('fullcalendar/packages/daygrid/main.css')}}" rel="stylesheet" type="text/css" />
 
    
     </head>
@@ -69,10 +65,10 @@
                     <!-- LOGO -->
                     <a href="index.html" class="logo text-center">
                         <span class="logo-lg">
-                           <img src="{{asset ('public/images/logo.png')}}" alt="..." height="70" class="rounded-circle"> 
+                           <img src="{{asset ('images/logo.png')}}" alt="..." height="70" class="rounded-circle"> 
                         </span>
                         <span class="logo-sm">
-                            <img src="{{asset ('public/images/logo.png')}}" alt="..." height="70" class="rounded-circle"> 
+                            <img src="{{asset ('images/logo.png')}}" alt="..." height="70" class="rounded-circle"> 
                         </span>
                     </a>
 

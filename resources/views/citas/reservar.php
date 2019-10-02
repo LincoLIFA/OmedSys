@@ -1,5 +1,5 @@
 <?php
-
+$mysqli = new mysqli("localhost", "root", "", "laravel");
 if ($link->connect_errno) {
     echo "Fallo al conectar a MySQL: (" . $link->connect_errno . ") " . $link->connect_error;
 }
