@@ -99,6 +99,24 @@
                         </li>
                         <li class="side-nav-item">
                             <a href="javascript: void(0);" class="side-nav-link">
+                                  <i class="far fa-calendar-alt"></i>
+                                <span class="badge  float-right"><i class="fas fa-angle-right"></i></span>
+                                <span> Lista de Espera </span>
+                            </a>
+                            <ul class="side-nav-second-level" aria-expanded="false">
+                                <li>
+                                    <a href="{{url('Lista/lista')}}">Resgistro de Lista</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('Lista/agglista')}}">Agregar a Lista</a>
+                                </li>
+                               <!-- <li>
+                                    <a href="{{url('Citas/actcitas')}}">Modificar Citas</a>
+                                </li>-->
+                            </ul>
+                        </li>
+                        <li class="side-nav-item">
+                            <a href="javascript: void(0);" class="side-nav-link">
                                  <i class="fas fa-user-md"></i>
                                 <span class="badge  float-right"><i class="fas fa-angle-right"></i></span>
                                 <span> Especialistas</span>

@@ -1,9 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCitasTable extends Migration
+class CreateListaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +13,15 @@ class CreateCitasTable extends Migration
      */
     public function up()
     {
-        Schema::create('citas', function (Blueprint $table) {
+        Schema::create('lista', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('citfecha');
-            $table->time('cithora');
-            $table->string('citPaciente');
-            $table->string('citMedico');
-            $table->string('citEsp');
-            $table->string('citEstado');
-            $table->string('citObservaciones');
+            $table->date('lisfecha');
+            $table->time('lishora');
+            $table->string('lisPaciente');
+            $table->string('lisMedico');
+            $table->string('lisEsp');
+            $table->string('lisEstado');
+            $table->string('lisObservaciones');
             $table->string('confirmacion');
             $table->dateTime('start');
             $table->timestamps();
@@ -34,6 +35,6 @@ class CreateCitasTable extends Migration
      */
     public function down()
     {
-        Schema::drop('citas');
+        Schema::dropIfExists('lista');
     }
 }

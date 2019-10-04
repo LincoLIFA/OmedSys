@@ -37,6 +37,19 @@ Route::get('hola', function () {
         Route::delete('DeleteC/{id}', 'CitasController@destroy')->name('DeleteC');
         Route::get('PerfilC/Paciente/{citPaciente}', 'PacientesController@showPerfil')->name('PerfilPC');
 /*fin de gestion de citas*/
+/*Gestion de Lista de espera */
+        Route::get('Lista/lista', 'ListaController@index');
+        Route::get('Lista/agglista', 'ListaController@create');
+        Route::get('Lista/actlista/{id}', 'ListaController@edit')->name('UpdateL');
+        Route::post('/Agregar', 'ListaController@store')->name('AgregarL');
+        Route::put('ActualizarL/{id}', 'LitaController@update')->name('ActualizarL');
+        Route::delete('DeleteL/{id}', 'ListaController@destroy')->name('DeleteL');
+        Route::get('PerfilL/Paciente/{citPaciente}', 'PacientesController@showPerfilL')->name('PerfilPL');
+/*fin de gestion de Lista de espera*/
+
+
+
+
 /* Eventos*/
         Route::get('Eventos/Get', 'EventsController@getEvents')->name('Evento');
         Route::post('Reservar', 'EventsController@create')->name('Reservar');

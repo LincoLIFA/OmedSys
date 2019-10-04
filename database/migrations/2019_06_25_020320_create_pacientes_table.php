@@ -22,6 +22,7 @@ class CreatePacientesTable extends Migration
             $table->string('pacsexo');
             $table->string('paccorreo');
             $table->string('pactelefono');
+            $table->timestamps();
             
         });
     }

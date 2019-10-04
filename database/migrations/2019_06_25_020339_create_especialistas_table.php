@@ -21,6 +21,7 @@ class CreateEspecialistasTable extends Migration
             $table->string('medespecialidad');
             $table->string('medtelefono');
             $table->string('medcorreo');
+            $table->timestamps();
             
         });
     }
