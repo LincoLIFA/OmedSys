@@ -99,7 +99,7 @@
                         </li>
                         <li class="side-nav-item">
                             <a href="javascript: void(0);" class="side-nav-link">
-                                  <i class="far fa-calendar-alt"></i>
+                             <i class="fas fa-clipboard-list"></i>
                                 <span class="badge  float-right"><i class="fas fa-angle-right"></i></span>
                                 <span> Lista de Espera </span>
                             </a>
@@ -208,6 +208,82 @@
                     <div class="navbar-custom ">
                         <ul class="list-unstyled topbar-right-menu float-right mb-0">
 
+                        <!-- Botton de Gestion de Citas-->
+                        <li class="dropdown notification-list">
+                                <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
+                                    aria-expanded="false">
+                                    <span class="account-user-avatar"> 
+                                    <i class="far fa-calendar-check"></i>
+                                    </span>
+                                    <span>
+                                        <span class="account-user-name">Gestion de citas</span>
+                                        <span class="account-position"> Calendario y reserva</span>
+                                    </span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+                                    <!-- item-->
+                                    <div class=" dropdown-header noti-title">
+                                        <h6 class="text-overflow m-0">Citas médicas</h6>
+                                    </div>
+                                    
+                                    <a class="dropdown-item" href="{{ route('Home.C') }}">
+                                    <i class="far fa-calendar-alt"></i>
+                                     Gestion de Citas
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{url('Citas/citas')}}"><i class="fas fa-angle-right"></i>   Reserva</a>
+                                    <a class="dropdown-item" href="{{url('Lista/lista')}}"><i class="fas fa-angle-right"></i>   Lista de Espera</a>
+                                    <a class="dropdown-item" href="{{url('Especialistas/Registro')}}"><i class="fas fa-angle-right"></i>   Especialistas</a>
+                                    <a class="dropdown-item" href="{{url('Especialidades/Registro')}}"><i class="fas fa-angle-right"></i>   Especialidades</a>
+                                    <a class="dropdown-item" href="{{url('Pacientes/Registro')}}"><i class="fas fa-angle-right"></i>   Pacientes</a>
+
+                                
+                                </div>
+                            </li>
+                            <!-- Fin botton de Gestion de Citas-->
+<!-- -------------------------------------------------------------------------------------------------------------------------------- -->
+
+                            <!-- Botton de Gestion Financiera-->
+
+                            <li class="dropdown notification-list">
+                                <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
+                                    aria-expanded="false">
+                                    <span class="account-user-avatar"> 
+                                    <i class="far fa-calendar-check"></i>
+                                    </span>
+                                    <span>
+                                        <span class="account-user-name">Gestion Financiera</span>
+                                        <span class="account-position"> Convenios y Aranceles</span>
+                                    </span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+                                    <!-- item-->
+                                    <div class=" dropdown-header noti-title">
+                                        <h6 class="text-overflow m-0">Finanzas</h6>
+                                    </div>
+                                    
+                                    <a class="dropdown-item" href="{{ route('Home.C') }}">
+                                    <i class="fas fa-dollar-sign"></i>
+                                     Modulo Financiero
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{url('Citas/citas')}}"><i class="fas fa-angle-right"></i>   Reserva</a>
+                                    <a class="dropdown-item" href="{{url('Lista/lista')}}"><i class="fas fa-angle-right"></i>   Lista de Espera</a>
+                                    <a class="dropdown-item" href="{{url('Especialistas/Registro')}}"><i class="fas fa-angle-right"></i>   Especialistas</a>
+                                    <a class="dropdown-item" href="{{url('Especialidades/Registro')}}"><i class="fas fa-angle-right"></i>   Especialidades</a>
+                                    <a class="dropdown-item" href="{{url('Pacientes/Registro')}}"><i class="fas fa-angle-right"></i>   Pacientes</a>
+
+                                
+                                </div>
+                            </li>
+
+
+
+                            <!-- Fin Botton de Gestion Financiera-->
+<!-- ------------------------------------------------------------------------------------------------------ -->
+                           
+                           
+                           
                             <li class="dropdown notification-list">
                                 <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
                                     aria-expanded="false">
