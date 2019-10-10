@@ -1,203 +1,6 @@
 @extends('index')
 @section('card')
 
-<?php
-$mysqli = new mysqli("localhost", "root", "", "laravel");
-if ($mysqli->connect_errno) { 
-    echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-}
-  $sql=$mysqli->query("select * from `events`  ");
-  $sql2=$mysqli->query("select * from `listas`  ");
-	
-
-?>
-
-
-
-<script type="text/javascript">
-    $(document).ready( function () {
-    $('#citas').DataTable();
-} );
-</script>
-   <!-- Script de fullcalendar -->
-<script type="text/javascript">
-
-  document.addEventListener('DOMContentLoaded', function() {
-    var Calendar = FullCalendar.Calendar;
-    var Draggable = FullCalendarInteraction.Draggable;
-    var containerEl = document.getElementById('external-events');
-    var checkbox = document.getElementById('drop-remove');
-    var calendarEl = document.getElementById('calendar');
-    
-  var calendar = new FullCalendar.Calendar(calendarEl, {
-    plugins: [ 'timeGrid','bootstrap','interaction'  ],
-    
-    defaultView: 'timeGridWeek',
-    hiddenDays: [ 0, 6 ],
-    timeZone: 'locale',
-    locale :'es',
-    defaultTimedEventDuration:'02:00:00',
-    
-    droppable: true,
-    header: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'timeGridWeek,timeGridDay'
-     },
-    eventoStartEditable: true,
-    eventResizableFromStart: true,
-      minTime:'09:00:00',
-      maxTime:'19:00:00',
-      navLinks: true, // can click day/week names to navigate views
-      allDaySlot: false, // hidden option allday on top calendar
-      themeSystem : 'bootstrap',
-      editable:true,
-      nowIndicator:true,
-      
-      businessHours: [
-        {
-            daysOfWeek: [ 1, 2, 3, 4 ], 
-            startTime: '10:00',
-            endTime: '18:00'
-        },
-     
-       ],
-        events:[
-        <?php
-        foreach ($sql as $fila)
-        {
-            
-        ?>
-          {
-            id:"<?php echo $fila['id'];?>",
-            title:"<?php echo $fila['title'];?>",
-            start:"<?php echo $fila['start'];?>",
-            end:"<?php echo $fila['end'];?>",
-            classNames:"<?php echo $fila['classNames'];?>",
-            description:"<?php echo $fila['description'];?>",
-          },
-          <?php } ?>
-          <?php
-        foreach ($sql2 as $fila2)
-        {
-            
-        ?>
-          {
-            id:"<?php echo $fila2['id'];?>",
-            title:"<?php echo $fila2['lisMedico'];?>",
-            start:"<?php echo $fila2['start'];?>",
-            classNames:"<?php echo $fila2['lisEstado'];?>",
-           
-          },
-          <?php } ?>
-    
-          
-          ],
-     
-        dateClick: function(info ,jsEvent, date) {
-            var fecha = info.dateStr;
-                if (info.view.type == 'timeGridWeek') {
-                   $('#modalReserva').modal('show');
-                   
-                   
-                }   
-        },
-        
-         eventClick: function(info , jsEvent , date) {
-             var id = info.event.id;
-             var title = info.event.title;
-             var classNames = info.event.classNames;
-             var startTime = info.event.start.toISOString();
-             var endTime  = info.event.end.toISOString();
-             
-               var start = calendar.formatIso(startTime);
-               var end = calendar.formatIso(endTime);
-               var fecha = calendar.formatDate(startTime ,{
-               
-                month: '2-digit',
-                year: 'numeric',
-                day: 'numeric'
-               });
-                
-               var hora = calendar.formatDate(startTime ,{
-               hour:'2-digit',
-               minute:'2-digit',
-              
-               });
-               var horaEnd = calendar.formatDate(endTime ,{
-               hour:'2-digit',
-               minute:'2-digit',
-               second:'2-digit',
-               });
-               
-             $('#event-modal').modal('show');
-                    $('#title').val(title);
-                    $('#id').val(id);
-                    $('#title2').val(title);
-                    $('#classNames').val(classNames);
-                   	$('#date').val(fecha);
-                	$('#hora').val(hora);
-                	$('#end').val(end);
-                	$('#start').val(start);
-            
-           
-          }
-
-        
-       
-       
-       
-  });
-
-  calendar.render();
- 
-  
-  new Draggable(containerEl, {
-      itemSelector: '.Suspender',
-      eventData: function(eventEl) {
-        return {
-          title: eventEl.innerText,
-           duration: '02:00',
-            classNames:'bloquear',
-            
-          
-          
-        };
-      }
-    });
-   
-    
-    
-});
-
-</script>
-<!-- Fin Script de fullcalendar -->
-<!-- Tamaño y estilos de fullcalendar -->
-<style>
-  #calendar {
-    max-width: 700px;
-    max-height: 550px;
-  }
-   #external-events .fc-event {
-    cursor: move;
-  }
-  .bloquear{
-  background:#fa5c7c;
-}
-
-    .No-confirmado{
-     background:#ffbc00;
-    }
-    
-    .Confirmado{
-     background:#0acf97;
-    }
-    
-
-</style>
-<!-- Fin de estilos de fullcalendar -->
- <!-- fullcalendar -->
-   
 
                     <div class="container-fluid">
                                         
@@ -206,7 +9,7 @@ if ($mysqli->connect_errno) {
                                           <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                               <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Lista de espera</h5>
+                                                <h5 class="modal-title" id="exampleModalLabel">Reserva de Cita</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                   <span aria-hidden="true">&times;</span>
                                                 </button>
@@ -216,7 +19,7 @@ if ($mysqli->connect_errno) {
                                                 <div class="form-group row">
                                                     <label for="staticEmail" class="col-sm-5 col-form-label">Paciente antiguo</label>
                                                     <div class="col-sm-7">
-                                                        <a href="{{ route('AgregarL') }}" class="rounded-pill float-right btn btn-primary" >Registrado</a>
+                                                        <a href="{{url('Citas/aggcitas')}}" class="rounded-pill float-right btn btn-primary" >Registrado</a>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -236,6 +39,13 @@ if ($mysqli->connect_errno) {
                                         </div>
                         
                     
+
+
+                   
+                    
+                    
+                    
+
                                         <!-- Modal -->
                                         <div class="modal fade" id="event-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                           <div class="modal-dialog modal-dialog-centered" role="document">
@@ -354,7 +164,7 @@ if ($mysqli->connect_errno) {
                                     <div class="card-body">
                                         <div class="row mb-2">
                                             <div class="col-sm-4">
-                                                <a href="{{route ('AggLista')}}" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle mr-2"></i> Agregar paciente a lista </a>
+                                                <a href="{{url('Citas/aggcitas')}}" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle mr-2"></i> Crear nueva cita</a>
                                             </div>
                                            
                                         </div>
@@ -364,7 +174,7 @@ if ($mysqli->connect_errno) {
                                                 <thead class="thead-light">
                                                     <tr>
                                                         
-                                                        <th class="all">N° en Lista</th>
+                                                        <th class="all">N° Cita</th>
                                                         <th>Fecha</th>
                                                         <th>Hora</th>
                                                         <th>Paciente</th>
@@ -383,24 +193,24 @@ if ($mysqli->connect_errno) {
                                                             <a href="">{{$item2->id}}</a>
                                                         </td>
                                                         <td>
-                                                           {{$item2->lisfecha}}
+                                                           {{$item2->citfecha}}
                                                         </td>
                                                         <td>
-                                                          {{$item2->lishora}}
+                                                          {{$item2->cithora}}
                                                         </td>
                                                         <td>
-                                                            <a href="{{route('PerfilPC', $item2->lisPaciente)}}" class="text-success">{{$item2->lisPaciente}} </a>
+                                                            <a href="{{route('PerfilPC', $item2->citPaciente)}}" class="text-success">{{$item2->citPaciente}} </a>
                                                            
                                                         </td>
                                                         <td>
-                                                            {{$item2->lisMedico}}
+                                                            {{$item2->citMedico}}
                                                         </td>
                     
                                                         <td>
-                                                           {{$item2->lisEsp}}
+                                                           {{$item2->citEsp}}
                                                         </td>
                                                         <td>
-                                                            <span class="badge badge-success">{{$item2->lisEstado}}</span>
+                                                            <span class="badge badge-success">{{$item2->citEstado}}</span>
                                                         </td>
                                                         <td>
                                                            {{$item2->confirmacion}}
@@ -408,8 +218,8 @@ if ($mysqli->connect_errno) {
                     
                                                         <td>
                                                              <div class="row">
-                                                            <a href="{{route('UpdateL', $item2->id)}}" class="btn btn-primary mr-1"> <i class="far fa-edit"></i></a>
-                                                            <form method="post" action="{{route('DeleteL', $item2->id)}}">
+                                                            <a href="{{route('UpdateC', $item2->id)}}" class="btn btn-primary mr-1"> <i class="far fa-edit"></i></a>
+                                                            <form method="post" action="{{route('DeleteC', $item2->id)}}">
                                                                     @method('DELETE') 
                                                                     @csrf
                                                               <button  class="btn btn-primary" type="submit"><i class="far fa-trash-alt"></i></button>

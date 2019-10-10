@@ -28,6 +28,16 @@ class HomeController extends Controller
         return view('citas.citas',compact('result'));
     }
     
+    // Index de Gestion Financiera 
+    public function indexF()
+    {
+        
+      
+        return view('finanzas.index');
+    }
+
+
+    
      public function indexE($id)
     {
         $result3 = App\Citas::all();

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateListaTable extends Migration
+class CreateListasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateListaTable extends Migration
      */
     public function up()
     {
-        Schema::create('lista', function (Blueprint $table) {
+        Schema::create('listas', function (Blueprint $table) {
             $table->increments('id');
             $table->date('lisfecha');
             $table->time('lishora');
@@ -35,6 +35,6 @@ class CreateListaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lista');
+        Schema::dropIfExists('listas');
     }
 }

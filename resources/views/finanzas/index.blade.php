@@ -81,92 +81,78 @@
                         
                          <li class="side-nav-item">
                             <a href="javascript: void(0);" class="side-nav-link">
-                                  <i class="far fa-calendar-alt"></i>
+                            <i class="fas fa-money-check-alt"></i>
                                 <span class="badge  float-right"><i class="fas fa-angle-right"></i></span>
-                                <span> Reserva </span>
+                                <span> Convenios </span>
                             </a>
                             <ul class="side-nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="{{url('Citas/citas')}}">Resgistro de Citas</a>
+                                    <a href="{{route('Registro-convenios')}}">Resgistro de Convenios</a>
                                 </li>
                                 <li>
-                                    <a href="{{url('Citas/aggcitas')}}">Agregar citas</a>
+                                    <a href="{{route('Agregar-convenios')}}">Agregar convenio</a>
                                 </li>
-                               <!-- <li>
-                                    <a href="{{url('Citas/actcitas')}}">Modificar Citas</a>
-                                </li>-->
                             </ul>
                         </li>
                         <li class="side-nav-item">
                             <a href="javascript: void(0);" class="side-nav-link">
-                                  <i class="far fa-calendar-alt"></i>
+                            <i class="far fa-credit-card"></i>
                                 <span class="badge  float-right"><i class="fas fa-angle-right"></i></span>
-                                <span> Lista de Espera </span>
+                                <span> Opciones de Pago </span>
                             </a>
                             <ul class="side-nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="{{url('Lista/lista')}}">Resgistro de Lista</a>
+                                    <a href="{{url('Lista/lista')}}">Resgistro Op. de pago </a>
                                 </li>
                                 <li>
-                                    <a href="{{url('Lista/agglista')}}">Agregar a Lista</a>
+                                    <a href="{{url('Lista/agglista')}}">Agregar nueva opcion</a>
                                 </li>
-                               <!-- <li>
-                                    <a href="{{url('Citas/actcitas')}}">Modificar Citas</a>
-                                </li>-->
                             </ul>
                         </li>
                         <li class="side-nav-item">
                             <a href="javascript: void(0);" class="side-nav-link">
-                                 <i class="fas fa-user-md"></i>
+                            <i class="fas fa-hand-holding-usd"></i>
                                 <span class="badge  float-right"><i class="fas fa-angle-right"></i></span>
-                                <span> Especialistas</span>
+                                <span> Dctos. Por Caja</span>
                             </a>
                             <ul class="side-nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="{{url('Especialistas/Registro')}}">Resgistro de especialistas</a>
+                                    <a href="{{url('Especialistas/Registro')}}">Descuentos vigentes</a>
                                 </li>
                                 <li>
-                                    <a href="{{url('Especialistas/New')}}">Agregar especialistas</a>
+                                    <a href="{{url('Especialistas/New')}}">Agregar Descuento</a>
                                 </li>
-                               <!-- <li>
-                                    <a href="{{url('Especialistas/Update')}}">Modificar especialistas</a>
-                                </li> -->
                             </ul>
                         </li>
                          <li class="side-nav-item">
                             <a href="javascript: void(0);" class="side-nav-link">
-                                <i class="fas fa-clinic-medical"></i>
+                            <i class="fas fa-file-invoice-dollar"></i>
                                 <span class="badge  float-right"><i class="fas fa-angle-right"></i></span>
-                                <span> Áreas </span>
+                                <span> Aranceles </span>
                             </a>
                             <ul class="side-nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="{{url('Especialidades/Registro')}}">Registro de especialidades</a>
+                                    <a href="{{url('Especialidades/Registro')}}">Registro de Aranceles</a>
                                 </li>
                                 <li>
-                                    <a href="{{url('Especialidades/New')}}">Agregar Especialidadess</a>
+                                    <a href="{{url('Especialidades/New')}}">Agregar Arancel</a>
                                 </li>
-                               <!-- <li>
-                                    <a href="{{url('Especialidades/Update')}}">Modificar Especialidades</a>
-                                </li>-->
                             </ul>
                         </li>
                          <li class="side-nav-item">
                             <a href="javascript: void(0);" class="side-nav-link">
-                                 <i class="fas fa-user"></i>
+                            <i class="far fa-id-card"></i>
                                 <span class="badge  float-right"><i class="fas fa-angle-right"></i></span>
-                                <span> Pacientes</span>
+                                <span> Honorarios</span>
                             </a>
                             <ul class="side-nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="{{url('Pacientes/Registro')}}">Registro de pacientes</a>
+                                    <a href="{{url('Pacientes/Registro')}}">Planilla de Honorarios</a>
                                 </li>
                                 <li>
-                                    <a href="{{url('Pacientes/New')}}">Agregar pacientes</a>
+                                    <a href="{{url('Pacientes/New')}}">Generar Pago</a>
                                 </li>
-                                <!--<li>
-                                    <a href="{{url('Pacientes/Update')}}">Modificar pacientes</a>
-                                </li>-->
+                              
                             </ul>
                         </li>
                          
@@ -176,18 +162,7 @@
             
                     </ul>
 
-                    <!-- Help Box 
-                    <div class="help-box text-white text-center">
-                        <a href="javascript: void(0);" class="float-right close-btn text-white">
-                            <i class="mdi mdi-close"></i>
-                        </a>
-                        <img src="assets/images/help-icon.svg" height="90" alt="Helper Icon Image" />
-                        <h5 class="mt-3">Unlimited Access</h5>
-                        <p class="mb-3">Upgrade to plan to get access to unlimited reports</p>
-                        <a href="javascript: void(0);" class="btn btn-outline-light btn-sm">Upgrade</a>
-                    </div>
-                     end Help Box -->
-                    <!-- End Sidebar -->
+                 
 
                     <div class="clearfix"></div>
 
@@ -208,6 +183,82 @@
                     <div class="navbar-custom ">
                         <ul class="list-unstyled topbar-right-menu float-right mb-0">
 
+                        <!-- Botton de Gestion de Citas-->
+                        <li class="dropdown notification-list">
+                                <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
+                                    aria-expanded="false">
+                                    <span class="account-user-avatar"> 
+                                    <i class="far fa-calendar-check"></i>
+                                    </span>
+                                    <span>
+                                        <span class="account-user-name">Gestion de citas</span>
+                                        <span class="account-position"> Calendario y reserva</span>
+                                    </span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+                                    <!-- item-->
+                                    <div class=" dropdown-header noti-title">
+                                        <h6 class="text-overflow m-0">Citas médicas</h6>
+                                    </div>
+                                    
+                                    <a class="dropdown-item" href="{{ route('Home.C') }}">
+                                    <i class="far fa-calendar-alt"></i>
+                                     Gestion de Citas
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{url('Citas/citas')}}"><i class="fas fa-angle-right"></i>   Reserva</a>
+                                    <a class="dropdown-item" href="{{url('Lista/lista')}}"><i class="fas fa-angle-right"></i>   Lista de Espera</a>
+                                    <a class="dropdown-item" href="{{url('Especialistas/Registro')}}"><i class="fas fa-angle-right"></i>   Especialistas</a>
+                                    <a class="dropdown-item" href="{{url('Especialidades/Registro')}}"><i class="fas fa-angle-right"></i>   Especialidades</a>
+                                    <a class="dropdown-item" href="{{url('Pacientes/Registro')}}"><i class="fas fa-angle-right"></i>   Pacientes</a>
+
+                                
+                                </div>
+                            </li>
+                            <!-- Fin botton de Gestion de Citas-->
+<!-- -------------------------------------------------------------------------------------------------------------------------------- -->
+
+                            <!-- Botton de Gestion Financiera-->
+
+                            <li class="dropdown notification-list">
+                                <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
+                                    aria-expanded="false">
+                                    <span class="account-user-avatar"> 
+                                    <i class="fas fa-chart-line"></i>                                   
+                                     </span>
+                                    <span>
+                                        <span class="account-user-name">Gestion Financiera</span>
+                                        <span class="account-position"> Convenios y Aranceles</span>
+                                    </span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+                                    <!-- item-->
+                                    <div class=" dropdown-header noti-title">
+                                        <h6 class="text-overflow m-0">Finanzas</h6>
+                                    </div>
+                                    
+                                    <a class="dropdown-item" href="{{ route('Home.F') }}">
+                                    <i class="fas fa-dollar-sign"></i>
+                                     Modulo Financiero
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{route('Registro-convenios')}}"><i class="fas fa-angle-right"></i>   Convenios</a>
+                                    <a class="dropdown-item" href="{{url('actualizar-convenios')}}"><i class="fas fa-angle-right"></i>   Aranceles</a>
+                                    <a class="dropdown-item" href="{{url('Especialistas/Registro')}}"><i class="fas fa-angle-right"></i>   Opciones de pago</a>
+                                    <a class="dropdown-item" href="{{url('Especialidades/Registro')}}"><i class="fas fa-angle-right"></i>   Dsctos por Caja</a>
+                                    <a class="dropdown-item" href="{{url('Pacientes/Registro')}}"><i class="fas fa-angle-right"></i>   Honorarios</a>
+
+                                
+                                </div>
+                            </li>
+
+
+
+                            <!-- Fin Botton de Gestion Financiera-->
+<!-- ------------------------------------------------------------------------------------------------------ -->
+                           
+                           
+                           
                             <li class="dropdown notification-list">
                                 <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
                                     aria-expanded="false">
@@ -290,128 +341,7 @@
         </div>
         <!-- END wrapper -->
 
-        <!-- Right Sidebar -->
-        <div class="right-bar">
-
-            <div class="rightbar-title">
-                <a href="javascript:void(0);" class="right-bar-toggle float-right">
-                    <i class="dripicons-cross noti-icon"></i>
-                </a>
-                <h5 class="m-0">Settings</h5>
-            </div>
-
-            <div class="slimscroll-menu rightbar-content">
-
-                <!-- Settings -->
-                <hr class="mt-0" />
-                <h5 class="pl-3">Basic Settings</h5>
-                <hr class="mb-0" />
-
-                <div class="p-3">
-                    <div class="custom-control custom-checkbox mb-2">
-                        <input type="checkbox" class="custom-control-input" id="notifications-check" checked>
-                        <label class="custom-control-label" for="notifications-check">Notifications</label>
-                    </div>
-
-                    <div class="custom-control custom-checkbox mb-2">
-                        <input type="checkbox" class="custom-control-input" id="api-access-check">
-                        <label class="custom-control-label" for="api-access-check">API Access</label>
-                    </div>
-
-                    <div class="custom-control custom-checkbox mb-2">
-                        <input type="checkbox" class="custom-control-input" id="auto-updates-check" checked>
-                        <label class="custom-control-label" for="auto-updates-check">Auto Updates</label>
-                    </div>
-
-                    <div class="custom-control custom-checkbox mb-2">
-                        <input type="checkbox" class="custom-control-input" id="online-status-check" checked>
-                        <label class="custom-control-label" for="online-status-check">Online Status</label>
-                    </div>
-
-                    <div class="custom-control custom-checkbox mb-2">
-                        <input type="checkbox" class="custom-control-input" id="auto-payout-check">
-                        <label class="custom-control-label" for="auto-payout-check">Auto Payout</label>
-                    </div>
-
-                </div>
-
-
-                <!-- Timeline -->
-                <hr class="mt-0" />
-                <h5 class="pl-3">Recent Activity</h5>
-                <hr class="mb-0" />
-                <div class="pl-2 pr-2">
-                    <div class="timeline-alt">
-                        <div class="timeline-item">
-                            <i class="mdi mdi-upload bg-info-lighten text-info timeline-icon"></i>
-                            <div class="timeline-item-info">
-                                <a href="#" class="text-info font-weight-bold mb-1 d-block">You sold an item</a>
-                                <small>Paul Burgess just purchased “Hyper - Admin Dashboard”!</small>
-                                <p class="mb-0 pb-2">
-                                    <small class="text-muted">5 minutes ago</small>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <i class="mdi mdi-airplane bg-primary-lighten text-primary timeline-icon"></i>
-                            <div class="timeline-item-info">
-                                <a href="#" class="text-primary font-weight-bold mb-1 d-block">Product on the Bootstrap Market</a>
-                                <small>Dave Gamache added
-                                    <span class="font-weight-bold">Admin Dashboard</span>
-                                </small>
-                                <p class="mb-0 pb-2">
-                                    <small class="text-muted">30 minutes ago</small>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <i class="mdi mdi-microphone bg-info-lighten text-info timeline-icon"></i>
-                            <div class="timeline-item-info">
-                                <a href="#" class="text-info font-weight-bold mb-1 d-block">Robert Delaney</a>
-                                <small>Send you message
-                                    <span class="font-weight-bold">"Are you there?"</span>
-                                </small>
-                                <p class="mb-0 pb-2">
-                                    <small class="text-muted">2 hours ago</small>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <i class="mdi mdi-upload bg-primary-lighten text-primary timeline-icon"></i>
-                            <div class="timeline-item-info">
-                                <a href="#" class="text-primary font-weight-bold mb-1 d-block">Audrey Tobey</a>
-                                <small>Uploaded a photo
-                                    <span class="font-weight-bold">"Error.jpg"</span>
-                                </small>
-                                <p class="mb-0 pb-2">
-                                    <small class="text-muted">14 hours ago</small>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <i class="mdi mdi-upload bg-info-lighten text-info timeline-icon"></i>
-                            <div class="timeline-item-info">
-                                <a href="#" class="text-info font-weight-bold mb-1 d-block">You sold an item</a>
-                                <small>Linco Fernandez Developer</small>
-                                <p class="mb-0 pb-2">
-                                    <small class="text-muted">1 day ago</small>
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="rightbar-overlay"></div>
-        <!-- /Right-bar -->
-
+     
      
      
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

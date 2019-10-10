@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App;
-class ListaController extends Controller
+class ListasController extends Controller
 {
     public function __construct()
     {
@@ -23,7 +20,7 @@ class ListaController extends Controller
     public function index()
     {
         
-      $result =  App\Lista::all();
+      $result =  App\Listas::all();
         return view('lista.lista',compact('result'));
     }
     
@@ -35,8 +32,8 @@ class ListaController extends Controller
      */
     public function create()
     {
-      $result=  App\Lista::all();
-      $result1=  App\Lista::all();
+      $result=  App\Listas::all();
+      $result1=  App\Listas::all();
       $result2 =  App\Pacientes::all();
       $result3 =  App\Especialistas::all();
       $result4 =  App\Especialidades::all();
@@ -52,9 +49,10 @@ class ListaController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request) {
+    public function store(Request $request) 
+    {
         
-    $lista = new App\Lista;
+    $lista = new App\Listas;
     $fecha =$request->lisfecha;
     $hora =$request->lishora;
 
@@ -93,7 +91,7 @@ class ListaController extends Controller
          $result =  App\Pacientes::all();
          $result2 =  App\Especialistas::all();
          $result3 =  App\Especialidades::all();
-        $lista = App\Lista::findOrfail($id);
+        $lista = App\Listas::findOrfail($id);
        return view('lista.actualizarlista',compact('lista','result','result2','result3'));
     }
 
@@ -106,12 +104,12 @@ class ListaController extends Controller
      */
      public function showPerfilL($lisPaciente)
     {
-          $pacientes =  App\Lista::findOrfail($lisPaciente);
+          $pacientes =  App\Listas::findOrfail($lisPaciente);
        return view('Perfil.paciente',compact('pacientes'));
     }
     public function update(Request $request, $id)
     {
-        $lista = App\Lista::findOrfail($id);
+        $lista = App\Listas::findOrfail($id);
         $lista->update($request->all());
         return back();
         
@@ -125,7 +123,7 @@ class ListaController extends Controller
      */
     public function destroy($id)
     {
-        $lista = App\Lista::findOrfail($id);
+        $lista = App\Listas::findOrfail($id);
         $lista ->delete();
          return back();
     }

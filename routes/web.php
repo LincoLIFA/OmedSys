@@ -15,35 +15,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('toma1', function () {
-    return view('SebaPrueba');
-
-});
-
-Route::get('puto', function () {
-    return view('Prueba5');
-});
-
-Route::get('hola', function () {
-    return view('prueba1');
-});
 
 /*Gestion de citas*/
         Route::get('Citas/citas', 'CitasController@index');
         Route::get('Citas/aggcitas', 'CitasController@create');
         Route::get('Citas/actcitas/{id}', 'CitasController@edit')->name('UpdateC');
-        Route::post('/Agregar', 'CitasController@store')->name('AgregarC');
+        Route::post('Citas/Agregar', 'CitasController@store')->name('AgregarC');
         Route::put('ActualizarC/{id}', 'CitasController@update')->name('ActualizarC');
         Route::delete('DeleteC/{id}', 'CitasController@destroy')->name('DeleteC');
         Route::get('PerfilC/Paciente/{citPaciente}', 'PacientesController@showPerfil')->name('PerfilPC');
 /*fin de gestion de citas*/
 /*Gestion de Lista de espera */
-        Route::get('Lista/lista', 'ListaController@index');
-        Route::get('Lista/agglista', 'ListaController@create');
-        Route::get('Lista/actlista/{id}', 'ListaController@edit')->name('UpdateL');
-        Route::post('/Agregar', 'ListaController@store')->name('AgregarL');
-        Route::put('ActualizarL/{id}', 'LitaController@update')->name('ActualizarL');
-        Route::delete('DeleteL/{id}', 'ListaController@destroy')->name('DeleteL');
+        Route::get('Lista/lista', 'ListasController@index')->name('RegistroL');
+        Route::get('Lista/agglista', 'ListasController@create')->name('AggLista');
+        Route::get('Lista/actlista/{id}', 'ListasController@edit')->name('UpdateL');
+        Route::post('/Agregar', 'ListasController@store')->name('AgregarL');
+        Route::put('ActualizarL/{id}', 'LitasController@update')->name('ActualizarL');
+        Route::delete('DeleteL/{id}', 'ListasController@destroy')->name('DeleteL');
         Route::get('PerfilL/Paciente/{citPaciente}', 'PacientesController@showPerfilL')->name('PerfilPL');
 /*fin de gestion de Lista de espera*/
 
@@ -105,7 +93,15 @@ Route::get('hola', function () {
         Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
         Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
 
+
+        // Home General de Reserva de Citas
         Route::get('/home', 'HomeController@index')->name('Home.C');
+
+        
+        // Home para Gestion Financiera 
+        Route::get('/Finanzas', 'HomeController@indexF')->name('Home.F');
+
+
         Route::get('/E/{id}', 'HomeController@indexE')->name('Home.E');
         Route::get('/P/{id}', 'HomeController@indexP')->name('Home.P');
        
@@ -115,4 +111,17 @@ Route::get('hola', function () {
         Route::get('login/google', 'Auth\LoginController@redirectToProvider')->name('login.google');
         Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallback');
         
+// --------------------------------------- RUTAS DE GESTION FINANCIERA ---------------------
+// 
+// *****************************************************************************************
 
+
+
+/*Gestion de Convenios*/
+Route::get('Convenios/Convenios', 'ConveniosController@index')->name('Registro-convenios');
+Route::get('Convenios/Aggconvenios', 'ConveniosController@create')->name('Agregar-convenios');
+Route::get('Convenios/actConvenios{id}', 'ConveniosController@edit')->name('Update-convenios');
+Route::post('/Agregar-Convenios', 'ConveniosController@store')->name('Agregar-nuevo-convenio');
+Route::put('Actualizar-Convenios/{id}', 'ConveniosController@update')->name('Actualizar-convenios');
+Route::delete('Delete-Convenios/{id}', 'ConveniosController@destroy')->name('Delete-convenios');
+/*fin de gestion de Convenios*/

@@ -13,7 +13,7 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                           <form class="my-2" action="{{route ('AgregarL')}}" method="POST">
+                                           <form class="my-2" action="{{route ('AgregarC')}}" method="POST">
                                                @method('POST') 
                                                 @csrf
                                              <div class="form-row">
@@ -129,7 +129,7 @@
                                                 <thead class="thead-light">
                                                     <tr>
                                                         
-                                                        <th class="all">N° Lista</th>
+                                                        <th class="all">N° Cita</th>
                                                         <th>Fecha</th>
                                                         <th>Hora</th>
                                                         <th>Paciente</th>
