@@ -26,8 +26,8 @@
                                              <div class="form-row">
                                                 <div class="form-group col">
                                                   <label for="inputDate">Fecha</label>
-                                                  <input type="date" class="form-control" name="fecha" placeholder="Fecha" "required/>
-                                                <small id="emailHelp" class="form-text text-muted">Debe escoger un día</small>
+                                                  <input type="date" class="form-control" name="fecha" placeholder="Fecha" required/>
+                                               
                                                 </div>
                                                 </div>
 
@@ -36,7 +36,7 @@
                                                 <div class="form-group col">
                                                   <label for="inputDate">Empresa</label>
                                                   <input type="text" class="form-control" name="empresa" placeholder="Ingrese nombre de empresa" required/>
-                                                <small id="emailHelp" class="form-text text-muted">Debe escoger un día</small>
+                                                
                                                 </div>
                                                 </div>
 
