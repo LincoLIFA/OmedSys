@@ -86,7 +86,7 @@
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Estado de Cita </label required>
                                                <select name="citEstado" class="custom-select mr-sm-1">
-                                            	<option value="Nulo">Seleccione Estado de la cita</option>
+                                            	<option value="{{$mostrar->citEstado}}">{{$mostrar->citEstado}}</option>
                                             	<option value="No-confirmado">No confirmado</option>
                                             	<option value="Confirmado">Confirmado</option>  
                                             	<option value="Pendiente">Pendiente</option>

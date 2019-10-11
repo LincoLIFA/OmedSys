@@ -85,7 +85,7 @@ if ($mysqli->connect_errno) {
           {
             id:"<?php echo $fila2['id'];?>",
             title:"<?php echo $fila2['citMedico'];?>",
-            start:"<?php echo $fila2['start'];?>",
+            start:"<?php echo $fila2['citfecha']."T".$fila2['cithora'];?>",
             classNames:"<?php echo $fila2['citEstado'];?>",
            
           },

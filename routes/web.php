@@ -54,7 +54,7 @@ Route::get('/', function () {
 /*fin de gestion de Especialistas*/
 
 /*Gestion de Especialidades*/
-        Route::get('Especialidades/Registro', 'EspecialidadesController@index');
+        Route::get('Especialidades/Registro', 'EspecialidadesController@index')->name('Registro-especialidades');
         Route::get('Especialidades/New', 'EspecialidadesController@create');
         Route::get('Especialidades/Update/{id}', 'EspecialidadesController@edit')->name('UpdateA');
         Route::post('agregarA', 'EspecialidadesController@store');

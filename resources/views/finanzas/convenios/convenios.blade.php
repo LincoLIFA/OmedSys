@@ -42,10 +42,56 @@
                                                         <th>Fecha</th>
                                                         <th>Empresa</th>
                                                         <th>% convenio</th>
+                                                        <th>Observaciones</th>
+                                                        <th>Contacto</th>
                                                         <th>Acción</th>
                                                         
                                                     </tr>
                                                 </thead>
+
+                                         
+                                                <tbody>
+                                                @foreach($result as $item)
+                                                    <tr>
+                                                        <td>
+                                                            <a href="">{{$item->id}}</a>
+                                                        </td>
+                                                        
+                                                        <td>
+                                                           {{$item->fecha}}
+                                                        </td>
+                                                        <td>
+                                                           {{$item->empresa}}
+                                                        </td>
+                                                        <td>
+                                                           {{$item->descuento}}
+                                                        </td>
+                                                        <td>
+                                                           {{$item->observacion}}
+                                                        </td>
+                                                        <td>
+                                                           {{$item->contacto}}
+                                                        </td>
+
+                                                       
+                                                        <td>
+                                                            <div class="row">
+                                                            <a href="{{route('Update-convenios', $item->id)}}" class="btn btn-primary mr-1"> <i class="far fa-edit"></i></a>
+                                                            <form method="post" action="{{route('Delete-convenios', $item->id)}}">
+                                                                    @method('DELETE') 
+                                                                    @csrf
+                                                              <button  class="btn btn-primary" type="submit"><i class="far fa-trash-alt"></i></button>
+                                                            </form>
+                                                            </div>
+                                                        </td>
+                                                       
+                                                    </tr>
+                                                    @endforeach();
+
+
+
+
+                                                </tbody>
                                                
                                             </table>
                                         </div>
@@ -54,7 +100,7 @@
                             </div> <!-- end col -->
                         </div>
                         <!-- end row -->        
-                        
+                                             
                     </div> <!-- container -->
 
 

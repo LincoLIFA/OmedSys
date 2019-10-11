@@ -66,7 +66,7 @@ class CitasController extends Controller
         $cita->citEstado = $request->citEstado;
         $cita->citObservaciones = $request->citObservaciones;
         $cita->confirmacion = $request->confirmacion;
-        $cita->start = $fecha."T".$hora;
+        $cita->start = $fecha+"T"+$hora;
         $cita->save();
        return back();
 }

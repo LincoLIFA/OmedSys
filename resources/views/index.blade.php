@@ -141,7 +141,7 @@
                             </a>
                             <ul class="side-nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="{{url('Especialidades/Registro')}}">Registro de especialidades</a>
+                                    <a href="{{route('Registro-especialidades')}}">Registro de especialidades</a>
                                 </li>
                                 <li>
                                     <a href="{{url('Especialidades/New')}}">Agregar Especialidadess</a>
