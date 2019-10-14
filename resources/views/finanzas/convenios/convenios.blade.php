@@ -1,4 +1,4 @@
-@extends('index')
+@extends('finanzas.index')
 @section('card')
 
 

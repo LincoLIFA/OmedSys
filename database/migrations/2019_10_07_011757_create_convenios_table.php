@@ -13,13 +13,16 @@ class CreateConveniosTable extends Migration
      */
     public function up()
     {
-        Schema::create('convenios', function (Blueprint $table) {
+        Schema::create('convenios', function (Blueprint $table) { 
             $table->bigIncrements('id');
+<<<<<<< HEAD
             $table->string('fecha');
             $table->string('empresa');
             $table->string('descuento');
             $table->string('observacion');
             $table->string('contacto');
+=======
+>>>>>>> linco
             $table->timestamps();
         });
     }

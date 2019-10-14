@@ -11,14 +11,31 @@ class CreateEspecialistasTable extends Migration
      * @return void
      */
     public function up()
+
+
+
+
     {
+
+
+
+
         Schema::create('especialistas', function (Blueprint $table) {
-            $table->increments('id');
+            
+            
+            
+            
+            $table->bigIncrements('id');
             $table->string('rut_med');
             $table->string('medidentificacion');
             $table->string('mednombres');
             $table->string('medapellidos');
-            $table->string('medespecialidad');
+
+            $table->unsignedBigInteger('especialidades_id'); // Relación con categorias
+            $table->foreign('especialidades_id')->references('id')->on('especialidades');
+
+           
+
             $table->string('medtelefono');
             $table->string('medcorreo');
             $table->timestamps();
@@ -33,6 +50,9 @@ class CreateEspecialistasTable extends Migration
      */
     public function down()
     {
+        
+      
         Schema::drop('especialistas');
+
     }
 }

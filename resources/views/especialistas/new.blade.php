@@ -57,10 +57,10 @@
                                         <div class="form-group">
                                             <div class="col-auto my-1">
                                                 <label class="mr-sm-2" for="inlineFormCustomSelect">Especialidad: </label>
-                                                <select  class="custom-select mr-sm-2" name="medespecialidad">  
+                                                <select  class="custom-select mr-sm-2" name="especialidades_id">  
                                                     <option value="Seleccione una especialidad">Seleccione una especialidad</option>
                     							         @foreach ($result2 as $mostrar)
-                    							        <option value="{{$mostrar->espNombre}}">{{$mostrar->espNombre}}</option>
+                    							        <option value="{{$mostrar->id}}">{{$mostrar->espNombre}}</option>
                     							        @endforeach
 						                        </select>
                                             </div>

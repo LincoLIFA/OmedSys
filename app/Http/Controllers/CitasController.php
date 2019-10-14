@@ -35,7 +35,7 @@ class CitasController extends Controller
      */
     public function create()
     {
-         $result=  App\Citas::all();
+      $result=  App\Citas::all();
       $result1=  App\Citas::all();
       $result2 =  App\Pacientes::all();
       $result3 =  App\Especialistas::all();
