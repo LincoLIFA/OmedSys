@@ -6,8 +6,8 @@ $mysqli = new mysqli("localhost", "root", "", "laravel");
 if ($mysqli->connect_errno) { 
     echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
-  $sql=$mysqli->query("select * from `events`  ");
-  $sql2=$mysqli->query("select * from `citas`  ");
+  $sql=$mysqli->query("select * from `events, citas` where  events.id = citas.events_id ");
+
 	
 
 ?>
@@ -77,19 +77,7 @@ if ($mysqli->connect_errno) {
             description:"<?php echo $fila['description'];?>",
           },
           <?php } ?>
-          <?php
-        foreach ($sql2 as $fila2)
-        {
-            
-        ?>
-          {
-            id:"<?php echo $fila2['id'];?>",
-            title:"<?php echo $fila2['citMedico'];?>",
-            start:"<?php echo $fila2['start'];?>",
-            classNames:"<?php echo $fila2['citEstado'];?>",
-           
-          },
-          <?php } ?>
+          
     
           
           ],

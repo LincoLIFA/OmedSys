@@ -49,7 +49,7 @@ class EspecialistasController extends Controller
         $NuevoPro->medidentificacion = $request->medidentificacion;
         $NuevoPro->mednombres = $request->mednombres;
         $NuevoPro->medapellidos = $request->medapellidos;
-        $NuevoPro->medespecialidad = $request->medespecialidad;
+        $NuevoPro->especialidades_id = $request->especialidades_id;
         $NuevoPro->medtelefono = $request->medtelefono;
         $NuevoPro->medcorreo = $request->medcorreo;
        	
