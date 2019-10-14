@@ -13,10 +13,8 @@ class CreateConveniosTable extends Migration
      */
     public function up()
     {
-        Schema::create('convenios', function (Blueprint $table) {
+        Schema::create('convenios', function (Blueprint $table) { 
             $table->bigIncrements('id');
-
-            
             $table->timestamps();
         });
     }
