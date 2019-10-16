@@ -63,8 +63,7 @@
                                                             {{$item->medapellidos}}
                                                         </td>
                                                         <td>
-                                                           {{$item->especialidades_id}}
-                                                          
+                                                        {{$item->especialidades->espNombre}}
                                                         </td>
                                                         <td>
                                                            {{$item->medtelefono}}

@@ -23,7 +23,10 @@ class CreateListasTable extends Migration
             $table->foreign('medico_id')->references('id')->on('especialistas');
             $table->unsignedBigInteger('especialidades_id'); // Relación con categorias
             $table->foreign('especialidades_id')->references('id')->on('especialidades');
-
+            $table->string('estado');
+            $table->string('observaciones');
+            $table->string('confirmacion');
+            $table->timestamps();
         });
     }
 

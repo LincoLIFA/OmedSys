@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class citas extends Model
 {
-    protected $fillable = [ 'id' , 'citfecha' , 'cithora' , 'citPaciente' , 'citMedico' , 'citEsp' , 'citEstado' , 'citObservaciones' , 'confirmacion' , 'start' ];
+    protected $fillable = [ 'id' , 'events_id' , 'paciente_id' , 'medico_id' , 'especialidades_id' ,  'citEstado' , 'citObservaciones' , 'confirmacion'  ];
 
     public function pacientes()
     {

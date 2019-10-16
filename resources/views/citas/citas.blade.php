@@ -6,7 +6,7 @@ $mysqli = new mysqli("localhost", "root", "", "laravel");
 if ($mysqli->connect_errno) { 
     echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
-  $sql=$mysqli->query("select * from `events, citas` where  events.id = citas.events_id ");
+  $sql=$mysqli->query("select * from `events` ");
 
 	
 
@@ -379,7 +379,6 @@ if ($mysqli->connect_errno) {
                                                         
                                                         <th class="all">N° Cita</th>
                                                         <th>Fecha</th>
-                                                        <th>Hora</th>
                                                         <th>Paciente</th>
                                                         <th>Especialista</th>
                                                         <th>Especialidad</th>
@@ -393,24 +392,22 @@ if ($mysqli->connect_errno) {
                                                     @foreach($result as $item2)
                                                     <tr>
                                                         <td>
-                                                            <a href="">{{$item2->id}}</a>
+                                                          <a href="">{{$item2->id}}</a>
                                                         </td>
                                                         <td>
-                                                           {{$item2->citfecha}}
+                                                           {{$item2->events->start->format('d/m/Y')}}
                                                         </td>
+                                                        
                                                         <td>
-                                                          {{$item2->cithora}}
-                                                        </td>
-                                                        <td>
-                                                            <a href="{{route('PerfilPC', $item2->citPaciente)}}" class="text-success">{{$item2->citPaciente}} </a>
+                                                            <a href="{{route('PerfilPC', $item2->pacientes_id)}}" class="text-success">{{$item2->pacientes->pacnombre}}  {{$item2->pacientes->pacapellidoP}} </a>
                                                            
                                                         </td>
                                                         <td>
-                                                            {{$item2->citMedico}}
+                                                            {{$item2->especialistas->medidentificacion}}
                                                         </td>
                     
                                                         <td>
-                                                           {{$item2->citEsp}}
+                                                           {{$item2->especialidades->espNombre}}
                                                         </td>
                                                         <td>
                                                             <span class="badge badge-success">{{$item2->citEstado}}</span>

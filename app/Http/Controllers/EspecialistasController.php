@@ -87,11 +87,12 @@ class EspecialistasController extends Controller
     
     { 
        
-        $result3 = App\Citas::all();
         $result =  App\Especialistas::all();
+        $result1 = App\Events::all();
         $result2 =  App\Especialidades::all();
+        $result3 = App\Citas::all();
         $especialistas = App\Especialistas::findOrfail($id);
-       return view('Perfil.especialista',compact('especialistas','result','result2','result3'));
+       return view('Perfil.especialista',compact('especialistas','result','result1','result2','result3'));
        
        
      
