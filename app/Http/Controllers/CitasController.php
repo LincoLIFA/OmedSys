@@ -36,7 +36,7 @@ class CitasController extends Controller
     public function create()
     {
       $result=  App\Citas::all();
-      $result1=  App\Citas::all();
+      $result1=  App\Events::all();
       $result2 =  App\Pacientes::all();
       $result3 =  App\Especialistas::all();
       $result4 =  App\Especialidades::all();
@@ -53,20 +53,29 @@ class CitasController extends Controller
      * @return Response
      */
     public function store(Request $request) {
+
+        $events = new App\Events;
+
+        $events->id = $request->id;
+        $events->title = $request->title;
+        $events->description = $request->description;
+        $events->classNames = "No-confirmado";
+        $events->start = $request->citFecha;
+        $events->end = $request->end;
+        $events->save();
+       return back();
         
     $cita = new App\Citas;
-    $fecha =$request->citfecha;
-    $hora =$request->cithora;
 
-        $cita->citfecha = $request->citfecha;
-        $cita->cithora = $request->cithora;
-        $cita->citPaciente = $request->citPaciente;
-        $cita->citMedico = $request->citMedico;
-        $cita->citEsp = $request->citEsp;
+
+      
+        $cita->events_id = $request->events_id;
+        $cita->pacientes_id = $request->pacientes_id;
+        $cita->medico_id = $request->medico_id;
+        $cita->especialidades_id = $request->especialidades_id;
         $cita->citEstado = $request->citEstado;
         $cita->citObservaciones = $request->citObservaciones;
         $cita->confirmacion = $request->confirmacion;
-        $cita->start = $fecha."T".$hora;
         $cita->save();
        return back();
 }
@@ -79,7 +88,7 @@ class CitasController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -91,10 +100,11 @@ class CitasController extends Controller
     public function edit($id)
     {
          $result =  App\Pacientes::all();
+         $result1 =  App\Events::all();
          $result2 =  App\Especialistas::all();
          $result3 =  App\Especialidades::all();
         $cita = App\Citas::findOrfail($id);
-       return view('citas.actualizarcitas',compact('cita','result','result2','result3'));
+       return view('citas.actualizarcitas',compact('cita','result','result1','result2','result3'));
     }
 
     /**
@@ -104,9 +114,9 @@ class CitasController extends Controller
      * @param  int  $id
      * @return Response
      */
-     public function showPerfil($citPaciente)
+     public function showPerfil($pacientes_id)
     {
-          $pacientes =  App\Citas::findOrfail($citPaciente);
+          $pacientes =  App\Citas::findOrfail($pacientes_id);
        return view('Perfil.paciente',compact('pacientes'));
     }
     public function update(Request $request, $id)

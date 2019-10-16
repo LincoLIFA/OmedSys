@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+
+
+use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App;
-class ListasController extends Controller
+class listasController extends Controller
 {
     public function __construct()
     {
@@ -20,8 +23,8 @@ class ListasController extends Controller
     public function index()
     {
         
-      $result =  App\Listas::all();
-        return view('lista.lista',compact('result'));
+      $result =  App\listas::all();
+        return view('listas.listas',compact('result'));
     }
     
 
@@ -32,12 +35,12 @@ class ListasController extends Controller
      */
     public function create()
     {
-      $result=  App\Listas::all();
-      $result1=  App\Listas::all();
+      $result=  App\listas::all();
+      $result1=  App\Events::all();
       $result2 =  App\Pacientes::all();
       $result3 =  App\Especialistas::all();
       $result4 =  App\Especialidades::all();
-       return view('lista.agregarlista',compact('result','result1','result2','result3','result4'));
+       return view('listas.agregarlistass',compact('result','result1','result2','result3','result4'));
     }
     
     
@@ -49,23 +52,20 @@ class ListasController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request) 
-    {
+    public function store(Request $request) {
         
-    $lista = new App\Listas;
-    $fecha =$request->lisfecha;
-    $hora =$request->lishora;
+    $listas = new App\listas;
 
-        $lista->lisfecha = $request->lisfecha;
-        $lista->lishora = $request->lishora;
-        $lista->lisPaciente = $request->lisPaciente;
-        $lista->lisMedico = $request->lisMedico;
-        $lista->lisEsp = $request->lisEsp;
-        $lista->lisEstado = $request->lisEstado;
-        $lista->lisObservaciones = $request->lisObservaciones;
-        $lista->confirmacion = $request->confirmacion;
-        $lista->start = $fecha."T".$hora;
-        $lista->save();
+
+      
+        $listas->events_id = $request->events_id;
+        $listas->pacientes_id = $request->pacientes_id;
+        $listas->medico_id = $request->medico_id;
+        $listas->especialidades_id = $request->especialidades_id;
+        $listas->citEstado = $request->citEstado;
+        $listas->citObservaciones = $request->citObservaciones;
+        $listas->confirmacion = $request->confirmacion;
+        $listas->save();
        return back();
 }
 
@@ -89,10 +89,11 @@ class ListasController extends Controller
     public function edit($id)
     {
          $result =  App\Pacientes::all();
+         $result1 =  App\Events::all();
          $result2 =  App\Especialistas::all();
          $result3 =  App\Especialidades::all();
-        $lista = App\Listas::findOrfail($id);
-       return view('lista.actualizarlista',compact('lista','result','result2','result3'));
+        $listas = App\listas::findOrfail($id);
+       return view('listas.actualizarlistass',compact('listas','result','result1','result2','result3'));
     }
 
     /**
@@ -102,15 +103,15 @@ class ListasController extends Controller
      * @param  int  $id
      * @return Response
      */
-     public function showPerfilL($lisPaciente)
+     public function showPerfil($pacientes_id)
     {
-          $pacientes =  App\Listas::findOrfail($lisPaciente);
+          $pacientes =  App\listas::findOrfail($pacientes_id);
        return view('Perfil.paciente',compact('pacientes'));
     }
     public function update(Request $request, $id)
     {
-        $lista = App\Listas::findOrfail($id);
-        $lista->update($request->all());
+        $listas = App\listas::findOrfail($id);
+        $listas->update($request->all());
         return back();
         
     }
@@ -123,8 +124,8 @@ class ListasController extends Controller
      */
     public function destroy($id)
     {
-        $lista = App\Listas::findOrfail($id);
-        $lista ->delete();
+        $listas = App\listas::findOrfail($id);
+        $listas ->delete();
          return back();
     }
 }

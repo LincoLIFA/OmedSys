@@ -117,6 +117,25 @@
                         </li>
                         <li class="side-nav-item">
                             <a href="javascript: void(0);" class="side-nav-link">
+                                 <i class="fas fa-user"></i>
+                                <span class="badge  float-right"><i class="fas fa-angle-right"></i></span>
+                                <span> Pacientes</span>
+                            </a>
+                            <ul class="side-nav-second-level" aria-expanded="false">
+                                <li>
+                                    <a href="{{url('Pacientes/Registro')}}">Registro de pacientes</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('Pacientes/New')}}">Agregar pacientes</a>
+                                </li>
+                                <!--<li>
+                                    <a href="{{url('Pacientes/Update')}}">Modificar pacientes</a>
+                                </li>-->
+                            </ul>
+                        </li>
+
+                        <li class="side-nav-item">
+                            <a href="javascript: void(0);" class="side-nav-link">
                                  <i class="fas fa-user-md"></i>
                                 <span class="badge  float-right"><i class="fas fa-angle-right"></i></span>
                                 <span> Especialistas</span>
