@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDescuentosPorCajasTable extends Migration
+class CreateConveniosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateDescuentosPorCajasTable extends Migration
      */
     public function up()
     {
-        Schema::create('descuentos_por_cajas', function (Blueprint $table) {
+        Schema::create('convenios', function (Blueprint $table) { 
             $table->bigIncrements('id');
-            $table->string('nombre');
+            $table->string('fecha');
+            $table->string('empresa');
             $table->string('descuento');
+            $table->string('observacion');
+            $table->string('contacto');
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ class CreateDescuentosPorCajasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('descuentos_por_cajas');
+        Schema::dropIfExists('convenios');
     }
 }

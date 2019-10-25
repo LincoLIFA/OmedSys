@@ -125,3 +125,13 @@ Route::post('/Agregar-Convenios', 'ConveniosController@store')->name('Agregar-nu
 Route::put('Actualizar-Convenios/{id}', 'ConveniosController@update')->name('Actualizar-convenios');
 Route::delete('Delete-Convenios/{id}', 'ConveniosController@destroy')->name('Delete-convenios');
 /*fin de gestion de Convenios*/
+
+
+/*Gestion de descuentos por caja*/
+Route::get('Descuentos/Descuentos', 'DescuentosPorCajaController@index')->name('Registro-Descuentos');
+Route::get('Descuentos/AggDescuentos', 'DescuentosPorCajaController@create')->name('Agregar-Descuentos');
+Route::get('Descuentos/actDescuentos{id}', 'DescuentosPorCajaController@edit')->name('Update-Descuentos');
+Route::post('/Agregar-Descuentos', 'DescuentosPorCajaController@store')->name('Agregar-nuevo-Descuentos');
+Route::put('Actualizar-Descuentos/{id}', 'DescuentosPorCajaController@update')->name('Actualizar-Descuentos');
+Route::delete('Delete-Descuentos/{id}', 'DescuentosPorCajaController@destroy')->name('Delete-Descuentos');
+/*fin de gestion de descuentos por caja*/

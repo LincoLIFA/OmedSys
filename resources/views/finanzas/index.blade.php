@@ -117,10 +117,10 @@
                             </a>
                             <ul class="side-nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="{{url('Especialistas/Registro')}}">Descuentos vigentes</a>
+                                    <a href="{{route('Registro-Descuentos')}}">Descuentos vigentes</a>
                                 </li>
                                 <li>
-                                    <a href="{{url('Especialistas/New')}}">Agregar Descuento</a>
+                                    <a href="{{route('Agregar-Descuentos')}}">Agregar Descuento</a>
                                 </li>
                             </ul>
                         </li>

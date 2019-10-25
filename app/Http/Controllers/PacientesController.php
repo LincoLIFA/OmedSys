@@ -53,7 +53,8 @@ class PacientesController extends Controller
        	$NuevoP->paccorreo = $request->paccorreo;
        	$NuevoP->pactelefono = $request->pactelefono;
         $NuevoP->save();
-       return back();
+        $result =  App\Pacientes::all();
+        return view('pacientes.registro',compact('result'));
     }
 
     /**
@@ -106,7 +107,8 @@ class PacientesController extends Controller
     {
         $pacientes = App\Pacientes::findOrfail($id);
         $pacientes->update($request->all());
-        return back();
+        $result =  App\Pacientes::all();
+        return view('pacientes.registro',compact('result'));
     }
 
     /**
@@ -119,6 +121,7 @@ class PacientesController extends Controller
     {
         $pacientes = App\Pacientes::findOrfail($id);
         $pacientes ->delete();
-        return back();
+        $result =  App\Pacientes::all();
+      return view('pacientes.registro',compact('result'));
     }
 }

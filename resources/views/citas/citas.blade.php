@@ -363,6 +363,7 @@ if ($mysqli->connect_errno) {
                                                         <th class="all">N° Cita</th>
                                                         <th>Fecha</th>
                                                         <th>Paciente</th>
+                                                        <th>Contacto</th>
                                                         <th>Especialista</th>
                                                         <th>Especialidad</th>
                                                         <th>Estado</th>
@@ -384,6 +385,9 @@ if ($mysqli->connect_errno) {
                                                         <td>
                                                             <a href="{{route('PerfilPC', $item2->pacientes_id)}}" class="text-success">{{$item2->pacientes->pacnombre}}  {{$item2->pacientes->pacapellidoP}} </a>
                                                            
+                                                        </td>
+                                                        <td>
+                                                        {{$item2->pacientes->pactelefono}}
                                                         </td>
                                                         <td>
                                                             {{$item2->especialistas->medidentificacion}}

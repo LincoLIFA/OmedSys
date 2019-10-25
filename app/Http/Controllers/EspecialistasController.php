@@ -54,7 +54,8 @@ class EspecialistasController extends Controller
         $NuevoPro->medcorreo = $request->medcorreo;
        	
         $NuevoPro->save();
-       return back();
+        $result =  App\Especialistas::all();
+        return view('especialistas.registro',compact('result'));
 
     }
 
@@ -109,7 +110,8 @@ class EspecialistasController extends Controller
     {
         $especialistas = App\Especialistas::findOrfail($id);
         $especialistas->update($request->all());
-        return back();
+        $result =  App\Especialistas::all();
+      return view('especialistas.registro',compact('result'));
         
     }
 
@@ -123,6 +125,7 @@ class EspecialistasController extends Controller
     {
         $especialistas = App\Especialistas::findOrfail($id);
         $especialistas ->delete();
-        return back();
+        $result =  App\Especialistas::all();
+        return view('especialistas.registro',compact('result'));
     }
 }

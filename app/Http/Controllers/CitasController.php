@@ -54,16 +54,6 @@ class CitasController extends Controller
      */
     public function store(Request $request) {
 
-        $events = new App\Events;
-
-        $events->id = $request->id;
-        $events->title = $request->title;
-        $events->description = $request->description;
-        $events->classNames = "No-confirmado";
-        $events->start = $request->citFecha;
-        $events->end = $request->end;
-        $events->save();
-       return back();
         
     $cita = new App\Citas;
 
@@ -76,14 +66,11 @@ class CitasController extends Controller
         $cita->citEstado = $request->citEstado;
         $cita->citObservaciones = $request->citObservaciones;
         $cita->confirmacion = $request->confirmacion;
-<<<<<<< HEAD
         $cita->start = $fecha+"T"+$hora;
-=======
->>>>>>> linco
         $cita->save();
-       return back();
-}
-
+        $result =  App\Citas::all();
+        return view('citas.citas',compact('result'));
+    }
     /**
      * Display the specified resource.
      *
@@ -127,8 +114,8 @@ class CitasController extends Controller
     {
         $citas = App\Citas::findOrfail($id);
         $citas->update($request->all());
-        return back();
-        
+        $result =  App\Citas::all();
+        return view('citas.citas',compact('result'));
     }
 
     /**
@@ -141,6 +128,7 @@ class CitasController extends Controller
     {
         $citas = App\Citas::findOrfail($id);
         $citas ->delete();
-         return back();
+        $result =  App\Citas::all();
+        return view('citas.citas',compact('result'));
     }
 }
