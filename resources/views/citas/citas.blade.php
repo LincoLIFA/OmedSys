@@ -79,24 +79,7 @@ if ($mysqli->connect_errno) {
             description:"<?php echo $fila['description'];?>",
           },
           <?php } ?>
-<<<<<<< HEAD
-          <?php
-        foreach ($sql2 as $fila2)
-        {
-            
-        ?>
-          {
-            id:"<?php echo $fila2['id'];?>",
-            title:"<?php echo $fila2['citMedico'];?>",
-            start:"<?php echo $fila2['citfecha']."T".$fila2['cithora'];?>",
-            classNames:"<?php echo $fila2['citEstado'];?>",
-           
-          },
-          <?php } ?>
-=======
-          
->>>>>>> linco
-    
+
           
           ],
      
