@@ -15,6 +15,13 @@ class CreateArancelesTable extends Migration
     {
         Schema::create('aranceles', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('procedimientos');
+            $table->integer('precios');
+            $table->string('comentarios');
+            $table->unsignedBigInteger('medico_id'); // Relación con categorias
+            $table->foreign('medico_id')->references('id')->on('especialistas');
+            $table->unsignedBigInteger('especialidades_id'); // Relación con categorias
+            $table->foreign('especialidades_id')->references('id')->on('especialidades');
             $table->timestamps();
         });
     }
