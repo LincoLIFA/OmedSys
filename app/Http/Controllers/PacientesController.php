@@ -68,16 +68,6 @@ class PacientesController extends Controller
        
     }
 	
-
-
-
-
-
-
-
-
-
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -91,9 +81,12 @@ class PacientesController extends Controller
     }
     
     public function showPerfil($id)
-    {
-          $pacientes =  App\Pacientes::findOrfail($id);
-       return view('Perfil.paciente',compact('pacientes'));
+    {        
+            $result =  App\Citas::all();
+            $result2 =  App\Especialistas::all();
+            $result3 =  App\Especialidades::all();
+            $pacientes =  App\Pacientes::findOrfail($id);
+          return view('Perfil.paciente',compact('pacientes','result','result2','result3'));
     }
 
     /**
