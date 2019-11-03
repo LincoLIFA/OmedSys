@@ -156,5 +156,13 @@ Route::delete('Delete-Aranceles/{id}', 'ArancelesController@destroy')->name('Del
 /*fin de gestion  aranceles*/
 
 Route::get('ficha', function () {
-        return view('ficha.fichamedica.aranceles');
+        return view('ficha.fichamedica.fichamedica');
+    });
+
+    Route::get('pagos', function () {
+        return view('finanzas.pagos.pagos');
+    });
+
+    Route::get('evolucionar', function () {
+        return view('finanzas.pagos.evolucionar');
     });
