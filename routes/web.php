@@ -154,3 +154,7 @@ Route::post('/Agregar-Aranceles', 'ArancelesController@store')->name('Agregar-nu
 Route::put('Actualizar-Aranceles/{id}', 'ArancelesController@update')->name('Actualizar-Aranceles');
 Route::delete('Delete-Aranceles/{id}', 'ArancelesController@destroy')->name('Delete-Aranceles');
 /*fin de gestion  aranceles*/
+
+Route::get('ficha', function () {
+        return view('ficha.fichamedica.aranceles');
+    });
