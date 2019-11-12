@@ -119,19 +119,60 @@
                                                 </a>
                                             </li>
                                         </ul>
+                                        
+                                            <!--ABOUTME-->
                                         <div class="tab-content">
                                             <div class="tab-pane active" id="aboutme">
-    
-                                                <h5 class="text-uppercase"><i class="mdi mdi-briefcase mr-1"></i>
-                                                    Experience</h5>
+                                                
+                    
+                                                <!--<h5 class="text-uppercase"><i class="mdi mdi-briefcase mr-1"></i>
+                                                    Historial de Diagnosticos</h5> -->
+
+                                                <div style="text-align: center">
+                                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#nuevodiagnostico" data-whatever="@mdo" style='width:300px; height:35px'>Nuevo Diagnostico</button>
+
+                                                </div>
+
+                                                <div class="modal fade" id="nuevodiagnostico" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog modal-lg" role="document">
+                                                          <div class="modal-content">
+                                                            <div class="modal-header">
+                                                              <h5 class="modal-title" id="exampleModalLabel">Cargar Nueva Prestación</h5>
+                                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                              </button>
+                                                            </div>
+
+                                                            <div class="modal-body">        
+                                                                <div class="form-group">
+
+                                                                        <label for="inputDATE">Fecha de la cita</label>
+                                                                        <input type="date" class="form-control"  name="pacfechaN" pattern="[A-Za-z0-9.-_,;: ]+" required>
+
+                                                                        <label for="message-text" class="col-form-label mt-2">Comentarios:</label>
+                                                                        <textarea class="form-control" id="message-text"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="modal-footer">
+                                                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                                              <button type="button" class="btn btn-primary">Agregar</button>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                            
+
+
+                                            
+                                                    
 
                                                 <div class="timeline-alt pb-0">
                                                     <div class="timeline-item">
                                                         <i class="mdi mdi-circle bg-info-lighten text-info timeline-icon"></i>
                                                         <div class="timeline-item-info">
-                                                            <h5 class="mt-0 mb-1">Lead designer / Developer</h5>
-                                                            <p class="font-14">websitename.com <span class="ml-2 font-12">Year: 2015 - 18</span></p>
-                                                            <p class="text-muted mt-2 mb-0 pb-3">Everyone realizes why a new common language
+                                                            <p class="font-14"> Fecha:08/12/21</p>
+                                                            <p class="mt-2 mb-0 pb-3">Everyone realizes why a new common language
                                                                 would be desirable: one could refuse to pay expensive translators.
                                                                 To achieve this, it would be necessary to have uniform grammar,
                                                                 pronunciation and more common words.</p>
@@ -141,9 +182,8 @@
                                                     <div class="timeline-item">
                                                         <i class="mdi mdi-circle bg-primary-lighten text-primary timeline-icon"></i>
                                                         <div class="timeline-item-info">
-                                                            <h5 class="mt-0 mb-1">Senior Graphic Designer</h5>
-                                                            <p class="font-14">Software Inc. <span class="ml-2 font-12">Year: 2012 - 15</span></p>
-                                                            <p class="text-muted mt-2 mb-0 pb-3">If several languages coalesce, the grammar
+                                                            <p class="font-14">Fecha: 12/15/19</p>
+                                                            <p class="mt-2 mb-0 pb-3">If several languages coalesce, the grammar
                                                                 of the resulting language is more simple and regular than that of
                                                                 the individual languages. The new common language will be more
                                                                 simple and regular than the existing European languages.</p>
@@ -154,204 +194,43 @@
                                                     <div class="timeline-item">
                                                         <i class="mdi mdi-circle bg-info-lighten text-info timeline-icon"></i>
                                                         <div class="timeline-item-info">
-                                                            <h5 class="mt-0 mb-1">Graphic Designer</h5>
-                                                            <p class="font-14">Coderthemes Design LLP <span class="ml-2 font-12">Year: 2010 - 12</span></p>
-                                                            <p class="text-muted mt-2 mb-0 pb-2">The European languages are members of
+                                                            <p class="font-14">Coderthemes Design LLP</p>
+                                                            <p  class="mt-2 mb-0 pb-2">The European languages are members of
                                                                 the same family. Their separate existence is a myth. For science
                                                                 music sport etc, Europe uses the same vocabulary. The languages
                                                                 only differ in their grammar their pronunciation.</p>
                                                         </div>
                                                     </div>
 
-                                                </div>
-                                                <!-- end timeline -->        
 
-                                                <h5 class="mb-3 mt-4 text-uppercase"><i class="mdi mdi-cards-variant mr-1"></i>
-                                                    Projects</h5>
-                                                <div class="table-responsive">
-                                                    <table class="table table-borderless table-nowrap mb-0">
-                                                        <thead class="thead-light">
-                                                            <tr>
-                                                                <th>#</th>
-                                                                <th>Clients</th>
-                                                                <th>Project Name</th>
-                                                                <th>Start Date</th>
-                                                                <th>Due Date</th>
-                                                                <th>Status</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>1</td>
-                                                                <td><img src="assets/images/users/avatar-2.jpg" alt="table-user" class="mr-2 rounded-circle" height="24"> Halette Boivin</td>
-                                                                <td>App design and development</td>
-                                                                <td>01/01/2015</td>
-                                                                <td>10/15/2018</td>
-                                                                <td><span class="badge badge-info-lighten">Work in Progress</span></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>2</td>
-                                                                <td><img src="assets/images/users/avatar-3.jpg" alt="table-user" class="mr-2 rounded-circle" height="24"> Durandana Jolicoeur</td>
-                                                                <td>Coffee detail page - Main Page</td>
-                                                                <td>21/07/2016</td>
-                                                                <td>12/05/2018</td>
-                                                                <td><span class="badge badge-danger-lighten">Pending</span></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>3</td>
-                                                                <td><img src="assets/images/users/avatar-4.jpg" alt="table-user" class="mr-2 rounded-circle" height="24"> Lucas Sabourin</td>
-                                                                <td>Poster illustation design</td>
-                                                                <td>18/03/2018</td>
-                                                                <td>28/09/2018</td>
-                                                                <td><span class="badge badge-success-lighten">Done</span></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>4</td>
-                                                                <td><img src="assets/images/users/avatar-6.jpg" alt="table-user" class="mr-2 rounded-circle" height="24"> Donatien Brunelle</td>
-                                                                <td>Drinking bottle graphics</td>
-                                                                <td>02/10/2017</td>
-                                                                <td>07/05/2018</td>
-                                                                <td><span class="badge badge-info-lighten">Work in Progress</span></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>5</td>
-                                                                <td><img src="assets/images/users/avatar-5.jpg" alt="table-user" class="mr-2 rounded-circle" height="24"> Karel Auberjo</td>
-                                                                <td>Landing page design - Home</td>
-                                                                <td>17/01/2017</td>
-                                                                <td>25/05/2021</td>
-                                                                <td><span class="badge badge-warning-lighten">Coming soon</span></td>
-                                                            </tr>
-    
-                                                        </tbody>
-                                                    </table>
+
                                                 </div>
+                                            
     
                                             </div> <!-- end tab-pane -->
                                             <!-- end about me section content -->
+                                            
+
+                                            <!--TIMELINE-->
+                                            <div class="tab-pane" id="timeline">
+                                           
     
-                                            <div class="tab-pane show" id="timeline">
+                                            </div> 
+                                            <!-- end timeline content--> 
     
-                                                <!-- comment box -->
-                                                <div class="border rounded mt-2 mb-3">
-                                                    <form action="#" class="comment-area-box">
-                                                        <textarea rows="3" class="form-control border-0 resize-none" placeholder="Write something...."></textarea>
-                                                        <div class="p-2 bg-light d-flex justify-content-between align-items-center">
-                                                            <div>
-                                                                <a href="#" class="btn btn-sm px-2 font-16 btn-light"><i class="mdi mdi-account-circle"></i></a>
-                                                                <a href="#" class="btn btn-sm px-2 font-16 btn-light"><i class="mdi mdi-map-marker"></i></a>
-                                                                <a href="#" class="btn btn-sm px-2 font-16 btn-light"><i class="mdi mdi-camera"></i></a>
-                                                                <a href="#" class="btn btn-sm px-2 font-16 btn-light"><i class="mdi mdi-emoticon-outline"></i></a>
-                                                            </div>
-                                                            <button type="submit" class="btn btn-sm btn-dark waves-effect">Post</button>
-                                                        </div>
-                                                    </form>
-                                                </div> <!-- end .border-->
-                                                <!-- end comment box -->
-    
-                                                <!-- Story Box-->
-                                                <div class="border border-light rounded p-2 mb-3">
-                                                    <div class="media">
-                                                        <img class="mr-2 rounded-circle" src="assets/images/users/avatar-3.jpg" alt="Generic placeholder image" height="32">
-                                                        <div class="media-body">
-                                                            <h5 class="m-0">Jeremy Tomlinson</h5>
-                                                            <p class="text-muted"><small>about 2 minuts ago</small></p>
-                                                        </div>
-                                                    </div>
-                                                    <p>Story based around the idea of time lapse, animation to post soon!</p>
-    
-                                                    <img src="assets/images/small/small-1.jpg" alt="post-img" class="rounded mr-1" height="60">
-                                                    <img src="assets/images/small/small-2.jpg" alt="post-img" class="rounded mr-1" height="60">
-                                                    <img src="assets/images/small/small-3.jpg" alt="post-img" class="rounded" height="60">
-    
-                                                    <div class="mt-2">
-                                                        <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted"><i class="mdi mdi-reply"></i> Reply</a>
-                                                        <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted"><i class="mdi mdi-heart-outline"></i> Like</a>
-                                                        <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted"><i class="mdi mdi-share-variant"></i> Share</a>
-                                                    </div>
-                                                </div>
-    
-                                                <!-- Story Box-->
-                                                <div class="border border-light rounded p-2 mb-3">
-                                                    <div class="media">
-                                                        <img class="mr-2 rounded-circle" src="assets/images/users/avatar-4.jpg" alt="Generic placeholder image" height="32">
-                                                        <div class="media-body">
-                                                            <h5 class="m-0">Thelma Fridley</h5>
-                                                            <p class="text-muted"><small>about 1 hour ago</small></p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="font-16 text-center font-italic text-dark">
-                                                        <i class="mdi mdi-format-quote-open font-20"></i> Cras sit amet nibh libero, in
-                                                        gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
-                                                        purus odio, vestibulum in vulputate at, tempus viverra turpis. Duis
-                                                        sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper
-                                                        porta. Mauris massa.
-                                                    </div>
-    
-                                                    <div class="mx-n2 p-2 mt-3 bg-light">
-                                                        <div class="media">
-                                                            <img class="mr-2 rounded-circle" src="assets/images/users/avatar-3.jpg" alt="Generic placeholder image" height="32">
-                                                            <div class="media-body">
-                                                                <h5 class="mt-0">Jeremy Tomlinson <small class="text-muted">3 hours ago</small></h5>
-                                                                Nice work, makes me think of The Money Pit.
-    
-                                                                <br>
-                                                                <a href="javascript: void(0);" class="text-muted font-13 d-inline-block mt-2"><i class="mdi mdi-reply"></i> Reply</a>
-    
-                                                                <div class="media mt-3">
-                                                                    <a class="pr-2" href="#">
-                                                                        <img src="assets/images/users/avatar-4.jpg" class="rounded-circle" alt="Generic placeholder image" height="32">
-                                                                    </a>
-                                                                    <div class="media-body">
-                                                                        <h5 class="mt-0">Thelma Fridley <small class="text-muted">5 hours ago</small></h5>
-                                                                        i'm in the middle of a timelapse animation myself! (Very different though.) Awesome stuff.
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-    
-                                                        <div class="media mt-2">
-                                                            <a class="pr-2" href="#">
-                                                                <img src="assets/images/users/avatar-1.jpg" class="rounded-circle" alt="Generic placeholder image" height="32">
-                                                            </a>
-                                                            <div class="media-body">
-                                                                <input type="text" id="simpleinput" class="form-control border-0 form-control-sm" placeholder="Add comment">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-    
-                                                    <div class="mt-2">
-                                                        <a href="javascript: void(0);" class="btn btn-sm btn-link text-danger"><i class="mdi mdi-heart"></i> Like (28)</a>
-                                                        <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted"><i class="mdi mdi-share-variant"></i> Share</a>
-                                                    </div>
-                                                </div>
-    
-                                                <!-- Story Box-->
-                                                <div class="border border-light p-2 mb-3">
-                                                    <div class="media">
-                                                        <img class="mr-2 rounded-circle" src="assets/images/users/avatar-6.jpg" alt="Generic placeholder image" height="32">
-                                                        <div class="media-body">
-                                                            <h5 class="m-0">Martin Williamson</h5>
-                                                            <p class="text-muted"><small>15 hours ago</small></p>
-                                                        </div>
-                                                    </div>
-                                                    <p>The parallax is a little odd but O.o that house build is awesome!!</p>
-    
-                                                    <iframe src="https://player.vimeo.com/video/87993762" height="300" class="img-fluid border-0"></iframe>
-                                                </div>
-    
-                                                <div class="text-center">
-                                                    <a href="javascript:void(0);" class="text-danger"><i class="mdi mdi-spin mdi-loading mr-1"></i> Load more </a>
-                                                </div>
-    
-                                            </div>
-                                            <!-- end timeline content-->
-    
-                                            <div class="tab-pane" id="settings">
-            <div style="text-align: right">                        
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cargarprestacion" data-whatever="@mdo">Cargar Prestación</button>
+
+
+
+
+
+          <!--SETTINGS-->                                  
+        <div class="tab-pane" id="settings">
+            
+            <div style="text-align: center">                        
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cargarprestacion" data-whatever="@mdo" style='width:300px; height:35px'>Cargar Prestación</button>
               </div>
-            </div>
-            <div class="card-block p-0">
+           
+            <div class="card-block p-0 mb-2">
             <div class="row">
               <div class="col-12">
                 <table class="table">

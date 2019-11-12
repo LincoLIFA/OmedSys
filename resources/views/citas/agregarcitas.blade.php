@@ -9,7 +9,16 @@
                         <!-- end page title --> 
 
                     <div class="container-fluid">
-                      <div class="row my-5">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <h4 class="page-title">Registro de Citas</h4>
+                                </div>
+                            </div>
+                        </div>     
+
+                      <div class="row">
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
@@ -30,25 +39,20 @@
                                               </div>
                                               
                     						
-                    						<div class="form-group">
-                    						    <div class="form-group row">
-                                                    <label for="inputPassword" class="col-sm-2 col-form-label">Paciente</label>
-                                                    <div class="col-sm-10">
+                    						<div class="form-row">
+                    						    <div class="form-group col-md-6">
+                                                    <label for="inputPassword">Paciente</label> 
                                                       <select name="pacientes_id"  class="custom-select mr-sm-1" required>
                     							        <option value="Seleccione un paciente">Seleccione un paciente</option>
                     							        @foreach ($result2 as $mostrar)
                     							        <option value="{{$mostrar->id}}">{{$mostrar->pacnombre}} {{$mostrar->pacapellidoP}} </option>
                     							        
                     							        @endforeach
-                    							        
-                    							        </select>
-                                                    </div>
-                                                </div>    
-                                            </div>
-                                            <div class="form-group">
-                    						    <div class="form-group row">
-                                                    <label for="inputPassword" class="col-sm-2 col-form-label">Profesional</label>
-                                                    <div class="col-sm-10">
+                    							                     </select>
+                                </div>
+
+                    						    <div class="form-group col-md-6">
+                                                    <label for="inputPassword">Profesional</label>
                                                       <select name="especialistas_id"  class="custom-select mr-sm-1" required>
                     							        <option value="Seleccione un profesional">Seleccione un profesional</option>
                     							        @foreach ($result3 as $mostrar)
@@ -56,26 +60,21 @@
                     							        
                     							        @endforeach
                     							        </select>
-                                                    </div>
-                                                </div>    
+                                                    </div>  
                                             </div>
-                                            <div class="form-group">
-                    						    <div class="form-group row">
-                                                    <label for="inputPassword" class="col-sm-2 col-form-label">Especialidad</label>
-                                                    <div class="col-sm-10">
+
+                                    <div class="form-row">
+                    						          <div class="form-group col-md-6">
+                                                    <label for="inputPassword">Especialidad</label>
                                                       <select name="citEsp"  class="custom-select mr-sm-1" required>
                     							        <option value="Seleccione una especialidad">Seleccione una especialidad</option>
                     							         @foreach ($result4 as $mostrar)
                     							        <option value="{{$mostrar->id}}">{{$mostrar->espNombre}}</option>
                     							        @endforeach
-                    							        </select>
-                                                    </div>
-                                                </div>    
+                    							        </select> 
                                             </div>
-                                            <div class="form-group">
-                    						    <div class="form-group row">
-                                                    <label for="inputPassword" class="col-sm-2 col-form-label">Metodo Confirmacion</label>
-                                                    <div class="col-sm-10">
+                    						    <div class="form-group col-md-6">
+                                                    <label for="inputPassword">Metodo Confirmacion</label>
                                                       <select name="confirmacion"  class="custom-select mr-sm-1" required>
                     							        <option value="Whatsapp">Whatsapp</option>
                     							        <option value="Telefono">Telefono</option>
@@ -83,8 +82,9 @@
                     							        </select>
                                                     </div>
                                                 </div>    
-                                            </div>
-                                            <div class="form-group">
+
+                                            <div class="form-row">
+                                              <div class="from-group col-md-6">
                                                 <label for="exampleInputEmail1">Estado de Cita </label required>
                                                <select name="citEstado" class="custom-select mr-sm-1">
                                             	<option value="Nulo">Seleccione Estado de la cita</option>
@@ -94,13 +94,18 @@
                                             	<option value="Atendido">Atendido</option>  
                                             </select>   
                                             </div>
-                                            <div class="form-group">
+                                          </div>
+
+
+                                            <div class="form-group mt-2">
                                                 <label for="exampleInputEmail1">Observaciones sobre la Cita o el Paciente </label>
-                                               <textarea class="form-control" placeholder="Observación" value="Observaciones"name="citObservaciones">Observación</textarea>
+                                               <textarea class="form-control" placeholder="Escriba observaciones aquí. . ." value="Observaciones"name="citObservaciones"></textarea>
                     						    
                                             </div>
-                                            <input type="submit" name="enviar" class="btn btn-danger btn-block" value="Ingresar registro de reserva">
-                                            
+
+                                            <div align="center"> 
+                                            <input type="submit" name="enviar" class="btn btn-danger btn-block mt-3" value="Ingresar registro de reserva" style='width:500px; height:35px'>
+                                            </div>
                                             
                                             
                     					</form>
