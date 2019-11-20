@@ -383,8 +383,13 @@ if ($mysqli->connect_errno) {
                                                         </td>
                                                         
                                                         <td>
+<<<<<<< HEAD
                                                             <a href"" class="text-success">{{$item2->pacientes->pacnombre}}  {{$item2->pacientes->pacapellidoP}} </a>
                                                            
+=======
+                                                            <a href="{{route('PerfilPC', $item2->paciente_id)}}" class="text-success"> </a>
+
+>>>>>>> Linco
                                                         </td>
                                                         <td>
                                                         {{$item2->pacientes->pactelefono}}

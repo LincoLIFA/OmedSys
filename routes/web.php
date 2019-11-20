@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Auth::routes(['verify' => true]);
+
+
 
 /*Gestion de citas*/
         Route::get('Citas/citas', 'CitasController@index');
@@ -30,7 +33,7 @@ Route::get('/', function () {
         Route::get('Lista/agglista', 'ListasController@create')->name('AggLista');
         Route::get('Lista/actlista/{id}', 'ListasController@edit')->name('UpdateL');
         Route::post('/Agregar', 'ListasController@store')->name('AgregarL');
-        Route::put('ActualizarL/{id}', 'LitasController@update')->name('ActualizarL');
+        Route::put('ActualizarL/{id}', 'ListasController@update')->name('ActualizarL');
         Route::delete('DeleteL/{id}', 'ListasController@destroy')->name('DeleteL');
         Route::get('PerfilL/Paciente/{citPaciente}', 'PacientesController@showPerfilL')->name('PerfilPL');
 /*fin de gestion de Lista de espera*/
@@ -67,7 +70,7 @@ Route::get('/', function () {
         Route::get('Pacientes/Registro', 'PacientesController@index');
         Route::get('Pacientes/New', 'PacientesController@create');
         Route::get('Pacientes/Update/{id}', 'PacientesController@edit')->name('UpdateP');
-        Route::get('Perfil/Paciente/{id}', 'PacientesController@showPerfil')->name('PerfilP');
+        Route::get('Perfil/Paciente/{paciente_id}', 'PacientesController@showPerfil')->name('PerfilPC');
         Route::post('/agregarP', 'PacientesController@store')->name('AgregarP');
         Route::put('AactualizarP/{id}', 'PacientesController@update')->name('ActualizarP');
         Route::delete('DeleteP/{id}', 'PacientesController@destroy')->name('DeleteP');
@@ -95,15 +98,15 @@ Route::get('/', function () {
 
 
         // Home General de Reserva de Citas
-        Route::get('/home', 'HomeController@index')->name('Home.C');
+        Route::get('/home', 'HomeController@index')->name('Home.C')->middleware('verified');
 
         
         // Home para Gestion Financiera 
-        Route::get('/Finanzas', 'HomeController@indexF')->name('Home.F');
+        Route::get('/Finanzas', 'HomeController@indexF')->name('Home.F')->middleware('verified');
 
 
-        Route::get('/E/{id}', 'HomeController@indexE')->name('Home.E');
-        Route::get('/P/{id}', 'HomeController@indexP')->name('Home.P');
+        Route::get('/E/{id}', 'HomeController@indexE')->name('Home.E')->middleware('verified');
+        Route::get('/P/{id}', 'HomeController@indexP')->name('Home.P')->middleware('verified');
        
         
 /*Rutas para Auth con redes sociales*/
@@ -155,6 +158,7 @@ Route::put('Actualizar-Aranceles/{id}', 'ArancelesController@update')->name('Act
 Route::delete('Delete-Aranceles/{id}', 'ArancelesController@destroy')->name('Delete-Aranceles');
 /*fin de gestion  aranceles*/
 
+<<<<<<< HEAD
 Route::get('ficha', function () {
         return view('ficha.fichamedica.fichamedica');
     });
@@ -166,3 +170,6 @@ Route::get('ficha', function () {
     Route::get('evolucionar', function () {
         return view('finanzas.pagos.evolucionar');
     });
+=======
+
+>>>>>>> Linco
