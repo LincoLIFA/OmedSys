@@ -46,7 +46,7 @@
 	    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 	
         <!-- third party css end -->
-        <!-- App css -->
+        <!-- App css -->    
        
         <link href="{{asset('plugins/bootstrap/css/vendor/app.min.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('fullcalendar/packages/daygrid/main.css')}}" rel="stylesheet" type="text/css" />
