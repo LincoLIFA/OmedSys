@@ -158,18 +158,4 @@ Route::put('Actualizar-Aranceles/{id}', 'ArancelesController@update')->name('Act
 Route::delete('Delete-Aranceles/{id}', 'ArancelesController@destroy')->name('Delete-Aranceles');
 /*fin de gestion  aranceles*/
 
-<<<<<<< HEAD
-Route::get('ficha', function () {
-        return view('ficha.fichamedica.fichamedica');
-    });
 
-    Route::get('pagos', function () {
-        return view('finanzas.pagos.pagos');
-    });
-
-    Route::get('evolucionar', function () {
-        return view('finanzas.pagos.evolucionar');
-    });
-=======
-
->>>>>>> Linco
