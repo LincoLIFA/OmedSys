@@ -21,7 +21,6 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{asset('plugins/bootstrap/css/vendor/app.min.css')}}" rel="stylesheet" type="text/css" />
     
-
     <!-- Google Auth -->
     <meta name = "google-signin-scope" content = "email de perfil" > 
      <meta name = "google-signin-client_id" content = "YOUR_CLIENT_ID.apps.googleusercontent.com " > 
