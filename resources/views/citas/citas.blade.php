@@ -379,12 +379,12 @@ if ($mysqli->connect_errno) {
                                                           <a href="">{{$item2->id}}</a>
                                                         </td>
                                                         <td>
-                                                           {{$item2->events->start->format('d/m/Y')}}
+                                                           {{$item2->events->start}}
                                                         </td>
                                                         
                                                         <td>
-                                                            <a href="{{route('PerfilPC', $item2->pacientes_id)}}" class="text-success">{{$item2->pacientes->pacnombre}}  {{$item2->pacientes->pacapellidoP}} </a>
-                                                           
+                                                            <a href="{{route('PerfilPC', $item2->paciente_id)}}" class="text-success"> </a>
+
                                                         </td>
                                                         <td>
                                                         {{$item2->pacientes->pactelefono}}

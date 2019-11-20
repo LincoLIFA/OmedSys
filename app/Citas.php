@@ -11,12 +11,12 @@ class citas extends Model
 
     public function pacientes()
     {
-        return $this->belongsTo('App\Pacientes', 'pacientes_id');
+        return $this->belongsTo('App\Pacientes', 'paciente_id');
     }
     
     public function especialistas()
     {
-        return $this->belongsTo('App\Especialistas', 'especialistas_id');
+        return $this->belongsTo('App\Especialistas', 'medico_id');
     }
     public function especialidades()
     {
