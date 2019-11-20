@@ -16,12 +16,9 @@ if ($mysqli->connect_errno) {
 
 <script type="text/javascript">
     $(document).ready( function () {
-    $('#citas').DataTable();
+    $('#registro-citas').DataTable();
 } );
 
-$('#ESP').select2({
-  closeOnSelect: true
-});
 </script>
    <!-- Script de fullcalendar -->
 <script type="text/javascript">
@@ -476,29 +473,64 @@ $('#ESP').select2({
                                     <div class="card-body">
                                         <h4 class="header-title mb-3">Mis Citas</h4>
                                         <div class="table-responsive">
-                                            <table class="table table-hover table-centered mb-0">
-                                                <thead>
+                                        <table class="table table-centered w-100 dt-responsive nowrap display" id="registro-citas">
+                                                <thead class="thead-light">
                                                     <tr>
-                                                        <th>ID</th>
-                                                        <th>Paciente</th>
+                                                        
+                                                        <th class="all">N° </th>
                                                         <th>Fecha</th>
-                                                        <th>Hora</th>
+                                                        <th>Especialista</th>
+                                                        <th>Especialidad</th>
+                                                        <th>Observaciones</th>
+                                                        <th>Acción</th>
+                                                        
                                                     </tr>
                                                 </thead>
-                                                
-                                               
-                                                
-                                                
+
+                                         
                                                 <tbody>
+                                                @foreach($result as $item)
                                                     <tr>
-                                                       
+                                                        <td>
+                                                            <a href="">{{$item->id}}</a>
+                                                        </td>
                                                         
-                                                        <td><span class="badge badge-primary">82 Pcs</span></td>
-                                                        <td>$6,518.18</td>
+                                                        <td>
+                                                           {{$item->fecha}}
+                                                        </td>
+                                                        <td>
+                                                           {{$item->empresa}}
+                                                        </td>
+                                                        <td>
+                                                           {{$item->descuento}}
+                                                        </td>
+                                                        <td>
+                                                           {{$item->observacion}}
+                                                        </td>
+                                                        <td>
+                                                           {{$item->contacto}}
+                                                        </td>
+
+                                                       
+                                                        <td>
+                                                            <div class="row">
+                                                            <a href="{{route('Update-convenios', $item->id)}}" class="btn btn-primary mr-1"> <i class="far fa-edit"></i></a>
+                                                            <form method="post" action="{{route('Delete-convenios', $item->id)}}">
+                                                                    @method('DELETE') 
+                                                                    @csrf
+                                                              <button  class="btn btn-primary" type="submit"><i class="far fa-trash-alt"></i></button>
+                                                            </form>
+                                                            </div>
+                                                        </td>
+                                                       
                                                     </tr>
-                                                   
-                                            
+                                                    @endforeach();
+
+
+
+
                                                 </tbody>
+                                               
                                             </table>
                                         </div> 
                                         
