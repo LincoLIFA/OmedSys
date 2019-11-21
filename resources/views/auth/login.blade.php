@@ -9,16 +9,15 @@
 
                             <!-- Logo -->
                             <div class="card-header pt-4 pb-4 text-center bg-primary">
-                            {{ __('Login') }}
-                                <a href="index.html">
-                                    <span><img src="assets/images/icono.png" alt="" height="18"></span>
-                                </a>
+                           
+                                    <span><img src="{{asset ('images/icono.png')}}" alt="" height="75"> <H3 style="color:#FFFFFF";> INICIO DE SESIÓN <H3> </span>
+                            
                             </div>
 
                             <div class="card-body p-4">
                                 
                                 <div class="text-center w-75 m-auto">
-                                    <h4 class="text-dark-50 text-center mt-0 font-weight-bold">Sign In</h4>
+                                    <!--<h4 class="text-dark-50 text-center mt-0 font-weight-bold">Sign In</h4> -->
                                     <p class="text-muted mb-4">Enter your email address and password to access admin panel.</p>
                                 </div>
 
