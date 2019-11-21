@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welome');
+    return view('auth.login');
 });
 
 Auth::routes(['verify' => true]);
