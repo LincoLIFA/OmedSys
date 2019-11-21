@@ -10,40 +10,40 @@
                             <!-- Logo -->
                             <div class="card-header pt-4 pb-4 text-center bg-primary">
                            
-                                    <span><img src="{{asset ('images/icono.png')}}" alt="" height="75"> <H3 style="color:#FFFFFF";> INICIO DE SESIÓN <H3> </span>
+                                    <span><img src="{{asset ('images/logo2.png')}}" alt="" height="75"> <!--<H3 style="color:#FFFFFF";> Inicio de Sesión <H3> --> </span>
                             
                             </div>
 
                             <div class="card-body p-4">
                                 
                                 <div class="text-center w-75 m-auto">
-                                    <!--<h4 class="text-dark-50 text-center mt-0 font-weight-bold">Sign In</h4> -->
-                                    <p class="text-muted mb-4">Enter your email address and password to access admin panel.</p>
+                                    <h4 class="text-dark-50 text-center mt-0 font-weight-bold">INICIA SESIÓN</h4>
+                                    <p class="text-muted mb-4">Ingresa tú dirección de correo electrónico y contraseña para acceder al panel de administrador.</p>
                                 </div>
-
+                                
                                 <form method="POST" action="{{ route('login') }}">
                                 @csrf
 
                                     <div class="form-group">
-                                        <label for="emailaddress">Email address</label>
-                                        <input class="form-control" type="email" id="emailaddress" required="" placeholder="Enter your email">
+                                        <label for="emailaddress">Dirección de Correo</label>
+                                        <input class="form-control" type="email" id="emailaddress" required="" placeholder="Ingresa tu correo electrónico">
                                     </div>
 
                                     <div class="form-group">
-                                        <a href="pages-recoverpw.html" class="text-muted float-right"><small>Forgot your password?</small></a>
-                                        <label for="password">Password</label>
-                                        <input class="form-control" type="password" required="" id="password" placeholder="Enter your password">
+                                        <a href="pages-recoverpw.html" class="text-muted float-right"><small>Olvidaste tú contraseña?</small></a>
+                                        <label for="password">Contraseña</label>
+                                        <input class="form-control" type="password" required="" id="password" placeholder="Ingresa tu contraseña">
                                     </div>
 
                                     <div class="form-group mb-3">
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="checkbox-signin" checked="">
-                                            <label class="custom-control-label" for="checkbox-signin">Remember me</label>
+                                            <label class="custom-control-label" for="checkbox-signin">Recuerdame</label>
                                         </div>
                                     </div>
 
                                     <div class="form-group mb-0 text-center">
-                                        <button class="btn btn-primary" type="submit"> Log In </button>
+                                        <button class="btn btn-primary" type="submit"> Ingresar </button>
                                     </div>
 
                                 </form>
@@ -53,7 +53,7 @@
 
                         <div class="row mt-3">
                             <div class="col-12 text-center">
-                                <p class="text-muted">Don't have an account? <a href="pages-register.html" class="text-muted ml-1"><b>Sign Up</b></a></p>
+                                <p class="text-muted">No tienes una cuenta? <a href="pages-register.html" class="text-muted ml-1"><b>Registrate</b></a></p>
                             </div> <!-- end col -->
                         </div>
                         <!-- end row -->
