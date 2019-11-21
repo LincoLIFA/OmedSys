@@ -11,7 +11,7 @@
                             <div class="card-header pt-4 pb-4 text-center bg-primary">
                             {{ __('Login') }}
                                 <a href="index.html">
-                                    <span><img src="assets/images/logo.png" alt="" height="18"></span>
+                                    <span><img src="assets/images/icono.png" alt="" height="18"></span>
                                 </a>
                             </div>
 
