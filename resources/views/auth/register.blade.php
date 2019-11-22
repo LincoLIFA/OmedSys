@@ -9,15 +9,15 @@
                             <!-- Logo-->
                             <div class="card-header pt-4 pb-4 text-center bg-primary">
                                 <a href="index.html">
-                                    <span><img src="assets/images/logo.png" alt="" height="18"></span>
+                                <span><img src="{{asset ('images/logo2.png')}}" alt="" height="75"> <!--<H3 style="color:#FFFFFF";> Inicio de Sesión <H3> --> </span>
                                 </a>
                             </div>
 
                             <div class="card-body p-4">
                                 
                                 <div class="text-center w-75 m-auto">
-                                    <h4 class="text-dark-50 text-center mt-0 font-weight-bold">Free Sign Up</h4>
-                                    <p class="text-muted mb-4">Don't have an account? Create your account, it takes less than a minute </p>
+                                    <h4 class="text-dark-50 text-center mt-0 font-weight-bold">REGISTRATE</h4>
+                                    <p class="text-muted mb-4">No tienes una cuenta? Crea una, tomará menos de un minuto </p>
                                 </div>
 
                                 <form method="POST" action="{{ route('register') }}">
@@ -25,6 +25,7 @@
 
 
                                     <div class="form-group">
+<<<<<<< HEAD
                                         <label for="fullname">{{ __('Nombre') }}</label>
                                         <input id="name" type="text" placeholder="Ingresa tu nombre" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                                          @error('name')
@@ -43,22 +44,31 @@
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
+=======
+                                        <label for="fullname">Nombre Completo</label>
+                                        <input class="form-control" type="text" id="fullname" placeholder="Ingresa tu nombre" required="">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <input class="form-control" type="password" required="" id="password" placeholder="Enter your password">
+                                        <label for="emailaddress">Dirección de Correo</label>
+                                        <input class="form-control" type="email" id="emailaddress" required="" placeholder="Ingresa un correo electrónico">
+>>>>>>> seba
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="password">Contraseña</label>
+                                        <input class="form-control" type="password" required="" id="password" placeholder="Ingresa una contraseña">
                                     </div>
 
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="checkbox-signup">
-                                            <label class="custom-control-label" for="checkbox-signup">I accept <a href="#" class="text-muted">Terms and Conditions</a></label>
+                                            <label class="custom-control-label" for="checkbox-signup">Acepto <a href="#" class="text-muted">Terminos y Condiciones</a></label>
                                         </div>
                                     </div>
 
                                     <div class="form-group mb-0 text-center">
-                                        <button class="btn btn-primary" type="submit"> Sign Up </button>
+                                        <button class="btn btn-primary" type="submit"> Registrate </button>
                                     </div>
 
                                 </form>
@@ -131,7 +141,7 @@
 
                         <div class="row mt-3">
                             <div class="col-12 text-center">
-                                <p class="text-muted">Already have account? <a href="pages-login.html" class="text-muted ml-1"><b>Log In</b></a></p>
+                                <p class="text-muted">Ya tienes una cuenta? <a href="pages-login.html" class="text-muted ml-1"><b>Inicia Sesión</b></a></p>
                             </div> <!-- end col-->
                         </div>
                         <!-- end row -->

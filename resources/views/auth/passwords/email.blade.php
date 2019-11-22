@@ -9,25 +9,25 @@
                             <!-- Logo -->
                             <div class="card-header pt-4 pb-4 text-center bg-primary">
                                 <a href="index.html">
-                                    <span><img src="assets/images/logo.png" alt="" height="18"></span>
+                                <span><img src="{{asset ('images/logo2.png')}}" alt="" height="75"> <!--<H3 style="color:#FFFFFF";> Inicio de Sesión <H3> --> </span>
                                 </a>
                             </div>
                             
                             <div class="card-body p-4">
                                 
                                 <div class="text-center w-75 m-auto">
-                                    <h4 class="text-dark-50 text-center mt-0 font-weight-bold">Reset Password</h4>
-                                    <p class="text-muted mb-4">Enter your email address and we'll send you an email with instructions to reset your password.</p>
+                                    <h4 class="text-dark-50 text-center mt-0 font-weight-bold">RESTABLECER CONTRASEÑA</h4>
+                                    <p class="text-muted mb-4">Ingrese su dirección de correo electrónico y le enviaremos un mensaje con instrucciones para restablecer su contraseña.</p>
                                 </div>
 
                                 <form action="#">
                                     <div class="form-group mb-3">
-                                        <label for="emailaddress">Email address</label>
-                                        <input class="form-control" type="email" id="emailaddress" required="" placeholder="Enter your email">
+                                        <label for="emailaddress">Correo electrónico</label>
+                                        <input class="form-control" type="email" id="emailaddress" required="" placeholder="Ingrsa tu correo electrónico">
                                     </div>
 
                                     <div class="form-group mb-0 text-center">
-                                        <button class="btn btn-primary" type="submit">Reset Password</button>
+                                        <button class="btn btn-primary" type="submit">Restablecer Contraseña</button>
                                     </div>
                                 </form>
                             </div> <!-- end card-body-->
@@ -36,7 +36,7 @@
 
                         <div class="row mt-3">
                             <div class="col-12 text-center">
-                                <p class="text-muted">Back to <a href="pages-login.html" class="text-muted ml-1"><b>Log In</b></a></p>
+                                <p class="text-muted">Regresa a <a href="pages-login.html" class="text-muted ml-1"><b>Inicio de sesión</b></a></p>
                             </div> <!-- end col -->
                         </div>
                         <!-- end row -->
