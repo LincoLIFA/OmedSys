@@ -79,23 +79,7 @@ if ($mysqli->connect_errno) {
             description:"<?php echo $fila['description'];?>",
           },
           <?php } ?>
-<<<<<<< HEAD
-          <?php
-        foreach ($sql2 as $fila2)
-        {
-            
-        ?>
-          {
-            id:"<?php echo $fila2['id'];?>",
-            title:"<?php echo $fila2['citMedico'];?>",
-            start:"<?php echo $fila2['citfecha']."T".$fila2['cithora'];?>",
-            classNames:"<?php echo $fila2['citEstado'];?>",
-           
-          },
-          <?php } ?>
-=======
-          
->>>>>>> linco
+        
     
           
           ],
@@ -380,6 +364,7 @@ if ($mysqli->connect_errno) {
                                                         <th class="all">N° Cita</th>
                                                         <th>Fecha</th>
                                                         <th>Paciente</th>
+                                                        <th>Contacto Pac.</th>
                                                         <th>Especialista</th>
                                                         <th>Especialidad</th>
                                                         <th>Estado</th>
@@ -401,6 +386,9 @@ if ($mysqli->connect_errno) {
                                                         <td>
                                                             <a href="{{route('PerfilPC', $item2->pacientes_id)}}" class="text-success">{{$item2->pacientes->pacnombre}}  {{$item2->pacientes->pacapellidoP}} </a>
                                                            
+                                                        </td>
+                                                        <td>
+                                                        {{$item2->pacientes->pactelefono}}
                                                         </td>
                                                         <td>
                                                             {{$item2->especialistas->medidentificacion}}

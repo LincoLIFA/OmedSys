@@ -55,13 +55,14 @@ class CitasController extends Controller
     public function store(Request $request) {
 
         $events = new App\Events;
+        $fecha =$request->citfecha;
+        $hora =$request->cithora;
+        
 
-        $events->id = $request->id;
         $events->title = $request->title;
         $events->description = $request->description;
         $events->classNames = "No-confirmado";
-        $events->start = $request->citFecha;
-        $events->end = $request->end;
+        $events->start =  $fecha+"T"+$hora;
         $events->save();
        return back();
         
@@ -76,10 +77,6 @@ class CitasController extends Controller
         $cita->citEstado = $request->citEstado;
         $cita->citObservaciones = $request->citObservaciones;
         $cita->confirmacion = $request->confirmacion;
-<<<<<<< HEAD
-        $cita->start = $fecha+"T"+$hora;
-=======
->>>>>>> linco
         $cita->save();
        return back();
 }

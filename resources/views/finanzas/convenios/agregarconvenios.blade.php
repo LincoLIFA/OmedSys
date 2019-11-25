@@ -5,7 +5,16 @@
                    
                         
                         <!-- start page title -->
-                       
+                       <!-- cabecera de sección  -->
+        <div class="page-title-box">
+                <div class="page-title-right">
+                                        
+                </div>
+
+                <h4 class="page-title">Agregar nuevos Convenios </h4>
+        </div>
+
+<!-- fin de caebcera de sección -->
                         <!-- end page title --> 
 
                     <div class="container-fluid">

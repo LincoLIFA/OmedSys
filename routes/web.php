@@ -125,3 +125,12 @@ Route::post('/Agregar-Convenios', 'ConveniosController@store')->name('Agregar-nu
 Route::put('Actualizar-Convenios/{id}', 'ConveniosController@update')->name('Actualizar-convenios');
 Route::delete('Delete-Convenios/{id}', 'ConveniosController@destroy')->name('Delete-convenios');
 /*fin de gestion de Convenios*/
+
+/*Gestion de Medios de pago*/
+Route::get('Medios/Medios_pago', 'OpcionesDePagoController@index')->name('Registro-Medios');
+Route::get('Medios/Aggmedios', 'OpcionesDePagoController@create')->name('Agregar-Medios');
+Route::get('Medios/actMedios{id}', 'OpcionesDePagoController@edit')->name('Update-Medios');
+Route::post('/Agregar-Medios', 'OpcionesDePagoController@store')->name('Agregar-nuevo-Medios');
+Route::put('Actualizar-Medios/{id}', 'OpcionesDePagoController@update')->name('Actualizar-Medios');
+Route::delete('Delete-Medios/{id}', 'OpcionesDePagoController@destroy')->name('Delete-Medios');
+/*fin de gestion de Medios de pago */

@@ -102,10 +102,10 @@
                             </a>
                             <ul class="side-nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="{{url('Lista/lista')}}">Resgistro Op. de pago </a>
+                                    <a href="{{route('Registro-Medios')}}">Resgistro Op. de pago </a>
                                 </li>
                                 <li>
-                                    <a href="{{url('Lista/agglista')}}">Agregar nueva opcion</a>
+                                    <a href="{{route('Agregar-Medios')}}">Agregar nueva opcion</a>
                                 </li>
                             </ul>
                         </li>
