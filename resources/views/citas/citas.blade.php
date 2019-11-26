@@ -79,8 +79,12 @@ if ($mysqli->connect_errno) {
             description:"<?php echo $fila['description'];?>",
           },
           <?php } ?>
+<<<<<<< HEAD
         
     
+=======
+
+>>>>>>> 8b6717f4125ee46a222e0191b5175ddd24a93b16
           
           ],
      
@@ -364,7 +368,11 @@ if ($mysqli->connect_errno) {
                                                         <th class="all">N° Cita</th>
                                                         <th>Fecha</th>
                                                         <th>Paciente</th>
+<<<<<<< HEAD
                                                         <th>Contacto Pac.</th>
+=======
+                                                        <th>Contacto</th>
+>>>>>>> 8b6717f4125ee46a222e0191b5175ddd24a93b16
                                                         <th>Especialista</th>
                                                         <th>Especialidad</th>
                                                         <th>Estado</th>
@@ -380,12 +388,20 @@ if ($mysqli->connect_errno) {
                                                           <a href="">{{$item2->id}}</a>
                                                         </td>
                                                         <td>
-                                                           {{$item2->events->start->format('d/m/Y')}}
+                                                           {{$item2->events->start}}
                                                         </td>
                                                         
                                                         <td>
-                                                            <a href="{{route('PerfilPC', $item2->pacientes_id)}}" class="text-success">{{$item2->pacientes->pacnombre}}  {{$item2->pacientes->pacapellidoP}} </a>
+<<<<<<< HEAD
+                                                            <a href"" class="text-success">{{$item2->pacientes->pacnombre}}  {{$item2->pacientes->pacapellidoP}} </a>
                                                            
+=======
+                                                            <a href="{{route('PerfilPC', $item2->paciente_id)}}" class="text-success"> </a>
+
+>>>>>>> Linco
+                                                        </td>
+                                                        <td>
+                                                        {{$item2->pacientes->pactelefono}}
                                                         </td>
                                                         <td>
                                                         {{$item2->pacientes->pactelefono}}

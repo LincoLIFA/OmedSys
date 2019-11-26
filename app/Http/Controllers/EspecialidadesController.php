@@ -46,7 +46,8 @@ class EspecialidadesController extends Controller
        $NuevaEsp= new App\Especialidades;
         $NuevaEsp->espNombre = $request->espNombre;
         $NuevaEsp->save();
-       return back();
+        $result =  App\Especialidades::all();
+        return view('especialidades.registro',compact('result'));
     }
 
     /**
@@ -87,7 +88,8 @@ class EspecialidadesController extends Controller
     {
         $especialidades = App\Especialidades::findOrfail($id);
         $especialidades ->update($request->all());
-        return back();
+        $result =  App\Especialidades::all();
+        return view('especialidades.registro',compact('result'));
     }
 
     
@@ -95,6 +97,7 @@ class EspecialidadesController extends Controller
     {
         $especialidades = App\Especialidades::findOrfail($id);
         $especialidades ->delete();
-        return back();
+        $result =  App\Especialidades::all();
+        return view('especialidades.registro',compact('result'));
     }
 }

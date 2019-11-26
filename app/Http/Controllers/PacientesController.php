@@ -53,7 +53,8 @@ class PacientesController extends Controller
        	$NuevoP->paccorreo = $request->paccorreo;
        	$NuevoP->pactelefono = $request->pactelefono;
         $NuevoP->save();
-       return back();
+        $result =  App\Pacientes::all();
+        return view('pacientes.registro',compact('result'));
     }
 
     /**
@@ -67,16 +68,6 @@ class PacientesController extends Controller
        
     }
 	
-
-
-
-
-
-
-
-
-
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -90,9 +81,12 @@ class PacientesController extends Controller
     }
     
     public function showPerfil($id)
-    {
-          $pacientes =  App\Pacientes::findOrfail($id);
-       return view('Perfil.paciente',compact('pacientes'));
+    {        
+            $result =  App\Citas::all();
+            $result2 =  App\Especialistas::all();
+            $result3 =  App\Especialidades::all();
+            $pacientes =  App\Pacientes::findOrfail($id);
+          return view('Perfil.paciente',compact('pacientes','result','result2','result3'));
     }
 
     /**
@@ -106,7 +100,8 @@ class PacientesController extends Controller
     {
         $pacientes = App\Pacientes::findOrfail($id);
         $pacientes->update($request->all());
-        return back();
+        $result =  App\Pacientes::all();
+        return view('pacientes.registro',compact('result'));
     }
 
     /**
@@ -119,6 +114,7 @@ class PacientesController extends Controller
     {
         $pacientes = App\Pacientes::findOrfail($id);
         $pacientes ->delete();
-        return back();
+        $result =  App\Pacientes::all();
+      return view('pacientes.registro',compact('result'));
     }
 }

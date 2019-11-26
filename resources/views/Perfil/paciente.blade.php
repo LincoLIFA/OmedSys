@@ -1,23 +1,24 @@
 @extends('index')
 @section('card')
 <?php
-$mysqli = new mysqli("localhost", "root", "", "laravel");
+$mysqli = new mysqli("localhost", "root", "toor", "laravel");
 
 if ($mysqli->connect_errno) {
     echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
        
   $sql=$mysqli->query("select * from `events`  ");
-  $sql2=$mysqli->query("select * from `citas` where citPaciente = '{$pacientes->pacnombre}' ");
-	
+  	
 ?>
+
 
 
 
 <script type="text/javascript">
     $(document).ready( function () {
-    $('#citas').DataTable();
+    $('#registro-citas').DataTable();
 } );
+
 </script>
    <!-- Script de fullcalendar -->
 <script type="text/javascript">
@@ -77,20 +78,6 @@ if ($mysqli->connect_errno) {
             description:"<?php echo $fila['description'];?>",
           },
           <?php } ?>
-          <?php
-        foreach ($sql2 as $fila2)
-        {
-            
-        ?>
-          {
-            id:"<?php echo $fila2['id'];?>",
-            title:"<?php echo $fila2['citMedico'];?>",
-            start:"<?php echo $fila2['citfecha']."T".$fila2['cithora'];?>",
-            classNames:"<?php echo $fila2['citEstado'];?>",
-           
-          },
-          <?php } ?>
-    
           
           ],
      
@@ -200,48 +187,9 @@ if ($mysqli->connect_errno) {
    
 
          <div class="container-fluid">
-                                        
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="modalReserva" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                          <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                              <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Reserva de Cita</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                  <span aria-hidden="true">&times;</span>
-                                                </button>
-                                              </div>
-                                              <div class="modal-body">
-                                                 <form>
-                                                <div class="form-group row">
-                                                    <label for="staticEmail" class="col-sm-5 col-form-label">Paciente antiguo</label>
-                                                    <div class="col-sm-7">
-                                                        <a href="{{url('Citas/aggcitas')}}" class="rounded-pill float-right btn btn-primary" >Registrado</a>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="staticEmail" class="col-sm-5 col-form-label">Paciente nuevo</label>
-                                                    <div class="col-sm-7">
-                                                      <a href="{{url('Pacientes/New')}}" class="rounded-pill float-right btn btn-primary" >No registrado</a>
-                                                       
-                                                    </div>
-                                                </div>  
-                                                  </form>
-                                              </div>
-                                              <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                        
                         <!-- end page title --> 
-
                         <div class="row my-2">
                             <div class="col-12">
-
-                              
-
                                 <!-- Add New Event MODAL -->
                                 <div class="modal fade" id="event-modal" tabindex="-1">
                                     <div class="modal-dialog">
@@ -265,7 +213,7 @@ if ($mysqli->connect_errno) {
                             <!-- end col-12 -->
                         </div> <!-- end row -->
                         
-                    </div> <!-- container -->
+        </div> <!-- container -->
 <!-- Fin fullcalendar -->
                     <div class="row">
                             <div class="col-sm-12">
@@ -343,10 +291,132 @@ if ($mysqli->connect_errno) {
                                     </div> <!-- end card-body-->
                                 </div> <!-- end card-->
                                 <!-- End Toll free number box-->
+                                 <!-- Button trigger modal -->
+                                
+                                <button type="button" class="mb-2 btn btn-primary" data-toggle="modal" data-target="#crear-ficha">
+                            Crear nueva ficha clìnica
+                            </button>
 
+
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="header-title mb-3">Historial de Fichas</h4>
+
+                                        <div class="inbox-widget">
+                                            <div class="inbox-item">
+                                                <div class="inbox-item-img"><img src="assets/images/users/avatar-2.jpg" class="rounded-circle" alt=""></div>
+                                                <p class="inbox-item-author">Tomaslau</p>
+                                                <p class="inbox-item-text">I've finished it! See you so...</p>
+                                                <p class="inbox-item-date">
+                                                    <a href="#" class="btn btn-sm btn-link text-info font-13"> Reply </a>
+                                                </p>
+                                            </div>
+                                            <div class="inbox-item">
+                                                <div class="inbox-item-img"><img src="assets/images/users/avatar-3.jpg" class="rounded-circle" alt=""></div>
+                                                <p class="inbox-item-author">Stillnotdavid</p>
+                                                <p class="inbox-item-text">This theme is awesome!</p>
+                                                <p class="inbox-item-date">
+                                                    <a href="#" class="btn btn-sm btn-link text-info font-13"> Reply </a>
+                                                </p>
+                                            </div>
+                                            <div class="inbox-item">
+                                                <div class="inbox-item-img"><img src="assets/images/users/avatar-4.jpg" class="rounded-circle" alt=""></div>
+                                                <p class="inbox-item-author">Kurafire</p>
+                                                <p class="inbox-item-text">Nice to meet you</p>
+                                                <p class="inbox-item-date">
+                                                    <a href="#" class="btn btn-sm btn-link text-info font-13"> Reply </a>
+                                                </p>
+                                            </div>
+
+                                            <div class="inbox-item">
+                                                <div class="inbox-item-img"><img src="assets/images/users/avatar-5.jpg" class="rounded-circle" alt=""></div>
+                                                <p class="inbox-item-author">Shahedk</p>
+                                                <p class="inbox-item-text">Hey! there I'm available...</p>
+                                                <p class="inbox-item-date">
+                                                    <a href="#" class="btn btn-sm btn-link text-info font-13"> Reply </a>
+                                                </p>
+                                            </div>
+                                            <div class="inbox-item">
+                                                <div class="inbox-item-img"><img src="assets/images/users/avatar-6.jpg" class="rounded-circle" alt=""></div>
+                                                <p class="inbox-item-author">Adhamdannaway</p>
+                                                <p class="inbox-item-text">This theme is awesome!</p>
+                                                <p class="inbox-item-date">
+                                                    <a href="#" class="btn btn-sm btn-link text-info font-13"> Reply </a>
+                                                </p>
+                                            </div>
+                                        </div> <!-- end inbox-widget -->
+                                    </div> <!-- end card-body-->
+                                </div>
                                
 
                             </div> <!-- end col-->
+                            
+
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="crear-ficha" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalCenterTitle">{{$pacientes->pacnombre}} {{$pacientes->pacapellidoP}} </h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    
+                                <form class="my-2" action="{{route ('AgregarC')}}" method="POST">
+                                               @method('POST') 
+                                                @csrf
+                                             
+                                              
+                    						
+                                            <div class="form-group">
+                    						    <div class="form-group row">
+                                                    <label for="inputPassword" class="col-sm-2 col-form-label">Profesional</label>
+                                                    <div class="col-sm-10">
+                                                      <select id="ESP" name="especialistas_id"  class="custom-select mr-sm-1" required>
+                    							        <option value="Seleccione un profesional">Seleccione un profesional</option>
+                    							        @foreach ($result2 as $mostrar)
+                    							        <option value="{{$mostrar->id}}">{{$mostrar->medidentificacion}}</option>
+                    							        
+                    							        @endforeach
+                    							        </select>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                            <div class="form-group">
+                    						    <div class="form-group row">
+                                                    <label for="inputPassword" class="col-sm-2 col-form-label">Especialidad</label>
+                                                    <div class="col-sm-10">
+                                                      <select name="citEsp"  class="custom-select mr-sm-1" required>
+                    							        <option value="Seleccione una especialidad">Seleccione una especialidad</option>
+                    							         @foreach ($result3 as $mostrar)
+                    							        <option value="{{$mostrar->id}}">{{$mostrar->espNombre}}</option>
+                    							        @endforeach
+                    							        </select>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Observaciones sobre la ficha mèdica </label>
+                                               <textarea class="form-control" placeholder="Observación" value="Observaciones"name="citObservaciones">Observación</textarea>
+                                            </div>
+                                            <input type="submit" name="enviar" class="btn btn-danger btn-block" value="Ingresar registro de reserva">
+                    					</form>
+                        
+
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Validar Ficha</button>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+
+
 
                             <div class="col-md-8">
 
@@ -360,7 +430,7 @@ if ($mysqli->connect_errno) {
                                         </div> <!-- end col -->
                                     </div>
                                 </div>
-                                <!-- End Chart
+                                <!-- End Chart -->
 
                                 <div class="row">
                                     <div class="col-sm-4">
@@ -372,7 +442,7 @@ if ($mysqli->connect_errno) {
                                                 <span class="badge badge-primary"> +11% </span> <span class="text-muted">From previous period</span>
                                             </div> 
                                         </div> 
-                                    </div><
+                                    </div>
 
                                     <div class="col-sm-4">
                                         <div class="card tilebox-one">
@@ -394,50 +464,85 @@ if ($mysqli->connect_errno) {
                                                 <span class="badge badge-primary"> +89% </span> <span class="text-muted">Last year</span>
                                             </div>
                                         </div> 
-                                    </div><
-
+                                    </div>
                                 </div>
                                 <!-- end row -->
 
 
-                                <!--<div class="card">
+                                <div class="card">
                                     <div class="card-body">
                                         <h4 class="header-title mb-3">Mis Citas</h4>
                                         <div class="table-responsive">
-                                            <table class="table table-hover table-centered mb-0">
-                                                <thead>
+                                        <table class="table table-centered w-100 dt-responsive nowrap display" id="registro-citas">
+                                                <thead class="thead-light">
                                                     <tr>
-                                                        <th>ID</th>
-                                                        <th>Paciente</th>
+                                                        
+                                                        <th class="all">N° </th>
                                                         <th>Fecha</th>
-                                                        <th>Hora</th>
+                                                        <th>Especialista</th>
+                                                        <th>Especialidad</th>
+                                                        <th>Observaciones</th>
+                                                        <th>Acción</th>
+                                                        
                                                     </tr>
                                                 </thead>
-                                                
-                                               
-                                                
-                                                
+
+                                         
                                                 <tbody>
+                                                @foreach($result as $item)
                                                     <tr>
-                                                       
+                                                        <td>
+                                                            <a href="">{{$item->id}}</a>
+                                                        </td>
                                                         
-                                                        <td><span class="badge badge-primary">82 Pcs</span></td>
-                                                        <td>$6,518.18</td>
+                                                        <td>
+                                                           {{$item->fecha}}
+                                                        </td>
+                                                        <td>
+                                                           {{$item->empresa}}
+                                                        </td>
+                                                        <td>
+                                                           {{$item->descuento}}
+                                                        </td>
+                                                        <td>
+                                                           {{$item->observacion}}
+                                                        </td>
+                                                        <td>
+                                                           {{$item->contacto}}
+                                                        </td>
+
+                                                       
+                                                        <td>
+                                                            <div class="row">
+                                                            <a href="{{route('Update-convenios', $item->id)}}" class="btn btn-primary mr-1"> <i class="far fa-edit"></i></a>
+                                                            <form method="post" action="{{route('Delete-convenios', $item->id)}}">
+                                                                    @method('DELETE') 
+                                                                    @csrf
+                                                              <button  class="btn btn-primary" type="submit"><i class="far fa-trash-alt"></i></button>
+                                                            </form>
+                                                            </div>
+                                                        </td>
+                                                       
                                                     </tr>
-                                                   
-                                            
+                                                    @endforeach();
+
+
+
+
                                                 </tbody>
+                                               
                                             </table>
                                         </div> 
                                         
-                                    </div> 
-                                </div>  end row-->
+                                    </div>
+                                </div>  
 
                             </div>
                             <!-- end col -->
 
                         </div>
                         <!-- end row -->
+                        
                         
                   
 <!-- Fin de tabla de citas -->

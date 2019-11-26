@@ -20,8 +20,11 @@ class CreateConveniosTable extends Migration
             $table->string('descuento');
             $table->string('observacion');
             $table->string('contacto');
+<<<<<<< HEAD:database/migrations/2019_10_07_011757_create_convenios_table.php
             $table->integer('telefono');
             $table->string('correo');
+=======
+>>>>>>> 8b6717f4125ee46a222e0191b5175ddd24a93b16:database/migrations/2019_10_25_011757_create_convenios_table.php
             $table->timestamps();
         });
     }

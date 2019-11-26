@@ -54,6 +54,7 @@ class CitasController extends Controller
      */
     public function store(Request $request) {
 
+<<<<<<< HEAD
         $events = new App\Events;
         $fecha =$request->citfecha;
         $hora =$request->cithora;
@@ -63,24 +64,30 @@ class CitasController extends Controller
         $events->description = $request->description;
         $events->classNames = "No-confirmado";
         $events->start =  $fecha+"T"+$hora;
+=======
+        $events = new App\Events;        
+        $events->title = $request->pacientes_id;
+        $events->description = $request->description;
+        $events->classNames = $request->citEstado;
+        $events->start = $request->$fecha+"T"+$hora;
+        $events->end = $request->end;
+>>>>>>> 8b6717f4125ee46a222e0191b5175ddd24a93b16
         $events->save();
-       return back();
-        
-    $cita = new App\Citas;
 
 
-      
+
+        $cita = new App\Citas;
         $cita->events_id = $request->events_id;
-        $cita->pacientes_id = $request->pacientes_id;
+        $cita->paciente_id = $request->paciente_id;
         $cita->medico_id = $request->medico_id;
         $cita->especialidades_id = $request->especialidades_id;
         $cita->citEstado = $request->citEstado;
         $cita->citObservaciones = $request->citObservaciones;
         $cita->confirmacion = $request->confirmacion;
         $cita->save();
-       return back();
-}
-
+        $result =  App\Citas::all();
+        return view('citas.citas',compact('result'));
+    }
     /**
      * Display the specified resource.
      *
@@ -115,17 +122,13 @@ class CitasController extends Controller
      * @param  int  $id
      * @return Response
      */
-     public function showPerfil($pacientes_id)
-    {
-          $pacientes =  App\Citas::findOrfail($pacientes_id);
-       return view('Perfil.paciente',compact('pacientes'));
-    }
+     
     public function update(Request $request, $id)
     {
         $citas = App\Citas::findOrfail($id);
         $citas->update($request->all());
-        return back();
-        
+        $result =  App\Citas::all();
+        return view('citas.citas',compact('result'));
     }
 
     /**
@@ -138,6 +141,7 @@ class CitasController extends Controller
     {
         $citas = App\Citas::findOrfail($id);
         $citas ->delete();
-         return back();
+        $result =  App\Citas::all();
+        return view('citas.citas',compact('result'));
     }
 }
