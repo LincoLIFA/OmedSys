@@ -40,23 +40,14 @@
   <link  href="{{asset('fullcalendar4/packages/resource-timeline/main.min.css')}}" rel='stylesheet' />
 
 
-<!-- fullcalendar party JS -->  
-  <script src="{{asset('fullcalendar4/packages/core/main.js')}}"></script>
-  <script src="{{asset('fullcalendar4/packages/interaction/main.js')}}"></script>
-  <script src="{{asset('fullcalendar4/packages/daygrid/main.js')}}"></script>
-  <script src="{{asset('fullcalendar4/packages/timegrid/main.min.js')}}"></script>
-  <script src="{{asset('fullcalendar4/packages/list/main.js')}}"></script>
-  <script src="{{asset('fullcalendar4/packages/timeline/main.min.js')}}"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/es.js" integrity="sha256-bETP3ndSBCorObibq37vsT+l/vwScuAc9LRJIQyb068=" crossorigin="anonymous"></script>
-  <script src="{{asset('fullcalendar4/packages/resource-common/main.js')}}"></script>
-  <script src="{{asset('fullcalendar4/packages/resource-timeline/main.js')}}"></script>  
+
               
 <!-- tablas de Jquery -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
-  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
-	<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.css"/>
+	<!-- DataTables JS-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 
 
 </head>
@@ -109,5 +100,16 @@
 <script src="{{asset('dashboard/dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('dashboard/dist/js/demo.js')}}"></script>
+<!-- fullcalendar party JS -->  
+  <script src="{{asset('fullcalendar4/packages/core/main.js')}}"></script>
+  <script src="{{asset('fullcalendar4/packages/interaction/main.js')}}"></script>
+  <script src="{{asset('fullcalendar4/packages/daygrid/main.js')}}"></script>
+  <script src="{{asset('fullcalendar4/packages/timegrid/main.min.js')}}"></script>
+  <script src="{{asset('fullcalendar4/packages/list/main.js')}}"></script>
+  <script src="{{asset('fullcalendar4/packages/timeline/main.min.js')}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/es.js" integrity="sha256-bETP3ndSBCorObibq37vsT+l/vwScuAc9LRJIQyb068=" crossorigin="anonymous"></script>
+  <script src="{{asset('fullcalendar4/packages/resource-common/main.js')}}"></script>
+  <script src="{{asset('fullcalendar4/packages/resource-timeline/main.js')}}"></script>  
+
 </body>
 </html>
