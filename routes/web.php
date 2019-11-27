@@ -76,7 +76,7 @@ Auth::routes(['verify' => true]);
         Route::get('Pacientes/Registro', 'PacientesController@index')->name('RegistroP');
         Route::get('Pacientes/New', 'PacientesController@create')->name('AggPacientes');
         Route::get('Pacientes/Update/{id}', 'PacientesController@edit')->name('UpdateP');
-        Route::get('Perfil/Paciente/{paciente_id}', 'PacientesController@showPerfil')->name('PerfilPC');
+        Route::get('Perfil/Paciente/{id}', 'PacientesController@showPerfil')->name('PerfilP');
         Route::post('/agregarP', 'PacientesController@store')->name('AgregarP');
         Route::put('AactualizarP/{id}', 'PacientesController@update')->name('ActualizarP');
         Route::delete('DeleteP/{id}', 'PacientesController@destroy')->name('DeleteP');

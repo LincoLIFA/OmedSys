@@ -63,14 +63,6 @@ class CitasController extends Controller
         $events->description = $request->description;
         $events->classNames = "No-confirmado";
         $events->start =  $fecha+"T"+$hora;
-=======
-        $events = new App\Events;        
-        $events->title = $request->pacientes_id;
-        $events->description = $request->description;
-        $events->classNames = $request->citEstado;
-        $events->start = $request->$fecha+"T"+$hora;
-        $events->end = $request->end;
->>>>>>> 8b6717f4125ee46a222e0191b5175ddd24a93b16
         $events->save();
 
 
