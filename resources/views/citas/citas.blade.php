@@ -12,15 +12,6 @@ if ($mysqli->connect_errno) {
 
 ?>
 
-
-
-
-
-<script type="text/javascript">
-    $(document).ready( function () {
-    $('#citas').DataTable();
-} );
-</script>
    <!-- Script de fullcalendar -->
 <script type="text/javascript">
 
@@ -134,7 +125,6 @@ if ($mysqli->connect_errno) {
           }
 
         
-       
        
        
   });

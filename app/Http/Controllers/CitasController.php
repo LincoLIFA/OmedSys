@@ -54,7 +54,6 @@ class CitasController extends Controller
      */
     public function store(Request $request) {
 
-<<<<<<< HEAD
         $events = new App\Events;
         $fecha =$request->citfecha;
         $hora =$request->cithora;

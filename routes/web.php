@@ -116,9 +116,6 @@ Auth::routes(['verify' => true]);
 // --------------------------------------- RUTAS DE GESTION FINANCIERA ---------------------
 // 
 // *****************************************************************************************
-
-
-
 /*Gestion de Convenios*/
 Route::get('Convenios/Convenios', 'ConveniosController@index')->name('Registro-convenios');
 Route::get('Convenios/Aggconvenios', 'ConveniosController@create')->name('Agregar-convenios');
