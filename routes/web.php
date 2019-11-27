@@ -76,13 +76,6 @@ Auth::routes(['verify' => true]);
         Route::delete('DeleteP/{id}', 'PacientesController@destroy')->name('DeleteP');
 /*fin de gestion de Pacientes*/
 
-/*Gestion de Usuarios*/
-        Route::get('Usuarios/Registro', 'UsuariosController@index');
-        Route::get('Usuarios/New', 'UsuariosController@create');
-        Route::get('Usuarios/Update', 'UsuariosController@edit');
-/*fin de gestion de Pacientes*/
-
-
 // Authentication Routes...
         Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
         Route::post('login', 'Auth\LoginController@login');
@@ -129,7 +122,6 @@ Route::put('Actualizar-Convenios/{id}', 'ConveniosController@update')->name('Act
 Route::delete('Delete-Convenios/{id}', 'ConveniosController@destroy')->name('Delete-convenios');
 /*fin de gestion de Convenios*/
 
-<<<<<<< HEAD
 /*Gestion de Medios de pago*/
 Route::get('Medios/Medios_pago', 'OpcionesDePagoController@index')->name('Registro-Medios');
 Route::get('Medios/Aggmedios', 'OpcionesDePagoController@create')->name('Agregar-Medios');
@@ -138,35 +130,3 @@ Route::post('/Agregar-Medios', 'OpcionesDePagoController@store')->name('Agregar-
 Route::put('Actualizar-Medios/{id}', 'OpcionesDePagoController@update')->name('Actualizar-Medios');
 Route::delete('Delete-Medios/{id}', 'OpcionesDePagoController@destroy')->name('Delete-Medios');
 /*fin de gestion de Medios de pago */
-=======
-
-/*Gestion de descuentos por caja*/
-Route::get('Descuentos/Descuentos', 'DescuentosPorCajaController@index')->name('Registro-Descuentos');
-Route::get('Descuentos/AggDescuentos', 'DescuentosPorCajaController@create')->name('Agregar-Descuentos');
-Route::get('Descuentos/actDescuentos{id}', 'DescuentosPorCajaController@edit')->name('Update-Descuentos');
-Route::post('/Agregar-Descuentos', 'DescuentosPorCajaController@store')->name('Agregar-nuevo-Descuentos');
-Route::put('Actualizar-Descuentos/{id}', 'DescuentosPorCajaController@update')->name('Actualizar-Descuentos');
-Route::delete('Delete-Descuentos/{id}', 'DescuentosPorCajaController@destroy')->name('Delete-Descuentos');
-/*fin de gestion de descuentos por caja*/
-
-/*Gestion de metodos de pago*/
-Route::get('Metodos/Metodos', 'OpcionesDePagoController@index')->name('Registro-Metodos');
-Route::get('Metodos/AggMetodos', 'OpcionesDePagoController@create')->name('Agregar-Metodos');
-Route::get('Metodos/actMetodos{id}', 'OpcionesDePagoController@edit')->name('Update-Metodos');
-Route::post('/Agregar-Metodos', 'OpcionesDePagoController@store')->name('Agregar-nuevo-Metodos');
-Route::put('Actualizar-Metodos/{id}', 'OpcionesDePagoController@update')->name('Actualizar-Metodos');
-Route::delete('Delete-Metodos/{id}', 'OpcionesDePagoController@destroy')->name('Delete-Metodos');
-/*fin de gestion de metodos de pago*/
-
-
-/*Gestion de aranceles*/
-Route::get('Aranceles/Aranceles', 'ArancelesController@index')->name('Registro-Aranceles');
-Route::get('Aranceles/AggAranceles', 'ArancelesController@create')->name('Agregar-Aranceles');
-Route::get('Aranceles/actAranceles{id}', 'ArancelesController@edit')->name('Update-Aranceles');
-Route::post('/Agregar-Aranceles', 'ArancelesController@store')->name('Agregar-nuevo-Aranceles');
-Route::put('Actualizar-Aranceles/{id}', 'ArancelesController@update')->name('Actualizar-Aranceles');
-Route::delete('Delete-Aranceles/{id}', 'ArancelesController@destroy')->name('Delete-Aranceles');
-/*fin de gestion  aranceles*/
-
-
->>>>>>> 8b6717f4125ee46a222e0191b5175ddd24a93b16

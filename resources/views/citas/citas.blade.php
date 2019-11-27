@@ -79,12 +79,8 @@ if ($mysqli->connect_errno) {
             description:"<?php echo $fila['description'];?>",
           },
           <?php } ?>
-<<<<<<< HEAD
         
     
-=======
-
->>>>>>> 8b6717f4125ee46a222e0191b5175ddd24a93b16
           
           ],
      
