@@ -15,13 +15,19 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::get('/prueba', function () {
+        return view('index2');
+    });
+    
+
+
 Auth::routes(['verify' => true]);
 
 
 
 /*Gestion de citas*/
-        Route::get('Citas/citas', 'CitasController@index');
-        Route::get('Citas/aggcitas', 'CitasController@create');
+        Route::get('Citas/citas', 'CitasController@index')->name('Citas');
+        Route::get('Citas/aggcitas', 'CitasController@create')->name('Agregar-citas-vista');
         Route::get('Citas/actcitas/{id}', 'CitasController@edit')->name('UpdateC');
         Route::post('Citas/Agregar', 'CitasController@store')->name('AgregarC');
         Route::put('ActualizarC/{id}', 'CitasController@update')->name('ActualizarC');
@@ -47,8 +53,8 @@ Auth::routes(['verify' => true]);
         Route::get('Eventos/GetP', 'EventsController@getEventsForP')->name('EventoP');
 
 /*Gestion de Especialistas*/
-        Route::get('Especialistas/Registro', 'EspecialistasController@index');
-        Route::get('Especialistas/New', 'EspecialistasController@create');
+        Route::get('Especialistas/Registro', 'EspecialistasController@index')->name('RegistroE');
+        Route::get('Especialistas/New', 'EspecialistasController@create')->name('AggEspecialista');
         Route::get('Especialistas/Update/{id}', 'EspecialistasController@edit')->name('UpdateE');
         Route::get('Perfil/Especialista/{id}', 'EspecialistasController@showPerfil')->name('PerfilE');
         Route::post('agregarE', 'EspecialistasController@store');
@@ -58,7 +64,7 @@ Auth::routes(['verify' => true]);
 
 /*Gestion de Especialidades*/
         Route::get('Especialidades/Registro', 'EspecialidadesController@index')->name('Registro-especialidades');
-        Route::get('Especialidades/New', 'EspecialidadesController@create');
+        Route::get('Especialidades/New', 'EspecialidadesController@create')->name('AggEspecialidades');
         Route::get('Especialidades/Update/{id}', 'EspecialidadesController@edit')->name('UpdateA');
         Route::post('agregarA', 'EspecialidadesController@store');
         Route::put('ActualizarA/{id}', 'EspecialidadesController@update')->name('ActualizarA');
@@ -67,8 +73,8 @@ Auth::routes(['verify' => true]);
 /*fin de gestion de Especialidades*/
 
 /*Gestion de Pacientes*/
-        Route::get('Pacientes/Registro', 'PacientesController@index');
-        Route::get('Pacientes/New', 'PacientesController@create');
+        Route::get('Pacientes/Registro', 'PacientesController@index')->name('RegistroP');
+        Route::get('Pacientes/New', 'PacientesController@create')->name('AggPacientes');
         Route::get('Pacientes/Update/{id}', 'PacientesController@edit')->name('UpdateP');
         Route::get('Perfil/Paciente/{paciente_id}', 'PacientesController@showPerfil')->name('PerfilPC');
         Route::post('/agregarP', 'PacientesController@store')->name('AgregarP');

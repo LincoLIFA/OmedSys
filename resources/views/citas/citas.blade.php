@@ -187,7 +187,7 @@ if ($mysqli->connect_errno) {
 </style>
 <!-- Fin de estilos de fullcalendar -->
  <!-- fullcalendar -->
-   
+      
 
                     <div class="container-fluid">
                                         
@@ -364,11 +364,7 @@ if ($mysqli->connect_errno) {
                                                         <th class="all">N° Cita</th>
                                                         <th>Fecha</th>
                                                         <th>Paciente</th>
-<<<<<<< HEAD
                                                         <th>Contacto Pac.</th>
-=======
-                                                        <th>Contacto</th>
->>>>>>> 8b6717f4125ee46a222e0191b5175ddd24a93b16
                                                         <th>Especialista</th>
                                                         <th>Especialidad</th>
                                                         <th>Estado</th>
@@ -388,13 +384,8 @@ if ($mysqli->connect_errno) {
                                                         </td>
                                                         
                                                         <td>
-<<<<<<< HEAD
                                                             <a href"" class="text-success">{{$item2->pacientes->pacnombre}}  {{$item2->pacientes->pacapellidoP}} </a>
                                                            
-=======
-                                                            <a href="{{route('PerfilPC', $item2->paciente_id)}}" class="text-success"> </a>
-
->>>>>>> Linco
                                                         </td>
                                                         <td>
                                                         {{$item2->pacientes->pactelefono}}
