@@ -30,8 +30,7 @@
   <link rel="stylesheet" href="{{asset('dashboard/plugins/summernote/summernote-bs4.css')}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-
- <!-- fullcalendar party css -->
+  <!-- fullcalendar party css -->
   <link  href="{{asset('fullcalendar4/packages/core/main.css')}}" rel="stylesheet"/>
   <link  href="{{asset('fullcalendar4/packages/daygrid/main.css')}}" rel="stylesheet"/>
   <link  href="{{asset('fullcalendar4/packages/timegrid/main.css')}}" rel="stylesheet"/>
@@ -39,6 +38,7 @@
   <link  href="{{asset('fullcalendar4/packages/timeline/main.min.css')}}" rel='stylesheet' />
   <link  href="{{asset('fullcalendar4/packages/resource-timeline/main.min.css')}}" rel='stylesheet' />
 
+<<<<<<< HEAD
 
 
               
@@ -50,6 +50,8 @@
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 
 
+=======
+>>>>>>> LKO
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -68,6 +70,9 @@
 <!-- ./wrapper -->
 <!-- jQuery -->
 <script src="{{asset('dashboard/plugins/jquery/jquery.min.js')}}"></script>
+<!-- DataTables -->
+<script src="{{asset('dashboard/plugins/datatables/jquery.dataTables.js')}}"></script>
+<script src="{{asset('dashboard/plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="{{asset('dashboard/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -76,6 +81,7 @@
 </script>
 <!-- Bootstrap 4 -->
 <script src="{{asset('dashboard/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
 <!-- ChartJS -->
 <script src="{{asset('dashboard/plugins/chart.js/Chart.min.js')}}"></script>
 <!-- Sparkline -->
@@ -100,8 +106,14 @@
 <script src="{{asset('dashboard/dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('dashboard/dist/js/demo.js')}}"></script>
+<<<<<<< HEAD
 <!-- fullcalendar party JS -->  
   <script src="{{asset('fullcalendar4/packages/core/main.js')}}"></script>
+=======
+
+<!-- fullcalendar party JS -->  
+<script src="{{asset('fullcalendar4/packages/core/main.js')}}"></script>
+>>>>>>> LKO
   <script src="{{asset('fullcalendar4/packages/interaction/main.js')}}"></script>
   <script src="{{asset('fullcalendar4/packages/daygrid/main.js')}}"></script>
   <script src="{{asset('fullcalendar4/packages/timegrid/main.min.js')}}"></script>
@@ -111,5 +123,28 @@
   <script src="{{asset('fullcalendar4/packages/resource-common/main.js')}}"></script>
   <script src="{{asset('fullcalendar4/packages/resource-timeline/main.js')}}"></script>  
 
+<<<<<<< HEAD
+=======
+  
+  <script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>  
+  <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.flash.min.js"></script>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>  
+  <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>  
+  <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>  
+
+
+  <script>
+  $(document).ready(function() {
+    $('.Tablas').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+} );
+  </script>
+>>>>>>> LKO
 </body>
 </html>

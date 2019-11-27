@@ -12,6 +12,7 @@ if ($mysqli->connect_errno) {
 
 ?>
 
+<<<<<<< HEAD
 
 
 
@@ -24,6 +25,8 @@ document.addEventListener('DOMContentLoaded', function()  {
     } );
 } );
 </script>
+=======
+>>>>>>> LKO
    <!-- Script de fullcalendar -->
 <script type="text/javascript">
 
@@ -155,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function()  {
             
           
           
-        };
+        }
       }
     });
    
@@ -168,8 +171,8 @@ document.addEventListener('DOMContentLoaded', function()  {
 <!-- Tamaño y estilos de fullcalendar -->
 <style>
   #calendar {
-    max-width: 700px;
-    max-height: 550px;
+    max-width: 750px;
+    max-height: 750px;
   }
    #external-events .fc-event {
     cursor: move;
@@ -190,10 +193,96 @@ document.addEventListener('DOMContentLoaded', function()  {
 </style>
 <!-- Fin de estilos de fullcalendar -->
  <!-- fullcalendar -->
-      
+       <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Reservas de citas medicas</h1>
+          </div>
+        
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
 
-                    <div class="container-fluid">
-                                        
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="sticky-top mb-3">
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-title">Draggable Events</h4>
+                </div>
+                <div class="card-body">
+                  <!-- the events -->
+                  <div id="external-events">
+                    <div class="external-event bg-success">Lunch</div>
+                    <div class="external-event bg-warning">Go home</div>
+                    <div class="external-event bg-info">Do homework</div>
+                    <div class="external-event bg-primary">Work on UI design</div>
+                    <div class="external-event bg-danger">Sleep tight</div>
+                    <div class="checkbox">
+                      <label for="drop-remove">
+                        <input type="checkbox" id="drop-remove">
+                        remove after drop
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Create Event</h3>
+                </div>
+                <div class="card-body">
+                  <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
+                    <!--<button type="button" id="color-chooser-btn" class="btn btn-info btn-block dropdown-toggle" data-toggle="dropdown">Color <span class="caret"></span></button>-->
+                    <ul class="fc-color-picker" id="color-chooser">
+                      <li><a class="text-primary" href="#"><i class="fas fa-square"></i></a></li>
+                      <li><a class="text-warning" href="#"><i class="fas fa-square"></i></a></li>
+                      <li><a class="text-success" href="#"><i class="fas fa-square"></i></a></li>
+                      <li><a class="text-danger" href="#"><i class="fas fa-square"></i></a></li>
+                      <li><a class="text-muted" href="#"><i class="fas fa-square"></i></a></li>
+                    </ul>
+                  </div>
+                  <!-- /btn-group -->
+                  <div class="input-group">
+                    <input id="new-event" type="text" class="form-control" placeholder="Event Title">
+
+                    <div class="input-group-append">
+                      <button id="add-new-event" type="button" class="btn btn-primary">Add</button>
+                    </div>
+                    <!-- /btn-group -->
+                  </div>
+                  <!-- /input-group -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.col -->
+          <div class="col-md-9">
+            <div class="card card-primary">
+              <div class="card-body p-0">
+                <!-- THE CALENDAR -->
+                <div id="calendar"></div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+
+
+                    <div class="container-fluid">         
                                         <!-- Modal -->
                                         <div class="modal fade" id="modalReserva" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                           <div class="modal-dialog" role="document">
@@ -227,15 +316,7 @@ document.addEventListener('DOMContentLoaded', function()  {
                                             </div>
                                           </div>
                                         </div>
-                        
-                    
-
-
-                   
-                    
-                    
-                    
-
+        
                                         <!-- Modal -->
                                         <div class="modal fade" id="event-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                           <div class="modal-dialog modal-dialog-centered" role="document">
@@ -293,54 +374,24 @@ document.addEventListener('DOMContentLoaded', function()  {
                                             </div>
                                           </div>
                                         </div>
-                                
-                               
-                                
-                                
-                               
 
-      
-                        
                         <!-- end page title --> 
-
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-lg-3">
-                                                
-                                                 <div id='external-events' class="m-t-20">
-    
-                                                      
-                                                            <div class="external-event fc-event Suspender bg-danger" data-class="bg-warning">
-                                                                <i class="mdi mdi-checkbox-blank-circle mr-2 vertical-middle"></i>Suspender bloque
-                                                            </div>
-                                                            
-    
-                                                <!--<div class="mt-5 d-none d-xl-block">
-                                                    <h5 class="text-center">How It Works ?</h5>
-    
-                                                    <ul class="pl-3">
-                                                        <li class="text-muted mb-3">
-                                                            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                                                        </li>
-                                                        <li class="text-muted mb-3">
-                                                            Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage.
-                                                        </li>
-                                                        <li class="text-muted mb-3">
-                                                            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                                                        </li>
-                                                    </ul>
-                                                </div> -->
-                                            </div> <!-- end col-->
-                                        </div>  <!-- end row -->
-                                            <div class="col">
-                                                    <div id="calendar"></div>
-                                            </div> <!-- end col -->
-                                    </div> <!-- end card body-->
-                                </div> <!-- end card -->
+        <!-- Main content -->
+        <section class="content">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Registro de citas</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <div class="row mb-2">
+                                <div class="col-sm-4">
+                                    <a href="{{url('Citas/aggcitas')}}" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle mr-2"></i> Crear nueva cita</a>
+                                </div>              
                             </div>
+<<<<<<< HEAD
                         </div> <!-- end row -->
                         
                     </div> <!-- container -->
@@ -846,10 +897,76 @@ document.addEventListener('DOMContentLoaded', function()  {
                                     </div> <!-- end card-body-->
                                 </div> <!-- end card-->
                             </div> <!-- end col -->
+=======
+                            <table id="example2" class="table Tablas table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th class="all">N°</th>
+                                        <th>Fecha</th>
+                                        <th>Paciente</th>
+                                        <th>Contacto Pac.</th>
+                                        <th>Especialista</th>
+                                        <th>Especialidad</th>
+                                        <th>Estado</th>
+                                        <th>Met. Confirm.</th>
+                                        <th>Acción</th>
+                                    </tr>
+                                </thead>
+                            <tbody>
+                                @foreach($result as $item2)
+                                <tr>
+                                    <td>
+                                        <a href="">{{$item2->id}}</a>
+                                    </td>
+                                    <td>
+                                        {{$item2->events->start}}
+                                    </td>
+                                                                    
+                                    <td>
+                                        <a href"" class="text-success">{{$item2->pacientes->pacnombre}}  {{$item2->pacientes->pacapellidoP}} </a>
+                                    
+                                    </td>
+                                    <td>
+                                        {{$item2->pacientes->pactelefono}}
+                                    </td>
+                                    <td>
+                                        {{$item2->pacientes->pactelefono}}
+                                    </td>
+                                    <td>
+                                        {{$item2->especialistas->medidentificacion}}
+                                    </td>
+                                    <td>
+                                        {{$item2->especialidades->espNombre}}
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-success">{{$item2->citEstado}}</span>
+                                    </td>
+                                    <td>
+                                        {{$item2->confirmacion}}
+                                    </td>
+                                    <td>
+                                        <div class="row">
+                                            <a href="{{route('UpdateC', $item2->id)}}" class="btn btn-primary mr-1"> <i class="far fa-edit"></i></a>
+                                            <form method="post" action="{{route('DeleteC', $item2->id)}}">
+                                                @method('DELETE') 
+                                                @csrf
+                                                <button  class="btn btn-primary" type="submit"><i class="far fa-trash-alt"></i></button>
+                                            </form>
+                                        </div>  
+                                    </td>             
+                                </tr>
+                                @endforeach()
+                            </tbody>
+                            </table>
+>>>>>>> LKO
                         </div>
-                        <!-- end row -->        
-                        
-                    </div> <!-- container -->
-<!-- Fin de tabla de citas -->
-              
+                         <!-- /.card-body -->
+                    </div>
+                     <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </section>
+        <!-- /.content -->
 @endsection
