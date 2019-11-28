@@ -16,9 +16,11 @@ Route::get('/', function () {
 });
 
 Route::get('/prueba', function () {
-        return view('index2');
+        return view('ficha.categorias.registro');
     });
-    
+    Route::get('/prueba2', function () {
+        return view('ficha.fichamedica.fichamedica');
+    });
 
 
 Auth::routes(['verify' => true]);

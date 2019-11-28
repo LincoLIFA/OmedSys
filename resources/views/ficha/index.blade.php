@@ -1,352 +1,128 @@
 <!DOCTYPE html>
-    <html lang="en">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>OmedSys</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="csrf-token" content="{{csrf_token() }}"  />
+  <!-- App favicon -->
+  <link rel="shortcut icon"  href="{{asset('images/logo.png')}}"/>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{asset('dashboard/plugins/fontawesome-free/css/all.min.css')}}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bbootstrap 4 -->
+  <link rel="stylesheet" href="{{asset('dashboard/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="{{asset('dashboard/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="{{asset('dashboard/plugins/jqvmap/jqvmap.min.css')}}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{asset('dashboard/dist/css/adminlte.min.css')}}">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="{{asset('dashboard/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="{{asset('dashboard/plugins/daterangepicker/daterangepicker.css')}}">
+  <!-- summernote -->
+  <link rel="stylesheet" href="{{asset('dashboard/plugins/summernote/summernote-bs4.css')}}">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!-- fullcalendar party css -->
+  <link  href="{{asset('fullcalendar4/packages/core/main.css')}}" rel="stylesheet"/>
+  <link  href="{{asset('fullcalendar4/packages/daygrid/main.css')}}" rel="stylesheet"/>
+  <link  href="{{asset('fullcalendar4/packages/timegrid/main.css')}}" rel="stylesheet"/>
+  <link  href="{{asset('fullcalendar4/packages/list/main.css')}}" rel="stylesheet"/>
+  <link  href="{{asset('fullcalendar4/packages/timeline/main.min.css')}}" rel='stylesheet' />
+  <link  href="{{asset('fullcalendar4/packages/resource-timeline/main.min.css')}}" rel='stylesheet' />
 
-    <head>
-        <meta charset="utf-8" />
-        <title>OmedSys</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <meta name="csrf-token" content="{{csrf_token() }}"  />
-        
-       <!-- App favicon -->
-        <link rel="shortcut icon"  href="{{asset('images/logo.png')}}"/>
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
 
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+@include('components.nav')
+@include('components.sidebar')
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Main content -->
+   @yield('card')
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  @include('components.footer')
+</div>
+<!-- ./wrapper -->
+<!-- jQuery -->
+<script src="{{asset('dashboard/plugins/jquery/jquery.min.js')}}"></script>
+<!-- DataTables -->
+<script src="{{asset('dashboard/plugins/datatables/jquery.dataTables.js')}}"></script>
+<script src="{{asset('dashboard/plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="{{asset('dashboard/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="{{asset('dashboard/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
-        <!-- fullcalendar party css -->
-        <link  href="{{asset('fullcalendar4/packages/core/main.css')}}" rel="stylesheet"/>
-        <link  href="{{asset('fullcalendar4/packages/daygrid/main.css')}}" rel="stylesheet"/>
-        <link  href="{{asset('fullcalendar4/packages/timegrid/main.css')}}" rel="stylesheet"/>
-        <link  href="{{asset('fullcalendar4/packages/list/main.css')}}" rel="stylesheet"/>
-        <link  href="{{asset('fullcalendar4/packages/timeline/main.min.css')}}" rel='stylesheet' />
-        <link  href="{{asset('fullcalendar4/packages/resource-timeline/main.min.css')}}" rel='stylesheet' />
-        
-        <script src="{{asset('fullcalendar4/packages/core/main.js')}}"></script>
-        <script src="{{asset('fullcalendar4/packages/interaction/main.js')}}"></script>
-        <script src="{{asset('fullcalendar4/packages/daygrid/main.js')}}"></script>
-        <script src="{{asset('fullcalendar4/packages/timegrid/main.min.js')}}"></script>
-        <script src="{{asset('fullcalendar4/packages/list/main.js')}}"></script>
-        <script src="{{asset('fullcalendar4/packages/timeline/main.min.js')}}"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/es.js" integrity="sha256-bETP3ndSBCorObibq37vsT+l/vwScuAc9LRJIQyb068=" crossorigin="anonymous"></script>
+<!-- ChartJS -->
+<script src="{{asset('dashboard/plugins/chart.js/Chart.min.js')}}"></script>
+<!-- Sparkline -->
+<script src="{{asset('dashboard/plugins/sparklines/sparkline.js')}}"></script>
+<!-- JQVMap -->
+<script src="{{asset('dashboard/plugins/jqvmap/jquery.vmap.min.js')}}"></script>
+<script src="{{asset('dashboard/plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
+<!-- jQuery Knob Chart -->
+<script src="{{asset('dashboard/plugins/jquery-knob/jquery.knob.min.js')}}"></script>
+<!-- daterangepicker -->
+<script src="{{asset('dashboard/plugins/moment/moment.min.js')}}"></script>
+<script src="{{asset('dashboard/plugins/daterangepicker/daterangepicker.js')}}"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="{{asset('dashboard/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
+<!-- Summernote -->
+<script src="{{asset('dashboard/plugins/summernote/summernote-bs4.min.js')}}"></script>
+<!-- overlayScrollbars -->
+<script src="{{asset('dashboard/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
+<!-- AdminLTE App -->
+<script src="{{asset('dashboard/dist/js/adminlte.js')}}"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="{{asset('dashboard/dist/js/pages/dashboard.js')}}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{{asset('dashboard/dist/js/demo.js')}}"></script>
 
-        
-        <script src="{{asset('fullcalendar4/packages/resource-common/main.js')}}"></script>
-        <script src="{{asset('fullcalendar4/packages/resource-timeline/main.js')}}"></script>  
-              
-   
-         
-        <link  href="{{asset('plugins/bootstrap/css/vendor/responsive.bootstrap4.css')}}" rel="stylesheet" type="text/css" />
-         <link  href="{{asset('fullcalendar/packages/core/main.css')}}" rel="stylesheet" type="text/css" />
-        <link href="{{asset('plugins/bootstrap/css/vendor/dataTables.bootstrap4.css')}}" rel="stylesheet" type="text/css" />
-        
-        
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
-        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
-	    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-	    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-	
-        <!-- third party css end -->
-        <!-- App css -->
-       
-        <link href="{{asset('plugins/bootstrap/css/vendor/app.min.css')}}" rel="stylesheet" type="text/css" />
-        <link href="{{asset('fullcalendar/packages/daygrid/main.css')}}" rel="stylesheet" type="text/css" />
+<!-- fullcalendar party JS -->  
+<script src="{{asset('fullcalendar4/packages/core/main.js')}}"></script>
+  <script src="{{asset('fullcalendar4/packages/interaction/main.js')}}"></script>
+  <script src="{{asset('fullcalendar4/packages/daygrid/main.js')}}"></script>
+  <script src="{{asset('fullcalendar4/packages/timegrid/main.min.js')}}"></script>
+  <script src="{{asset('fullcalendar4/packages/list/main.js')}}"></script>
+  <script src="{{asset('fullcalendar4/packages/timeline/main.min.js')}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/es.js" integrity="sha256-bETP3ndSBCorObibq37vsT+l/vwScuAc9LRJIQyb068=" crossorigin="anonymous"></script>
+  <script src="{{asset('fullcalendar4/packages/resource-common/main.js')}}"></script>
+  <script src="{{asset('fullcalendar4/packages/resource-timeline/main.js')}}"></script>  
 
-   
-    </head>
-    <body>
-        <!-- Begin page -->
-        <div class="wrapper">
-
-            <!-- ========== Left Sidebar Start ========== -->
-            <div class="left-side-menu overflow-auto ">
-
-                <div class="slimscroll-menu " id="left-side-menu-container">
-
-                    <!-- LOGO -->
-                    <a href="index.html" class="logo text-center">
-                        <span class="logo-lg">
-                           <img src="{{asset ('images/logo.png')}}" alt="..." height="70" class="rounded-circle"> 
-                        </span>
-                        <span class="logo-sm">
-                            <img src="{{asset ('images/logo.png')}}" alt="..." height="70" class="rounded-circle"> 
-                        </span>
-                    </a>
-
-                    <!--- Sidemenu -->
-                    <ul class="metismenu side-nav ">
-
-                        <li class="side-nav-title side-nav-item">Navigation</li>
-
-                    
-                        
-                         <li class="side-nav-item">
-                            <a href="javascript: void(0);" class="side-nav-link">
-                            <i class="fas fa-money-check-alt"></i>
-                                <span class="badge  float-right"><i class="fas fa-angle-right"></i></span>
-                                <span> Convenios </span>
-                            </a>
-                            <ul class="side-nav-second-level" aria-expanded="false">
-                                <li>
-                                    <a href="{{route('Registro-convenios')}}">Resgistro de Convenios</a>
-                                </li>
-                                <li>
-                                    <a href="{{route('Agregar-convenios')}}">Agregar convenio</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="side-nav-item">
-                            <a href="javascript: void(0);" class="side-nav-link">
-                            <i class="far fa-credit-card"></i>
-                                <span class="badge  float-right"><i class="fas fa-angle-right"></i></span>
-                                <span> Opciones de Pago </span>
-                            </a>
-                            <ul class="side-nav-second-level" aria-expanded="false">
-                                <li>
-                                    <a href="{{url('Lista/lista')}}">Resgistro Op. de pago </a>
-                                </li>
-                                <li>
-                                    <a href="{{url('Lista/agglista')}}">Agregar nueva opcion</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="side-nav-item">
-                            <a href="javascript: void(0);" class="side-nav-link">
-                            <i class="fas fa-hand-holding-usd"></i>
-                                <span class="badge  float-right"><i class="fas fa-angle-right"></i></span>
-                                <span> Dctos. Por Caja</span>
-                            </a>
-                            <ul class="side-nav-second-level" aria-expanded="false">
-                                <li>
-                                    <a href="{{route('Registro-Descuentos')}}">Descuentos vigentes</a>
-                                </li>
-                                <li>
-                                    <a href="{{route('Agregar-Descuentos')}}">Agregar Descuento</a>
-                                </li>
-                            </ul>
-                        </li>
-                         <li class="side-nav-item">
-                            <a href="javascript: void(0);" class="side-nav-link">
-                            <i class="fas fa-file-invoice-dollar"></i>
-                                <span class="badge  float-right"><i class="fas fa-angle-right"></i></span>
-                                <span> Aranceles </span>
-                            </a>
-                            <ul class="side-nav-second-level" aria-expanded="false">
-                                <li>
-                                    <a href="{{url('Especialidades/Registro')}}">Registro de Aranceles</a>
-                                </li>
-                                <li>
-                                    <a href="{{url('Especialidades/New')}}">Agregar Arancel</a>
-                                </li>
-                            </ul>
-                        </li>
-                         <li class="side-nav-item">
-                            <a href="javascript: void(0);" class="side-nav-link">
-                            <i class="far fa-id-card"></i>
-                                <span class="badge  float-right"><i class="fas fa-angle-right"></i></span>
-                                <span> Honorarios</span>
-                            </a>
-                            <ul class="side-nav-second-level" aria-expanded="false">
-                                <li>
-                                    <a href="{{url('Pacientes/Registro')}}">Planilla de Honorarios</a>
-                                </li>
-                                <li>
-                                    <a href="{{url('Pacientes/New')}}">Generar Pago</a>
-                                </li>
-                              
-                            </ul>
-                        </li>
-                         
-
-                       
-                        
-            
-                    </ul>
-
-                 
-
-                    <div class="clearfix"></div>
-
-                </div>
-                <!-- Sidebar -left -->
-
-            </div>
-            <!-- Left Sidebar End -->
-
-            <!-- ============================================================== -->
-            <!-- Start Page Content here -->
-            <!-- ============================================================== -->
-
-            <div class="content-page">
-                <div class="content">
-
-                    <!-- Topbar Start -->
-                    <div class="navbar-custom ">
-                        <ul class="list-unstyled topbar-right-menu float-right mb-0">
-
-                        <!-- Botton de Gestion de Citas-->
-                        <li class="dropdown notification-list">
-                                <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
-                                    aria-expanded="false">
-                                    <span class="account-user-avatar"> 
-                                    <i class="far fa-calendar-check"></i>
-                                    </span>
-                                    <span>
-                                        <span class="account-user-name">Gestion de citas</span>
-                                        <span class="account-position"> Calendario y reserva</span>
-                                    </span>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
-                                    <!-- item-->
-                                    <div class=" dropdown-header noti-title">
-                                        <h6 class="text-overflow m-0">Citas médicas</h6>
-                                    </div>
-                                    
-                                    <a class="dropdown-item" href="{{ route('Home.C') }}">
-                                    <i class="far fa-calendar-alt"></i>
-                                     Gestion de Citas
-                                    </a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{{url('Citas/citas')}}"><i class="fas fa-angle-right"></i>   Reserva</a>
-                                    <a class="dropdown-item" href="{{url('Lista/lista')}}"><i class="fas fa-angle-right"></i>   Lista de Espera</a>
-                                    <a class="dropdown-item" href="{{url('Especialistas/Registro')}}"><i class="fas fa-angle-right"></i>   Especialistas</a>
-                                    <a class="dropdown-item" href="{{url('Especialidades/Registro')}}"><i class="fas fa-angle-right"></i>   Especialidades</a>
-                                    <a class="dropdown-item" href="{{url('Pacientes/Registro')}}"><i class="fas fa-angle-right"></i>   Pacientes</a>
-
-                                
-                                </div>
-                            </li>
-                            <!-- Fin botton de Gestion de Citas-->
-<!-- -------------------------------------------------------------------------------------------------------------------------------- -->
-
-                            <!-- Botton de Gestion Financiera-->
-
-                            <li class="dropdown notification-list">
-                                <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
-                                    aria-expanded="false">
-                                    <span class="account-user-avatar"> 
-                                    <i class="fas fa-chart-line"></i>                                   
-                                     </span>
-                                    <span>
-                                        <span class="account-user-name">Gestion Financiera</span>
-                                        <span class="account-position"> Convenios y Aranceles</span>
-                                    </span>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
-                                    <!-- item-->
-                                    <div class=" dropdown-header noti-title">
-                                        <h6 class="text-overflow m-0">Finanzas</h6>
-                                    </div>
-                                    
-                                    <a class="dropdown-item" href="{{ route('Home.F') }}">
-                                    <i class="fas fa-dollar-sign"></i>
-                                     Modulo Financiero
-                                    </a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{{route('Registro-convenios')}}"><i class="fas fa-angle-right"></i>   Convenios</a>
-                                    <a class="dropdown-item" href="{{url('actualizar-convenios')}}"><i class="fas fa-angle-right"></i>   Aranceles</a>
-                                    <a class="dropdown-item" href="{{url('Especialistas/Registro')}}"><i class="fas fa-angle-right"></i>   Opciones de pago</a>
-                                    <a class="dropdown-item" href="{{url('Especialidades/Registro')}}"><i class="fas fa-angle-right"></i>   Dsctos por Caja</a>
-                                    <a class="dropdown-item" href="{{url('Pacientes/Registro')}}"><i class="fas fa-angle-right"></i>   Honorarios</a>
-
-                                
-                                </div>
-                            </li>
+  
+  <script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>  
+  <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.flash.min.js"></script>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>  
+  <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>  
+  <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>  
 
 
-
-                            <!-- Fin Botton de Gestion Financiera-->
-<!-- ------------------------------------------------------------------------------------------------------ -->
-                           
-                           
-                           
-                            <li class="dropdown notification-list">
-                                <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
-                                    aria-expanded="false">
-                                    <span class="account-user-avatar"> 
-                                        <i class="fas fa-user-secret"></i>
-                                    </span>
-                                    <span>
-                                        <span class="account-user-name">Omed Group</span>
-                                        <span class="account-position"> </span>
-                                    </span>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
-                                    <!-- item-->
-                                    <div class=" dropdown-header noti-title">
-                                        <h6 class="text-overflow m-0">Welcome !</h6>
-                                    </div>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                  
-                                </div>
-                            </li>
-
-                        </ul>
-                        <button class="button-menu-mobile open-left disable-btn">
-                            <i class="mdi mdi-menu"></i>
-                        </button>
-                       <!-- <div class="app-search">
-                            <form>
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search...">
-                                    <span class="mdi mdi-magnify"></span>
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary" type="submit">Buscar</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>-->
-                    </div>
-                    <!-- end Topbar -->
-
-                </div>
-                <!-- content -->
-                     
-                @yield ('card')
-                        
-
-                <!-- Footer Start -->
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-6">
-                                2018 - 2019 © Linco Fernandez Geekn Tecnology 
-                            </div>
-                            <div class="col-md-6">
-                                <div class="text-md-right footer-links d-none d-md-block">
-                                    <a href="javascript: void(0);">About</a>
-                                    <a href="javascript: void(0);">Support</a>
-                                    <a href="https://www.linkedin.com/in/linco-lifa">Contact Us</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-                <!-- end Footer -->
-
-            </div>
-
-            <!-- ============================================================== -->
-            <!-- End Page content -->
-            <!-- ============================================================== -->
-
-
-        </div>
-        <!-- END wrapper -->
-
-     
-     
-     
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
-    </body>
-
+  <script>
+  $(document).ready(function() {
+    $('.Tablas').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+} );
+  </script>
+</body>
 </html>
