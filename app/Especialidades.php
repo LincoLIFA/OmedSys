@@ -14,8 +14,7 @@ class especialidades extends Model
     public function listas()
     {
         return $this->hasMany('App\Listas');
-    }   
-     
+    }
     public function aranceles()
     {
         return $this->hasMany('App\Aranceles');

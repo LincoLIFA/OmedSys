@@ -16,7 +16,11 @@ class CreateDescuentosPorCajasTable extends Migration
         Schema::create('descuentos_por_cajas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nombre');
+<<<<<<< HEAD
+            $table->string('tasa');            
+=======
             $table->string('descuento');
+>>>>>>> 8b6717f4125ee46a222e0191b5175ddd24a93b16
             $table->timestamps();
         });
     }

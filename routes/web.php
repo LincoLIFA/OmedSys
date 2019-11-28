@@ -15,13 +15,19 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::get('/prueba', function () {
+        return view('index2');
+    });
+    
+
+
 Auth::routes(['verify' => true]);
 
 
 
 /*Gestion de citas*/
-        Route::get('Citas/citas', 'CitasController@index');
-        Route::get('Citas/aggcitas', 'CitasController@create');
+        Route::get('Citas/citas', 'CitasController@index')->name('Citas');
+        Route::get('Citas/aggcitas', 'CitasController@create')->name('Agregar-citas-vista');
         Route::get('Citas/actcitas/{id}', 'CitasController@edit')->name('UpdateC');
         Route::post('Citas/Agregar', 'CitasController@store')->name('AgregarC');
         Route::put('ActualizarC/{id}', 'CitasController@update')->name('ActualizarC');
@@ -47,8 +53,8 @@ Auth::routes(['verify' => true]);
         Route::get('Eventos/GetP', 'EventsController@getEventsForP')->name('EventoP');
 
 /*Gestion de Especialistas*/
-        Route::get('Especialistas/Registro', 'EspecialistasController@index');
-        Route::get('Especialistas/New', 'EspecialistasController@create');
+        Route::get('Especialistas/Registro', 'EspecialistasController@index')->name('RegistroE');
+        Route::get('Especialistas/New', 'EspecialistasController@create')->name('AggEspecialista');
         Route::get('Especialistas/Update/{id}', 'EspecialistasController@edit')->name('UpdateE');
         Route::get('Perfil/Especialista/{id}', 'EspecialistasController@showPerfil')->name('PerfilE');
         Route::post('agregarE', 'EspecialistasController@store');
@@ -58,7 +64,7 @@ Auth::routes(['verify' => true]);
 
 /*Gestion de Especialidades*/
         Route::get('Especialidades/Registro', 'EspecialidadesController@index')->name('Registro-especialidades');
-        Route::get('Especialidades/New', 'EspecialidadesController@create');
+        Route::get('Especialidades/New', 'EspecialidadesController@create')->name('AggEspecialidades');
         Route::get('Especialidades/Update/{id}', 'EspecialidadesController@edit')->name('UpdateA');
         Route::post('agregarA', 'EspecialidadesController@store');
         Route::put('ActualizarA/{id}', 'EspecialidadesController@update')->name('ActualizarA');
@@ -67,21 +73,14 @@ Auth::routes(['verify' => true]);
 /*fin de gestion de Especialidades*/
 
 /*Gestion de Pacientes*/
-        Route::get('Pacientes/Registro', 'PacientesController@index');
-        Route::get('Pacientes/New', 'PacientesController@create');
+        Route::get('Pacientes/Registro', 'PacientesController@index')->name('RegistroP');
+        Route::get('Pacientes/New', 'PacientesController@create')->name('AggPacientes');
         Route::get('Pacientes/Update/{id}', 'PacientesController@edit')->name('UpdateP');
-        Route::get('Perfil/Paciente/{paciente_id}', 'PacientesController@showPerfil')->name('PerfilPC');
+        Route::get('Perfil/Paciente/{id}', 'PacientesController@showPerfil')->name('PerfilP');
         Route::post('/agregarP', 'PacientesController@store')->name('AgregarP');
         Route::put('AactualizarP/{id}', 'PacientesController@update')->name('ActualizarP');
         Route::delete('DeleteP/{id}', 'PacientesController@destroy')->name('DeleteP');
 /*fin de gestion de Pacientes*/
-
-/*Gestion de Usuarios*/
-        Route::get('Usuarios/Registro', 'UsuariosController@index');
-        Route::get('Usuarios/New', 'UsuariosController@create');
-        Route::get('Usuarios/Update', 'UsuariosController@edit');
-/*fin de gestion de Pacientes*/
-
 
 // Authentication Routes...
         Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -117,9 +116,6 @@ Auth::routes(['verify' => true]);
 // --------------------------------------- RUTAS DE GESTION FINANCIERA ---------------------
 // 
 // *****************************************************************************************
-
-
-
 /*Gestion de Convenios*/
 Route::get('Convenios/Convenios', 'ConveniosController@index')->name('Registro-convenios');
 Route::get('Convenios/Aggconvenios', 'ConveniosController@create')->name('Agregar-convenios');
@@ -129,33 +125,11 @@ Route::put('Actualizar-Convenios/{id}', 'ConveniosController@update')->name('Act
 Route::delete('Delete-Convenios/{id}', 'ConveniosController@destroy')->name('Delete-convenios');
 /*fin de gestion de Convenios*/
 
-
-/*Gestion de descuentos por caja*/
-Route::get('Descuentos/Descuentos', 'DescuentosPorCajaController@index')->name('Registro-Descuentos');
-Route::get('Descuentos/AggDescuentos', 'DescuentosPorCajaController@create')->name('Agregar-Descuentos');
-Route::get('Descuentos/actDescuentos{id}', 'DescuentosPorCajaController@edit')->name('Update-Descuentos');
-Route::post('/Agregar-Descuentos', 'DescuentosPorCajaController@store')->name('Agregar-nuevo-Descuentos');
-Route::put('Actualizar-Descuentos/{id}', 'DescuentosPorCajaController@update')->name('Actualizar-Descuentos');
-Route::delete('Delete-Descuentos/{id}', 'DescuentosPorCajaController@destroy')->name('Delete-Descuentos');
-/*fin de gestion de descuentos por caja*/
-
-/*Gestion de metodos de pago*/
-Route::get('Metodos/Metodos', 'OpcionesDePagoController@index')->name('Registro-Metodos');
-Route::get('Metodos/AggMetodos', 'OpcionesDePagoController@create')->name('Agregar-Metodos');
-Route::get('Metodos/actMetodos{id}', 'OpcionesDePagoController@edit')->name('Update-Metodos');
-Route::post('/Agregar-Metodos', 'OpcionesDePagoController@store')->name('Agregar-nuevo-Metodos');
-Route::put('Actualizar-Metodos/{id}', 'OpcionesDePagoController@update')->name('Actualizar-Metodos');
-Route::delete('Delete-Metodos/{id}', 'OpcionesDePagoController@destroy')->name('Delete-Metodos');
-/*fin de gestion de metodos de pago*/
-
-
-/*Gestion de aranceles*/
-Route::get('Aranceles/Aranceles', 'ArancelesController@index')->name('Registro-Aranceles');
-Route::get('Aranceles/AggAranceles', 'ArancelesController@create')->name('Agregar-Aranceles');
-Route::get('Aranceles/actAranceles{id}', 'ArancelesController@edit')->name('Update-Aranceles');
-Route::post('/Agregar-Aranceles', 'ArancelesController@store')->name('Agregar-nuevo-Aranceles');
-Route::put('Actualizar-Aranceles/{id}', 'ArancelesController@update')->name('Actualizar-Aranceles');
-Route::delete('Delete-Aranceles/{id}', 'ArancelesController@destroy')->name('Delete-Aranceles');
-/*fin de gestion  aranceles*/
-
-
+/*Gestion de Medios de pago*/
+Route::get('Medios/Medios_pago', 'OpcionesDePagoController@index')->name('Registro-Medios');
+Route::get('Medios/Aggmedios', 'OpcionesDePagoController@create')->name('Agregar-Medios');
+Route::get('Medios/actMedios{id}', 'OpcionesDePagoController@edit')->name('Update-Medios');
+Route::post('/Agregar-Medios', 'OpcionesDePagoController@store')->name('Agregar-nuevo-Medios');
+Route::put('Actualizar-Medios/{id}', 'OpcionesDePagoController@update')->name('Actualizar-Medios');
+Route::delete('Delete-Medios/{id}', 'OpcionesDePagoController@destroy')->name('Delete-Medios');
+/*fin de gestion de Medios de pago */
