@@ -18,7 +18,14 @@ Route::get('/', function () {
 Route::get('/prueba', function () {
         return view('index2');
     });
-    
+
+Route::get('ficha', function () {
+       return view('ficha.fichamedica.fichamedica');
+ });
+
+ Route::get('tratamientos', function () {
+        return view('tratamiento.plandetratamiento');
+  });
 
 
 Auth::routes(['verify' => true]);
