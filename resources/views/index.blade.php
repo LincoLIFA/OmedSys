@@ -122,7 +122,12 @@
             'copy', 'csv', 'excel', 'pdf', 'print'
         ]
     } );
+
+    $('.buscador').DataTable( {
+    } );
+    
 } );
   </script>
+
 </body>
 </html>
