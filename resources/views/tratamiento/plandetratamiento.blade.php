@@ -1,4 +1,4 @@
-@extends('finanzas.index')
+@extends('index')
 @section('card')
 
 <section class="content-header">
@@ -19,14 +19,17 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title"></h3>
+                <h3 class="card-title">Lista de Planes de Tratamiento</h3>
+      
+                <div class="card-tools">
+                  <div class="input-group input-group-sm" style="width: 220px;">
+                    <input type="text" name="table_search" class="form-control float-right" placeholder="Buscar planes de tratamiento">
 
-          <div id="DataTables_Table_0_filter" class="dataTables_filter">
-                <label>Busca planes de tratamiento:
-                    <input type="search" class="form-control form-control-sm" placeholder="" aria-controls="DataTables_Table_0">
-                </label>
-            </div>
-
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                    </div>
+                  </div>
+                </div>
         </div>
         <div class="card-body p-0">
           <table class="table table-striped projects">
@@ -96,13 +99,5 @@
       <!-- /.card -->
 
     </section>
-
-
-
-
-
-
-
-
 
 @endsection

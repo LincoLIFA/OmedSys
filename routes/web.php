@@ -27,6 +27,10 @@ Route::get('ficha', function () {
         return view('tratamiento.plandetratamiento');
   });
 
+  Route::get('procedimientos', function () {
+        return view('tratamiento.procedimientos');
+  });
+
 
 Auth::routes(['verify' => true]);
 
