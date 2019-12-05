@@ -1,9 +1,24 @@
 @extends('finanzas.index')
 @section('card')
 
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1>Ficha Medica </h1>
+      </div>
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active">Advanced Form</li>
+        </ol>
+      </div>
+    </div>
+  </div><!-- /.container-fluid -->
+</section>
 
-
-<div class="row mt-4">
+<div class="container-fluid">
+<div class="row">
                             <div class="col-xl-4 col-lg-5">
                                 <div class="card text-center">
                                     <div class="card-body">
@@ -137,19 +152,24 @@
                                                         <div class="modal-dialog modal-lg" role="document">
                                                           <div class="modal-content">
                                                             <div class="modal-header">
-                                                              <h5 class="modal-title" id="exampleModalLabel">Cargar Nueva Prestación</h5>
+                                                              <h5 class="modal-title" id="exampleModalLabel">Ingrese un nuevo diagnostico</h5>
                                                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                               </button>
                                                             </div>
 
                                                             <div class="modal-body">        
-                                                                <div class="form-group">
+                                                                <div class="form-row">
 
+                                                                    <div class="col-sm-6">
+                                                                        <label for="inputDATE">Nombre del Diagnostico</label>
+                                                                        <input type="text" class="form-control"  name="pacfechaN" pattern="[A-Za-z0-9.-_,;: ]+" required>
+                                                                      </div>
+                                                                      <div class="col-sm-6">
                                                                         <label for="inputDATE">Fecha de la cita</label>
                                                                         <input type="date" class="form-control"  name="pacfechaN" pattern="[A-Za-z0-9.-_,;: ]+" required>
-
-                                                                        <label for="message-text" class="col-form-label mt-2">Comentarios:</label>
+                                                                      </div>
+                                                                        <label for="message-text" class="col-form-label">Descripción:</label>
                                                                         <textarea class="form-control" id="message-text"></textarea>
                                                                 </div>
                                                             </div>
@@ -161,51 +181,77 @@
                                                           </div>
                                                         </div>
                                                       </div>
-                            
-
-
+                          
                                             
+                                                      <div class="row">
+                                                          <div class="col-md-12">
+                                                            <!-- The time line -->
+                                                            <div class="timeline">
+                                                              <!-- timeline time label -->
+                                                              <div class="time-label">
+                                                                <span class="bg-red">10 Feb. 2014</span>
+                                                              </div>
+                                                              <!-- /.timeline-label -->
+                                                              <!-- timeline item -->
+                                                              <div>
+                                                                <i class="fas fas fa-user bg-blue"></i>
+                                                                <div class="timeline-item">
+                                                                  <span class="time"><i class="fas fa-clock"></i> 12:05</span>
+                                                                  <h3 class="timeline-header"><a href="#">Nombre del diagnostico</a> algo x</h3>
+                                                
+                                                                  <div class="timeline-body">
+                                                                    Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
+                                                                    weebly ning heekya handango imeem plugg dopplr jibjab, movity
+                                                                    jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
+                                                                    quora plaxo ideeli hulu weebly balihoo...
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+
+                                                              <div class="time-label">
+                                                                  <span class="bg-red">10 Feb. 2014</span>
+                                                                </div>
+                                                                <!-- /.timeline-label -->
+                                                                <!-- timeline item -->
+                                                                <div>
+                                                                  <i class="fas fas fa-user bg-blue"></i>
+                                                                  <div class="timeline-item">
+                                                                    <span class="time"><i class="fas fa-clock"></i> 12:05</span>
+                                                                    <h3 class="timeline-header"><a href="#">Support Team</a> sent you an email</h3>
+                                                  
+                                                                    <div class="timeline-body">
+                                                                      Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
+                                                                      weebly ning heekya handango imeem plugg dopplr jibjab, movity
+                                                                      jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
+                                                                      quora plaxo ideeli hulu weebly balihoo...
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+
+                                                                <div class="time-label">
+                                                                    <span class="bg-red">10 Feb. 2014</span>
+                                                                  </div>
+                                                                  <!-- /.timeline-label -->
+                                                                  <!-- timeline item -->
+                                                                  <div>
+                                                                    <i class="fas fas fa-user bg-blue"></i>
+                                                                    <div class="timeline-item">
+                                                                      <span class="time"><i class="fas fa-clock"></i> 12:05</span>
+                                                                      <h3 class="timeline-header"><a href="#">Support Team</a> sent you an email</h3>
                                                     
+                                                                      <div class="timeline-body">
+                                                                        Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
+                                                                        weebly ning heekya handango imeem plugg dopplr jibjab, movity
+                                                                        jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
+                                                                        quora plaxo ideeli hulu weebly balihoo...
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
 
-                                                <div class="timeline-alt pb-0">
-                                                    <div class="timeline-item">
-                                                        <i class="mdi mdi-circle bg-info-lighten text-info timeline-icon"></i>
-                                                        <div class="timeline-item-info">
-                                                            <p class="font-14"> Fecha:08/12/21</p>
-                                                            <p class="mt-2 mb-0 pb-3">Everyone realizes why a new common language
-                                                                would be desirable: one could refuse to pay expensive translators.
-                                                                To achieve this, it would be necessary to have uniform grammar,
-                                                                pronunciation and more common words.</p>
-                                                        </div>
-                                                    </div>
-    
-                                                    <div class="timeline-item">
-                                                        <i class="mdi mdi-circle bg-primary-lighten text-primary timeline-icon"></i>
-                                                        <div class="timeline-item-info">
-                                                            <p class="font-14">Fecha: 12/15/19</p>
-                                                            <p class="mt-2 mb-0 pb-3">If several languages coalesce, the grammar
-                                                                of the resulting language is more simple and regular than that of
-                                                                the individual languages. The new common language will be more
-                                                                simple and regular than the existing European languages.</p>
+                                                            </div>
+                                                          </div>
+                                                      </div>
 
-                                                        </div>
-                                                    </div>
-    
-                                                    <div class="timeline-item">
-                                                        <i class="mdi mdi-circle bg-info-lighten text-info timeline-icon"></i>
-                                                        <div class="timeline-item-info">
-                                                            <p class="font-14">Coderthemes Design LLP</p>
-                                                            <p  class="mt-2 mb-0 pb-2">The European languages are members of
-                                                                the same family. Their separate existence is a myth. For science
-                                                                music sport etc, Europe uses the same vocabulary. The languages
-                                                                only differ in their grammar their pronunciation.</p>
-                                                        </div>
-                                                    </div>
-
-
-
-                                                </div>
-                                            
     
                                             </div> <!-- end tab-pane -->
                                             <!-- end about me section content -->
