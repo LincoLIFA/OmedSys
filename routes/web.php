@@ -16,11 +16,14 @@ Route::get('/', function () {
 });
 
 Route::get('/prueba', function () {
-        return view('ficha.categorias.registro');
+        return view('home');
     });
-    Route::get('/prueba2', function () {
-        return view('ficha.fichamedica.fichamedica');
-    });
+
+Route::get('ficha', function () {
+       return view('ficha.fichamedica.fichamedica');
+ });
+
+
 
 
 Auth::routes(['verify' => true]);
@@ -135,3 +138,16 @@ Route::post('/Agregar-Medios', 'OpcionesDePagoController@store')->name('Agregar-
 Route::put('Actualizar-Medios/{id}', 'OpcionesDePagoController@update')->name('Actualizar-Medios');
 Route::delete('Delete-Medios/{id}', 'OpcionesDePagoController@destroy')->name('Delete-Medios');
 /*fin de gestion de Medios de pago */
+
+
+
+    Route::group(['middleware' => ['role:admin']], function () {
+        Route::get('tratamientos', function () {
+                return view('tratamiento.plandetratamiento');
+          });
+        
+          Route::get('procedimientos', function () {
+                return view('tratamiento.procedimientos');
+          });
+
+    });
