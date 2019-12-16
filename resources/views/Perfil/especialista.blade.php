@@ -281,8 +281,13 @@ if ($mysqli->connect_errno) {
                                         <div class="row">
                                             <div class="col-sm-8">
                                                 <div class="media">
-                                                    <span class="float-left m-2 mr-4"><i  class="fas fa-user text-white"></i></span>
-                                                    <div class="media-body">
+                                    <span class="float-left m-2 mr-4">
+                                        <img class="profile-user-img img-fluid img-circle"
+                                        src="{{Storage::url($especialistas->avatar)}}"
+                                        alt="User profile picture"
+                                        width="100px" height="100px">
+                                    </span>
+                                    <div class="media-body">
 
                                                         <h4 class="mt-1 mb-1 text-white">{{$especialistas->medidentificacion}}</h4>
                                                         <p class="font-13 text-white-50">{{$especialistas->mednombres}} {{$especialistas->medapellidos}}</p>
