@@ -11,7 +11,7 @@ class pacientes extends Model
         return $this->hasMany('App\Citas');
     }
   
-    protected $fillable = [ 'id' , 'pacidentificacion' , 'pacnombre' , 'pacapellidoP' , 'pacapellidoM' , 'pacfechaN' , 'pacsexo' , 'paccorreo' ,'pactelefono' ];
+    protected $fillable = [ 'id' , 'pacidentificacion' , 'pacnombre' , 'pacapellidoP' , 'pacapellidoM' , 'pacfechaN' , 'pacsexo' ,'avatar','paccorreo' ,'pactelefono' ];
 }
 
 

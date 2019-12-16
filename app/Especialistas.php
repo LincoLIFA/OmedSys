@@ -16,7 +16,7 @@ class especialistas extends Model
         return $this->hasMany('App\Aranceles');
     }
 
-    protected $fillable = [ 'id' , 'rut_med' , 'medidentificacion' , 'mednombres' , 'medapellidos' , 'medespecialidad' , 'medtelefono' , 'medcorreo' ];
+    protected $fillable = [ 'id' , 'rut_med' , 'medidentificacion' , 'mednombres' , 'medapellidos' , 'medespecialidad' , 'medtelefono' ,'avatar', 'medcorreo' ];
 }
 
 	

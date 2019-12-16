@@ -98,8 +98,18 @@ class PacientesController extends Controller
      */
     public function update(Request $request, $id)
     {
+       
         $pacientes = App\Pacientes::findOrfail($id);
-        $pacientes->update($request->all());
+        $pacientes->avatar=$request->file('avatar')->store('public');
+        $pacientes->pacidentificacion = $request->pacidentificacion;
+        $pacientes->pacnombre = $request->pacnombre;
+        $pacientes->pacapellidoP = $request->pacapellidoP;
+        $pacientes->pacapellidoM = $request->pacapellidoM;  
+        $pacientes->pacfechaN = $request->pacfechaN;
+        $pacientes->pacsexo = $request->pacsexo;
+       	$pacientes->paccorreo = $request->paccorreo;
+       	$pacientes->pactelefono = $request->pactelefono;
+        $pacientes->update();
         $result =  App\Pacientes::all();
         return view('pacientes.registro',compact('result'));
     }

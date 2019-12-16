@@ -17,14 +17,14 @@
                 <i class="far fa-calendar-check"></i>
                 </span>
                 <span>
-                    <span class="account-user-name">Gestion de citas</span>
+                    <span class="account-user-name">Gestion de Citas</span>
                     
                 </span>
             </a>
             <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
                 <!-- item-->
                 <div class=" dropdown-header noti-title">
-                    <h6 class="text-overflow m-0">Citas médicas</h6>
+                    <h6 class="text-overflow m-0">Control administrarivo</h6>
                 </div>
                 
                 <a class="dropdown-item" href="{{ route('Home.C') }}">
@@ -37,6 +37,35 @@
                 <a class="dropdown-item" href="{{route('RegistroP')}}"><i class="fas fa-angle-right"></i>   Pacientes</a>
                 <a class="dropdown-item" href="{{route('RegistroE')}}"><i class="fas fa-angle-right"></i>   Especialistas</a>
                 <a class="dropdown-item" href="{{route('Registro-especialidades')}}"><i class="fas fa-angle-right"></i>   Especialidades</a>
+            </div>
+        </li>
+        <li class="dropdown notification-list">
+            <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
+                aria-expanded="false">
+                <span class="account-user-avatar"> 
+                <i class="fas fa-laptop-medical"></i>                                   
+                </span>
+                <span>
+                    <span class="account-user-name">Gestion Clinica</span>
+                </span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+                <!-- item-->
+                <div class=" dropdown-header noti-title">
+                    <h6 class="text-overflow m-0">Ficha medica</h6>
+                </div>
+                
+                <a class="dropdown-item" href="{{ route('Home.F') }}">
+                <i class="fas fa-notes-medical"></i>
+                Modulo Financiero
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{{route('Registro-convenios')}}"><i class="fas fa-angle-right"></i>   Sesiones realizadas</a>
+                <a class="dropdown-item" href="{{url('actualizar-convenios')}}"><i class="fas fa-angle-right"></i>   Fichas medicas</a>
+                <a class="dropdown-item" href="{{url('Especialistas/Registro')}}"><i class="fas fa-angle-right"></i>   Prestaciones</a>
+                <a class="dropdown-item" href="{{url('Especialidades/Registro')}}"><i class="fas fa-angle-right"></i>   Planes de tratamientos</a>
+
+            
             </div>
         </li>
         <li class="dropdown notification-list">
@@ -78,10 +107,12 @@
             <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
                 aria-expanded="false">
                 <span class="account-user-avatar"> 
-                    <i class="fas fa-user-secret"></i>
+
+                    <img src="{{Storage::url(auth()->user()->avatar)}}" width="30px" height="30px" class="user-image" alt="User Image">
+                        
                 </span>
                 <span>
-                    <span class="account-user-name">Omed Group</span>
+                    <span class="account-user-name">{{auth()->user()->name}}</span>
                     <span class="account-position"> </span>
                 </span>
             </a>
@@ -90,10 +121,11 @@
                 <div class=" dropdown-header noti-title">
                     <h6 class="text-overflow m-0">Bienvenido</h6>
                 </div>
+                <a class="dropdown-item" href="{{route('Perfil_admin')}}">Perfil de cuenta</a>
                 <a class="dropdown-item" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
+                    {{ __('Cerrar Sesion') }}
                 </a>
 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

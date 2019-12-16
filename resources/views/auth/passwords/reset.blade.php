@@ -51,7 +51,8 @@
                                     {{ __('Actualizar Contraseña') }}
                                 </button>
                         </div>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

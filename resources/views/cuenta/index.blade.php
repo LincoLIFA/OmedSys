@@ -43,7 +43,7 @@
 <div class="wrapper">
 
 @include('components.nav')
-@include('components.sidebar')
+@include('components.sidebar-FM')
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Main content -->

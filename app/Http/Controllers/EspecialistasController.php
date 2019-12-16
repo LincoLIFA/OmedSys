@@ -108,8 +108,17 @@ class EspecialistasController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
         $especialistas = App\Especialistas::findOrfail($id);
-        $especialistas->update($request->all());
+        $especialistas->avatar=$request->file('avatar')->store('public');
+        $especialistas->rut_med = $request->rut_med;
+        $especialistas->medidentificacion = $request->medidentificacion;
+        $especialistas->mednombres = $request->mednombres;
+        $especialistas->medapellidos = $request->medapellidos;
+        $especialistas->especialidades_id = $request->especialidades_id;
+        $especialistas->medtelefono = $request->medtelefono;
+        $especialistas->medcorreo = $request->medcorreo; 
+        $especialistas->update();
         $result =  App\Especialistas::all();
       return view('especialistas.registro',compact('result'));
         

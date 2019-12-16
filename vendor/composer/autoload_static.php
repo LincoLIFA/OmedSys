@@ -469,6 +469,7 @@ class ComposerStaticInitComposerPhar1505141966
         'App\\Http\\Controllers\\PacientesController' => __DIR__ . '/../..' . '/app/Http/Controllers/PacientesController.php',
         'App\\Http\\Controllers\\PlanesDeTratamientosController' => __DIR__ . '/../..' . '/app/Http/Controllers/PlanesDeTratamientosController.php',
         'App\\Http\\Controllers\\SesionesController' => __DIR__ . '/../..' . '/app/Http/Controllers/SesionesController.php',
+        'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Controllers\\UsuariosController' => __DIR__ . '/../..' . '/app/Http/Controllers/UsuariosController.php',
         'App\\Http\\Controllers\\listasController' => __DIR__ . '/../..' . '/app/Http/Controllers/ListasController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',

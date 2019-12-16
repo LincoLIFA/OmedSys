@@ -135,4 +135,19 @@ class CitasController extends Controller
         $result =  App\Citas::all();
         return view('citas.citas',compact('result'));
     }
+
+    public function index_especialista()
+    {
+        $id = auth()->user()->id;
+        $result = App\Citas::where('medico_id', $id )->get();
+        return view('cuenta.citas.citas',compact('result'));
+    }
+    
+    public function sesiones_especialista()
+    {
+        $id = auth()->user()->id;
+        $result = App\Citas::where('medico_id', 1 and 'estado', 'Confirmado')->get();
+        return view('cuenta.citas.sesiones',compact('result'));
+    
+    }
 }

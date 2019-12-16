@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App;
 class HomeController extends Controller
 {
+    use AuthenticatesUsers;
     /**
      * Create a new controller instance.
      *
@@ -31,8 +33,6 @@ class HomeController extends Controller
     // Index de Gestion Financiera 
     public function indexF()
     {
-        
-      
         return view('finanzas.index');
     }
 
@@ -53,6 +53,14 @@ class HomeController extends Controller
    
           $pacientes =  App\Pacientes::findOrfail($id);
        return view('Perfil.paciente',compact('pacientes'));
+    }
+
+
+    public function index_especialista()
+    {
+        
+      
+        return view('cuenta.index');
     }
     
     

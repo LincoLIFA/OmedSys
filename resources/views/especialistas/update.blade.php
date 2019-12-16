@@ -17,6 +17,21 @@
                             </div>
                         </div>     
                         <!-- end page title --> 
+                        <div class="card card-primary card-outline">
+                                <div class="card-body box-profile">
+                                    <div class="text-center">
+                                    <img class="profile-user-img img-fluid img-circle"
+                                    src="{{Storage::url($especialistas->avatar)}}"
+                                        alt="User profile picture"
+                                        width="100px" height="100px">
+    
+                                    </div>
+                                        <h3 class="profile-username text-center">Photo Profile</h3>
+                                    </div>
+                                <!-- /.card-body -->
+                                </div>
+                                <!-- /.card -->
+                             </div>
 
                         <div class="row">
                             <div class="col-12">
@@ -64,6 +79,13 @@
                                                 @endforeach
 						                    </select>
                                         </div>
+                                        <div class="form-row">
+                                                <div class="col">
+                                                    <label for="avatar1">Imagen de perfil</label>
+                                                    <input type="file" class="form-control" name="avatar" >
+                                                    <small id="telefonoHelp" class="form-text text-muted">Nota: Puede ingresar de forma opcional una imagen de perfil</small>
+                                                </div>
+                                            </div>
 						                <input type="submit" class="btn btn-danger btn-block" name="enviar" value="Actualizar registro de especialista">
 						
                                     </div> <!-- end card body-->

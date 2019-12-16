@@ -20,10 +20,10 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{asset('dashboard/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
+                <img src="{{Storage::url(auth()->user()->avatar)}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Administrador</a>
+        <a href="{{route('Perfil_admin')}}" class="d-block">{{auth()->user()->name}}</a>
         </div>
       </div>
 
@@ -32,116 +32,93 @@
         <ul class="nav nav-pills nav-legacy nav-child-indent nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-            <li class="nav-item has-treeview menu-open">
-                <a href="#" class="nav-link active">
-                <i class="nav-icon fas fa-money-check-alt"></i>
+            <li class="nav-item has-treeview ">
+                <a href="#" class="nav-link ">
+                <i class="nav-icon far fa-calendar-alt"></i>
                 <p>
-                Convenios
+                Control de Reserva
                     <i class="right fas fa-angle-left"></i>
                 </p>
                 </a>
                 <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="{{route('Registro-convenios')}}" class="nav-link active">
+                <a href="{{route ('Citas_ESP')}}" class="nav-link ">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Registro de Convenios</p>
+                    <p>Registro de citas agendadas</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="Agregar-convenios" class="nav-link active">
+                    <a href="{{route ('Sesiones_ESP')}}" class="nav-link ">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Agregar nuevo convenio</p>
+                    <p>Sesiones realizadas</p>
                     </a>
                 </li>
                 </ul>
             </li>
-            <li class="nav-item has-treeview menu-open">
-                <a href="#" class="nav-link ">
-                <i class="nav-icon far fa-credit-card"></i>
-                <p>
-                Opciones de Pago
-                    <i class="right fas fa-angle-left"></i>
-                </p>
-                </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="{{route('RegistroL')}}" class="nav-link active">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Resgistro Op. de pago</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{route('AggLista')}}" class="nav-link active">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Agregar nueva opcion</p>
-                        </a>
-                    </li>
-                </ul>     
-            </li>
             <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-hand-holding-usd"></i>
+                    <i class="nav-icon fas fa-user"></i>
                      <p>
-                     Dctos. Por Caja
+                        Mis pacientes
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
                 <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="{{route('Citas')}}" class="nav-link">
+                    <a href="{{route ('Pacientes_ESP')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Descuentos vigentes</p>
+                    <p>Registro de Pacientes</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('Citas')}}" class="nav-link">
+                    <a href="{{route ('PerfilP_ESP')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Agregar nuevo Descuento</p>
+                    <p>Ficha medica por paciente</p>
                     </a>
                 </ul>
           </li>
-          <li class="nav-item has-treeview menu-open">
+          <li class="nav-item has-treeview ">
                 <a href="#" class="nav-link ">
-                <i class="nav-icon fas fa-file-invoice-dollar"></i>
+                <i class="nav-icon fas fa-list-ol"></i>
                 <p>
-                Aranceles
+                Planes de tratamientos
                     <i class="right fas fa-angle-left"></i>
                 </p>
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{route('RegistroE')}}" class="nav-link active">
+                        <a href="#" class="nav-link active">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>Registro de Aranceles</p>
+                        <p>Registro de Planes vigentes</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('AggEspecialista')}}" class="nav-link active">
+                        <a href="#" class="nav-link active">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>Agregar nuevo Arancel</p>
+                        <p>Agregar nuevo Plan</p>
                         </a>
                     </li>
                 </ul>     
             </li>
-            <li class="nav-item has-treeview menu-open">
+            <li class="nav-item has-treeview ">
                 <a href="#" class="nav-link ">
-                <i class="nav-icon far fa-id-card"></i>
+                <i class="nav-icon fas fa-file-invoice"></i>
                 <p>
-                Honorarios
+                Prestaciones
                     <i class="right fas fa-angle-left"></i>
                 </p>
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{route('Registro-especialidades')}}" class="nav-link active">
+                        <a href="" class="nav-link active">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>Planilla de Honorarios</p>
+                        <p>Prestaciones emitidas</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('AggEspecialidades')}}" class="nav-link active">
+                        <a href="" class="nav-link active">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>Generar Pago</p>
+                        <p>Estado de pago</p>
                         </a>
                     </li>
                 </ul>     

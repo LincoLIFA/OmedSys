@@ -16,8 +16,10 @@ Route::get('/', function () {
 });
 
 Route::get('/prueba', function () {
-        return view('home');
+        return view('Perfil.admin');
     });
+
+
 
 Route::get('ficha', function () {
        return view('ficha.fichamedica.fichamedica');
@@ -28,6 +30,10 @@ Route::get('ficha', function () {
 
 Auth::routes(['verify' => true]);
 
+
+/* actualizar foto de perfil de User */
+        Route::get('Perfil/admin', 'UserController@index')->name('Perfil_admin');
+        Route::put('ActualizarU/{id}', 'UserController@update')->name('ActualizarU');
 
 
 /*Gestion de citas*/
@@ -139,15 +145,64 @@ Route::put('Actualizar-Medios/{id}', 'OpcionesDePagoController@update')->name('A
 Route::delete('Delete-Medios/{id}', 'OpcionesDePagoController@destroy')->name('Delete-Medios');
 /*fin de gestion de Medios de pago */
 
+        
+// --------------------------------------- RUTAS DE CUENTA DE ESPECIALISTA ---------------------
+// 
+// *****************************************************************************************
+
+    
 
 
-    Route::group(['middleware' => ['role:admin']], function () {
+  // Home General de Reserva de Citas
+  Route::get('/ESP', 'HomeController@index_especialista')->name('Home.ESP')->middleware('verified'); 
+
+  /*Gestion de citas*/
+  Route::get('ESP/Citas', 'CitasController@index_especialista')->name('Citas_ESP');
+  Route::get('ESP/Sesiones', 'CitasController@sesiones_especialista')->name('Sesiones_ESP');
+
+ /*Gestion de pacientes*/
+  Route::get('ESP/Pacientes', 'PacientesController@pacientes_especialista')->name('Pacientes_ESP');
+  Route::get('ESP/Pacientes/{id}', 'PacientesController@Perfil_paciente_especialista')->name('PerfilP_ESP');
+
+  
+  Route::get('Citas/aggcitas', 'CitasController@create')->name('Agregar-citas-vista');
+  Route::get('Citas/actcitas/{id}', 'CitasController@edit')->name('UpdateC');
+  Route::post('Citas/Agregar', 'CitasController@store')->name('AgregarC');
+  Route::put('ActualizarC/{id}', 'CitasController@update')->name('ActualizarC');
+  Route::delete('DeleteC/{id}', 'CitasController@destroy')->name('DeleteC');
+  Route::get('PerfilC/Paciente/{citPaciente}', 'PacientesController@showPerfil')->name('PerfilPC');
+/*fin de gestion de citas*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         Route::get('tratamientos', function () {
                 return view('tratamiento.plandetratamiento');
           });
         
           Route::get('procedimientos', function () {
-                return view('tratamiento.procedimientos');
+                return view('tratamiento.Procedimientos');
+          });
+          Route::get('fichamedica', function () {
+                return view('ficha.fichamedica.fichamedica');
           });
 
-    });
+
+        Route::group(['middleware' => ['role:admin']], function () {     
+
+        });
