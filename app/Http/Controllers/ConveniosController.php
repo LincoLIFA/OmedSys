@@ -48,7 +48,7 @@ class ConveniosController extends Controller
       $NuevoConvenio= new App\Convenios;
       $NuevoConvenio->fecha = $request->fecha;
       $NuevoConvenio->empresa = $request->empresa;
-      $NuevoConvenio->descuento = $request->descuento;
+      $NuevoConvenio->descuento = $request->convenio;
       $NuevoConvenio->observacion = $request->observacion;
       $NuevoConvenio->contacto = $request->contacto;
        $NuevoConvenio->save();

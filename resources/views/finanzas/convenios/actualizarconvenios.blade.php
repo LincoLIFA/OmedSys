@@ -1,4 +1,4 @@
-@extends('../index')
+@extends('finanzas.index')
 
 @section('card')
 
@@ -11,98 +11,44 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                           <form class="my-2" action="{{route('ActualizarC',$cita->id)}}" method="POST">
-                                            @method('PUT')
-                                            @csrf
-                                             <div class="form-row">
-                                                <div class="form-group col-md-6">
-                                                  <label for="inputDate">Fecha</label>
-                                                  <input type="date" class="form-control" name="citfecha" placeholder="Fecha" value="{{$cita->citfecha}}"required/>
-                                                <small id="emailHelp" class="form-text text-muted">Debe escoger un día</small>
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                  <label for="inputTime">Hora</label>
-                                                  <input type="time" name="cithora" value="{{$cita->cithora}}" max="20:30" min="08:00" step="60" class="form-control" placeholder="Hora" required/>
-                                                <small id="emailHelp" class="form-text text-muted">Debe escoger una Hora</small>
-                                                </div>
-                                              </div>
-                                              
-                    						
-                    						<div class="form-group">
-                    						    <div class="form-group row">
-                                                    <label for="inputPassword" class="col-sm-2 col-form-label">Paciente</label>
-                                                    <div class="col-sm-10">
-                                                      <select name="citPaciente"  class="custom-select mr-sm-1" required>
-                    							        <option value="{{$cita->citPaciente}}">{{$cita->citPaciente}}</option>
-                    							        @foreach ($result as $mostrar)
-                    							        <option value="{{$mostrar->pacnombre}}">{{$mostrar->
-                    							        pacnombre}}</option>
-                    							        
-                    							        @endforeach
-                    							        
-                    							        </select>
-                                                    </div>
-                                                </div>    
+                                    <form action="{{route('Actualizar-convenios', $convenios->id )}}" method="post">
+                                          @csrf
+                                          @method('PUT')
+					                              <div class="form-row">
+                                            <div class="col-3">
+                                                <label for="inputName">Fecha</label>
+                                                <input type="date" class="form-control" value="{{$convenios->fecha}}" name="fecha" required >
                                             </div>
-                                            <div class="form-group">
-                    						    <div class="form-group row">
-                                                    <label for="inputPassword" class="col-sm-2 col-form-label">Profesional</label>
-                                                    <div class="col-sm-10">
-                                                      <select name="citMedico"  class="custom-select mr-sm-1" required>
-                    							        <option value="{{$cita->citMedico}}">{{$cita->citMedico}}</option>
-                    							        @foreach ($result2 as $mostrar)
-                    							        <option value="{{$mostrar->medidentificacion}}">{{$mostrar->medidentificacion}}</option>
-                    							        
-                    							        @endforeach
-                    							        </select>
-                                                    </div>
-                                                </div>    
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <label for="inputLastname">Empresa </label>
+                                                <input type="text" class="form-control" name="empresa" value="{{$convenios->empresa}}"  minlength="1" maxlength="50"pattern="[A-Za-z.-_,;: ]+" required>
                                             </div>
-                                            <div class="form-group">
-                    						    <div class="form-group row">
-                                                    <label for="inputPassword" class="col-sm-2 col-form-label">Especialidad</label>
-                                                    <div class="col-sm-10">
-                                                      <select name="citEsp"  class="custom-select mr-sm-1" required>
-                    							        <option value="{{$cita->citEsp}}">{{$cita->citEsp}}</option>
-                    							         @foreach ($result3 as $mostrar)
-                    							        <option value="{{$mostrar->espNombre}}">{{$mostrar->espNombre}}</option>
-                    							        @endforeach
-                    							        </select>
-                                                    </div>
-                                                </div>    
+                                        </div>
+
+                                        <div class="form-row mt-2">
+                                            <div class="col-md-6">
+                                                <label for="inputRUT">% convenio</label>
+                                                <input type="text" class="form-control" id="rut"   name="convenio" value="{{$convenios->descuento}}"  required>
+                                            </div>  
+					                        <div class="col-md-6">
+                                                <label for="inputDATE">Contacto</label>
+                                                <input type="text" class="form-control"  name="contacto" value="{{$convenios->contacto}}" pattern="[A-Za-z0-9.-_,;: ]+" required>
+                                             </div> 
+                                        </div> 
+                                        <div class="form-row mt-2">
+                                         
+					                        <div class="col-md-6">
+                                                <label for="inputEmail">Observaciones</label>
+                                                <input  class="form-control" type="textarea"  name="observacion" value="{{$convenios->observacion}}" pattern="[A-Za-z0-9.-_,;:@ ]+" required>
                                             </div>
-                                            <div class="form-group">
-                    						    <div class="form-group row">
-                                                    <label for="inputPassword" class="col-sm-2 col-form-label">Metodo Confirmacion</label>
-                                                    <div class="col-sm-10">
-                                                      <select name="confirmacion"  class="custom-select mr-sm-1" required>
-                    							        <option value="Whatsapp">Whatsapp</option>
-                    							        <option value="Telefono">Telefono</option>
-                    							        <option value="E-mail">E-mail</option>
-                    							        </select>
-                                                    </div>
-                                                </div>    
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Estado de Cita </label required>
-                                               <select name="citEstado" class="custom-select mr-sm-1">
-                                            	<option value="Nulo">Seleccione Estado de la cita</option>
-                                            	<option value="No-confirmado">No confirmado</option>
-                                            	<option value="Confirmado">Confirmado</option>  
-                                            	<option value="Pendiente">Pendiente</option>
-                                            	<option value="Atendido">Atendido</option>  
-                                            </select>   
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Observaciones sobre la Cita o el Paciente </label required>
-                                               <textarea class="form-control" placeholder="Observación" name="citObservaciones">Observación</textarea>
-                    						    
-                                            </div>
-                                            <input type="submit" name="enviar" class="btn btn-danger btn-block" value="Actualizar registro de reserva">
-                                            
-                                            
-                                            
-                    					</form>
+                                        </div>                                 
+                                        <div align="center"> 
+					  	                <input type="submit" class="btn btn-danger btn-block mt-3" name="enviar" value="Agregar registro de paciente" style='width:500px; height:35px'>
+                                        </div>
+                                    </form>
+
                                         
                                     </div> <!-- end card-body-->
                                 </div> <!-- end card-->

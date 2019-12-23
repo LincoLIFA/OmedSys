@@ -162,7 +162,7 @@ Route::delete('Delete-Medios/{id}', 'OpcionesDePagoController@destroy')->name('D
 
  /*Gestion de pacientes*/
   Route::get('ESP/Pacientes', 'PacientesController@pacientes_especialista')->name('Pacientes_ESP');
-  Route::get('ESP/Pacientes/{id}', 'PacientesController@Perfil_paciente_especialista')->name('PerfilP_ESP');
+  Route::get('ESP/Pacientes/1', 'PacientesController@Perfil_paciente_especialista')->name('PerfilP_ESP');
 
   
   Route::get('Citas/aggcitas', 'CitasController@create')->name('Agregar-citas-vista');

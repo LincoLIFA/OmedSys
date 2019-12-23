@@ -3,12 +3,6 @@
 
 
 
-<script type="text/javascript">
-    $(document).ready( function () {
-    $('#convenios').DataTable();
-} );
-</script>
-
 <!-- cabecera de sección  -->
         <div class="page-title-box">
                 <div class="page-title-right">
@@ -34,7 +28,7 @@
                                         </div>
                 
                                         <div class="table-responsive">
-                                            <table class="table table-centered w-100 dt-responsive nowrap display" id="convenios">
+                                            <table class="table Tablas table-centered w-100 dt-responsive nowrap display" id="convenios">
                                                 <thead class="thead-light">
                                                     <tr>
                                                         
@@ -86,7 +80,7 @@
                                                         </td>
                                                        
                                                     </tr>
-                                                    @endforeach();
+                                                    @endforeach()
 
 
 

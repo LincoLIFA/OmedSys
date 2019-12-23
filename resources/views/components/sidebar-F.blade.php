@@ -48,7 +48,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="Agregar-convenios" class="nav-link active">
+                    <a href="{{route('Agregar-convenios')}}" class="nav-link active">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Agregar nuevo convenio</p>
                     </a>
