@@ -20,7 +20,7 @@ class citas extends Model
     }
     public function especialidades()
     {
-        return $this->belongsTo('App\Especialidades', 'especalidades_id');
+        return $this->belongsTo('App\Especialidades', 'especialidades_id');
     }
     public function events()
     {

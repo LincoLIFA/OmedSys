@@ -397,15 +397,12 @@ if ($mysqli->connect_errno) {
                                         <a href="">{{$item2->id}}</a>
                                     </td>
                                     <td>
-                                        {{$item2->events->start}}
+                                        {{ \Carbon\Carbon::parse($item2->events->start)->format('d/m/Y')}} 
                                     </td>
                                                                     
                                     <td>
-                                        <a href"" class="text-success">{{$item2->pacientes->pacnombre}}  {{$item2->pacientes->pacapellidoP}} </a>
+                                        {{$item2->pacientes->pacnombre}}  {{$item2->pacientes->pacapellidoP}} 
                                     
-                                    </td>
-                                    <td>
-                                        {{$item2->pacientes->pactelefono}}
                                     </td>
                                     <td>
                                         {{$item2->pacientes->pactelefono}}
@@ -417,7 +414,7 @@ if ($mysqli->connect_errno) {
                                         {{$item2->especialidades->espNombre}}
                                     </td>
                                     <td>
-                                        <span class="badge badge-success">{{$item2->citEstado}}</span>
+                                        <span class="badge badge-success">{{$item2->estado}}</span>
                                     </td>
                                     <td>
                                         {{$item2->confirmacion}}

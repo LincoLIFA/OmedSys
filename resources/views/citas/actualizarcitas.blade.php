@@ -17,12 +17,12 @@
                                              <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                   <label for="inputDate">Fecha</label>
-                                                  <input type="date" class="form-control" name="citfecha" placeholder="Fecha" value="{{$cita->citfecha}}"required/>
+                                                  <input type="date" class="form-control" name="citfecha" placeholder="Fecha" value=" {{ \Carbon\Carbon::parse($cita->events->start)->format('d/m/Y')}}"required/>
                                                 <small id="emailHelp" class="form-text text-muted">Debe escoger un día</small>
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                   <label for="inputTime">Hora</label>
-                                                  <input type="time" name="cithora" value="{{$cita->cithora}}" max="20:30" min="08:00" step="60" class="form-control" placeholder="Hora" required/>
+                                                  <input type="time" name="cithora" value=" {{ \Carbon\Carbon::parse($cita->events->start)->format('H:m')}}" max="20:30" min="08:00" step="60" class="form-control" placeholder="Hora" required/>
                                                 <small id="emailHelp" class="form-text text-muted">Debe escoger una Hora</small>
                                                 </div>
                                               </div>
@@ -33,7 +33,7 @@
                                                     <label for="inputPassword" class="col-sm-2 col-form-label">Paciente</label>
                                                     <div class="col-sm-10">
                                                       <select name="citPaciente"  class="custom-select mr-sm-1" required>
-                    							        <option value="{{$cita->citPaciente}}">{{$cita->citPaciente}}</option>
+                    							        <option value="{{$result->pacientes->pacnombre}}">{{$cita->citPaciente}}</option>
                     							        @foreach ($result as $mostrar)
                     							        <option value="{{$mostrar->pacnombre}}">{{$mostrar->
                     							        pacnombre}}</option>
