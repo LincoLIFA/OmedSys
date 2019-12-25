@@ -15,6 +15,8 @@ class CreateOpcionesDePagosTable extends Migration
     {
         Schema::create('opciones_de_pagos', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('nombre');
+            $table->integer('retencion');
             $table->timestamps();
         });
     }

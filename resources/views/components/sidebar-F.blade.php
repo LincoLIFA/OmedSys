@@ -65,13 +65,13 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{route('RegistroL')}}" class="nav-link active">
+                        <a href="{{route('Registro-Medios')}}" class="nav-link active">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Resgistro Op. de pago</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('AggLista')}}" class="nav-link active">
+                        <a href="{{route('Agregar-Medios')}}" class="nav-link active">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Agregar nueva opcion</p>
                         </a>
@@ -88,13 +88,13 @@
                 </a>
                 <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="{{route('Citas')}}" class="nav-link">
+                    <a href="{{route('Registro-Descuentos')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Descuentos vigentes</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('Citas')}}" class="nav-link">
+                    <a href="{{route('Agregar-nuevo-Descuentos')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Agregar nuevo Descuento</p>
                     </a>
@@ -110,20 +110,20 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{route('RegistroE')}}" class="nav-link active">
+                        <a href="{{route('Registro-Aranceles')}}" class="nav-link active">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Registro de Aranceles</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('AggEspecialista')}}" class="nav-link active">
+                        <a href="{{route('Agregar-Aranceles')}}" class="nav-link active">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Agregar nuevo Arancel</p>
                         </a>
                     </li>
                 </ul>     
             </li>
-            <li class="nav-item has-treeview menu-open">
+         <!-- <li class="nav-item has-treeview menu-open">
                 <a href="#" class="nav-link ">
                 <i class="nav-icon far fa-id-card"></i>
                 <p>
@@ -145,7 +145,7 @@
                         </a>
                     </li>
                 </ul>     
-            </li>
+            </li> -->
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

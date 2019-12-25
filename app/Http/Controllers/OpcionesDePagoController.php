@@ -21,7 +21,7 @@ class OpcionesDePagoController extends Controller
     public function index()
     {
         $result =  App\OpcionesDePago::all();
-      return view('finanzas.metodos_pago.metodos',compact('result'));
+      return view('finanzas.medios_de_pago.medios_de_pago',compact('result'));
     }
 
     /**
@@ -32,7 +32,7 @@ class OpcionesDePagoController extends Controller
     public function create()
     {
        $result =  App\OpcionesDePago::all();
-      return view('finanzas.metodos_pago.agregarmetodos',compact('result'));
+      return view('finanzas.medios_de_pago.agregar_medios',compact('result'));
     }
 
     /**
@@ -45,10 +45,10 @@ class OpcionesDePagoController extends Controller
     {
        $nuevoMetodo= new App\OpcionesDePago;
         $nuevoMetodo->nombre = $request->nombre;
-        $nuevoMetodo->descuento = $request->descuento;
+        $nuevoMetodo->retencion = $request->retencion;
         $nuevoMetodo->save();
         $result =  App\OpcionesDePago::all();
-        return view('finanzas.metodos_pago.metodos',compact('result'));
+        return view('finanzas.medios_de_pago.medios_de_pago',compact('result'));
     }
 
     /**
@@ -70,8 +70,8 @@ class OpcionesDePagoController extends Controller
      */
     public function edit($id)
     {
-        $descuentos = App\OpcionesDePago::findOrfail($id);
-       return view('finanzas.metodos_pago.actualizarmetodos',compact('descuentos'));
+        $medios = App\OpcionesDePago::findOrfail($id);
+       return view('finanzas.medios_de_pago.actualizar_medios',compact('medios'));
      
     }
     
@@ -92,7 +92,7 @@ class OpcionesDePagoController extends Controller
 
     // vista
         $result =  App\OpcionesDePago::all();
-        return view('finanzas.metodos_pago.metodos',compact('result'));
+        return view('finanzas.medios_de_pago.medios_de_pago',compact('result'));
     }
 
     
@@ -102,7 +102,7 @@ class OpcionesDePagoController extends Controller
         $descuentos ->delete();
         // vista
         $result =  App\OpcionesDePago::all();
-        return view('finanzas.metodos_pago.metodos',compact('result'));
+        return view('finanzas.medios_de_pago.medios_de_pago',compact('result'));
     }
 }
 

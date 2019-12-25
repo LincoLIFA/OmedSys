@@ -61,9 +61,9 @@
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{{route('Registro-convenios')}}"><i class="fas fa-angle-right"></i>   Sesiones realizadas</a>
-                <a class="dropdown-item" href="{{url('actualizar-convenios')}}"><i class="fas fa-angle-right"></i>   Fichas medicas</a>
-                <a class="dropdown-item" href="{{url('Especialistas/Registro')}}"><i class="fas fa-angle-right"></i>   Prestaciones</a>
-                <a class="dropdown-item" href="{{url('Especialidades/Registro')}}"><i class="fas fa-angle-right"></i>   Planes de tratamientos</a>
+                <a class="dropdown-item" href="{{route('Registro-Aranceles')}}"><i class="fas fa-angle-right"></i>   Fichas medicas</a>
+                <a class="dropdown-item" href="{{route('Registro-Medios')}}"><i class="fas fa-angle-right"></i>   Prestaciones</a>
+                <a class="dropdown-item" href="{{route('Registro-Descuentos')}}"><i class="fas fa-angle-right"></i>   Planes de tratamientos</a>
 
             
             </div>
@@ -89,11 +89,10 @@
                 Modulo Financiero
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{{route('Registro-convenios')}}"><i class="fas fa-angle-right"></i>   Convenios</a>
-                <a class="dropdown-item" href="{{url('actualizar-convenios')}}"><i class="fas fa-angle-right"></i>   Aranceles</a>
-                <a class="dropdown-item" href="{{url('Especialistas/Registro')}}"><i class="fas fa-angle-right"></i>   Opciones de pago</a>
-                <a class="dropdown-item" href="{{url('Especialidades/Registro')}}"><i class="fas fa-angle-right"></i>   Dsctos por Caja</a>
-                <a class="dropdown-item" href="{{url('Pacientes/Registro')}}"><i class="fas fa-angle-right"></i>   Honorarios</a>
+                <a class="dropdown-item" href="{{route('Registro-convenios')}}"><i class="fas fa-angle-right"></i>  Convenios</a>
+                <a class="dropdown-item" href="{{route('Registro-Aranceles')}}"><i class="fas fa-angle-right"></i>  Aranceles</a>
+                <a class="dropdown-item" href="{{route('Registro-Medios')}}"><i class="fas fa-angle-right"></i> Op. de Pago</a>
+                <a class="dropdown-item" href="{{route('Registro-Descuentos')}}"><i class="fas fa-angle-right"></i> Descuentos</a>
 
             
             </div>

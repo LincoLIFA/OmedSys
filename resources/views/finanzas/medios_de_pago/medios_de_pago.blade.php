@@ -3,12 +3,6 @@
 
 
 
-<script type="text/javascript">
-    $(document).ready( function () {
-    $('#convenios').DataTable();
-} );
-</script>
-
 <!-- cabecera de sección  -->
         <div class="page-title-box">
                 <div class="page-title-right">
@@ -28,23 +22,19 @@
                                     <div class="card-body">
                                         <div class="row mb-2">
                                             <div class="col-sm-4">
-                                                <a href="{{route('Agregar-convenios')}}" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle mr-2"></i> Ingresar nuevo convenio</a>
+                                                <a href="{{route('Agregar-Medios')}}" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle mr-2"></i> Ingresar nuevo medio de pago</a>
                                             </div>
                                            
                                         </div>
                 
                                         <div class="table-responsive">
-                                            <table class="table table-centered w-100 dt-responsive nowrap display" id="convenios">
+                                            <table class="table Tablas table-centered w-100 dt-responsive nowrap display" id="convenios">
                                                 <thead class="thead-light">
                                                     <tr>
-                                                        
                                                         <th class="all">N° Medio</th>
                                                         <th>Medio de pago </th>
                                                         <th>Retención</th>
-                                                        <th>Acciones</th>
-
-
-                                                        
+                                                        <th>Acciones</th>                                                        
                                                     </tr>
                                                 </thead>
 
@@ -57,7 +47,7 @@
                                                         </td>
                                                         
                                                         <td>
-                                                           {{$item->medio_pago}}
+                                                           {{$item->nombre}}
                                                         </td>
                                                         <td>
                                                            {{$item->retencion}}
@@ -66,8 +56,8 @@
                                                        
                                                         <td>
                                                             <div class="row">
-                                                            <a href="{{route('Update-convenios', $item->id)}}" class="btn btn-primary mr-1"> <i class="far fa-edit"></i></a>
-                                                            <form method="post" action="{{route('Delete-convenios', $item->id)}}">
+                                                            <a href="{{route('Update-Medios', $item->id)}}" class="btn btn-primary mr-1"> <i class="far fa-edit"></i></a>
+                                                            <form method="post" action="{{route('Delete-Medios', $item->id)}}">
                                                                     @method('DELETE') 
                                                                     @csrf
                                                               <button  class="btn btn-primary" type="submit"><i class="far fa-trash-alt"></i></button>
@@ -76,7 +66,7 @@
                                                         </td>
                                                        
                                                     </tr>
-                                                    @endforeach();
+                                                    @endforeach()
 
 
 

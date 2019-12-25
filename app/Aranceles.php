@@ -6,12 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Aranceles extends Model
 {
-    public function especialistas()
+    protected $fillable = [ 'id' , 'procedimientos' , 'precios' ,'comentarios', 'medico_id' , 'especialidades_id'  ];
+
+
+   public function especialistas()
     {
-        return $this->belongsTo('App\Especialistas', 'especialistas_id');
+        return $this->belongsTo('App\Especialistas', 'medico_id');
     }
     public function especialidades()
     {
-        return $this->belongsTo('App\Especialidades', 'especalidades_id');
+        return $this->belongsTo('App\Especialidades', 'especialidades_id');
     }
 }

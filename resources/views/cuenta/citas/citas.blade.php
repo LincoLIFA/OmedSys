@@ -379,7 +379,7 @@ if ($mysqli->connect_errno) {
                                     
                                       </td>
                                       <td>
-                                     {{$item2->citEstado}}
+                                     {{$item2->estado}}
                                     </td>
                                     <td>
                                         {{$item2->confirmacion}}

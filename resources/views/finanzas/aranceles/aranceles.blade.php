@@ -3,19 +3,13 @@
 
 
 
-<script type="text/javascript">
-    $(document).ready( function () {
-    $('#Descuentos').DataTable();
-} );
-</script>
-
 <!-- cabecera de sección  -->
         <div class="page-title-box">
                 <div class="page-title-right">
                                         
                 </div>
 
-                <h4 class="page-title">Registro de metodos de pago </h4>
+                <h4 class="page-title">Registro de Aranceles</h4>
         </div>
 
 <!-- fin de caebcera de sección -->
@@ -28,21 +22,22 @@
                                     <div class="card-body">
                                         <div class="row mb-2">
                                             <div class="col-sm-4">
-                                                <a href="{{route('Agregar-convenios')}}" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle mr-2"></i> Ingresar nuevo convenio</a>
+                                                <a href="{{route('Agregar-Aranceles')}}" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle mr-2"></i> Ingresar nuevo Arancel</a>
                                             </div>
                                            
                                         </div>
                 
                                         <div class="table-responsive">
-                                            <table class="table table-centered w-100 dt-responsive nowrap display" id="Descuentos">
+                                            <table class="table Tablas table-centered w-100 dt-responsive nowrap display" id="convenios">
                                                 <thead class="thead-light">
                                                     <tr>
-                                                        
-                                                        <th class="all">N° Convenio</th>
-                                                        <th>Nombre</th>
-                                                        <th>% Descuento</th>
-                                                        <th>Acción</th>
-                                                        
+                                                        <th class="all">N°</th>
+                                                        <th>Procedimiento </th>
+                                                        <th>Precio</th>
+                                                        <th>Comentario</th> 
+                                                        <th>Especialista</th> 
+                                                        <th>Especialidad</th> 
+                                                        <th>Accion</th>                                                        
                                                     </tr>
                                                 </thead>
 
@@ -53,16 +48,26 @@
                                                         <td>
                                                             <a href="">{{$item->id}}</a>
                                                         </td>
+                                                        
                                                         <td>
-                                                           {{$item->nombre}}
+                                                           {{$item->procedimientos}}
                                                         </td>
                                                         <td>
-                                                           {{$item->descuento}}
+                                                            {{$item->precios}}
+                                                         </td>
+                                                         <td>
+                                                            {{$item->comentarios}}
+                                                         </td>
+                                                        <td>
+                                                           {{$item->especialistas->medidentificacion}}
                                                         </td>
+                                                        <td>
+                                                            {{$item->especialidades->espNombre}}
+                                                         </td>
                                                         <td>
                                                             <div class="row">
-                                                            <a href="{{route('Update-Descuentos', $item->id)}}" class="btn btn-primary mr-1"> <i class="far fa-edit"></i></a>
-                                                            <form method="post" action="{{route('Delete-Descuentos', $item->id)}}">
+                                                            <a href="{{route('Update-Aranceles', $item->id)}}" class="btn btn-primary mr-1"> <i class="far fa-edit"></i></a>
+                                                            <form method="post" action="{{route('Delete-Aranceles', $item->id)}}">
                                                                     @method('DELETE') 
                                                                     @csrf
                                                               <button  class="btn btn-primary" type="submit"><i class="far fa-trash-alt"></i></button>
@@ -71,7 +76,11 @@
                                                         </td>
                                                        
                                                     </tr>
-                                                    @endforeach();
+                                                    @endforeach()
+
+
+
+
                                                 </tbody>
                                                
                                             </table>

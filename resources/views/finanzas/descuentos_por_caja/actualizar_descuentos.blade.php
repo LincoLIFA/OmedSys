@@ -11,7 +11,7 @@
                                         
                 </div>
 
-                <h4 class="page-title">Actualizar medio de pago</h4>
+                <h4 class="page-title">Actualizar Descuento por caja</h4>
         </div>
 
 <!-- fin de caebcera de sección -->
@@ -23,20 +23,20 @@
                                 <div class="card">
                                     <div class="card-body">
                                         
-                                        <form action="{{route('Actualizar-Medios', $medios->id)}}" method="post">
+                                        <form action="{{route('Actualizar-Descuentos', $descuentos->id)}}" method="post">
                                           
                                           @csrf
                                           @method('PUT')
                                         <div class="form-row">
                                             <div class="col">
                                                 <label for="inputLastname">Nombre </label>
-                                            <input type="text" class="form-control" name="nombre" value="{{$medios->nombre}}" minlength="1" maxlength="50"pattern="[A-Za-z.-_,;: ]+" required>
+                                            <input type="text" class="form-control" name="nombre" value="{{$descuentos->nombre}}" minlength="1" maxlength="50"pattern="[A-Za-z.-_,;: ]+" required>
                                             </div>
                                         </div>
                                         <div class="form-row mt-2">
                                             <div class="col-md-6">
                                                 <label for="inputRUT">% Retencion</label>
-                                                <input type="text" class="form-control" id="retencion"   name="retencion" value="{{$medios->retencion}}" required>
+                                                <input type="text" class="form-control" id="retencion"   name="descuento" value="{{$descuentos->descuento}}" required>
                                             </div>  
                                         </div>                                  
                                         <div align="center"> 

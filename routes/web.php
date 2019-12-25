@@ -145,8 +145,28 @@ Route::put('Actualizar-Medios/{id}', 'OpcionesDePagoController@update')->name('A
 Route::delete('Delete-Medios/{id}', 'OpcionesDePagoController@destroy')->name('Delete-Medios');
 /*fin de gestion de Medios de pago */
 
+
+/*Gestion de descuentos por caja*/
+Route::get('Descuentos/Descuentos_por_caja', 'DescuentosPorCajaController@index')->name('Registro-Descuentos');
+Route::get('Descuentos/AggDescuentos', 'DescuentosPorCajaController@create')->name('Agregar-Descuentos');
+Route::get('Descuentos/actDescuentos{id}', 'DescuentosPorCajaController@edit')->name('Update-Descuentos');
+Route::post('/Agregar-Descuentos', 'DescuentosPorCajaController@store')->name('Agregar-nuevo-Descuentos');
+Route::put('Actualizar-Descuentos/{id}', 'DescuentosPorCajaController@update')->name('Actualizar-Descuentos');
+Route::delete('Delete-Descuentos/{id}', 'DescuentosPorCajaController@destroy')->name('Delete-Descuentos');
+/*fin de gestion de descuentos por caja*/
+
+
+/*Gestion de araceles */
+Route::get('Aranceles/Aranceles', 'ArancelesController@index')->name('Registro-Aranceles');
+Route::get('Aranceles/AggAranceles', 'ArancelesController@create')->name('Agregar-Aranceles');
+Route::get('Aranceles/actAranceles{id}', 'ArancelesController@edit')->name('Update-Aranceles');
+Route::post('/Agregar-Aranceles', 'ArancelesController@store')->name('Agregar-nuevo-Aranceles');
+Route::put('Actualizar-Aranceles/{id}', 'ArancelesController@update')->name('Actualizar-Aranceles');
+Route::delete('Delete-Aranceles/{id}', 'ArancelesController@destroy')->name('Delete-Aranceles');
+/*fin de gestion de aranceles*/
+
         
-// --------------------------------------- RUTAS DE CUENTA DE ESPECIALISTA ---------------------
+// --------------------------------------- RUTAS DE CUENTA DE ESPECIALISTA -----------------
 // 
 // *****************************************************************************************
 

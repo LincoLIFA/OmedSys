@@ -11,7 +11,7 @@
                                         
                 </div>
 
-                <h4 class="page-title">Actualizar medio de pago</h4>
+                <h4 class="page-title">Agregar nuevo Descuento por caja </h4>
         </div>
 
 <!-- fin de caebcera de sección -->
@@ -23,24 +23,22 @@
                                 <div class="card">
                                     <div class="card-body">
                                         
-                                        <form action="{{route('Actualizar-Medios', $medios->id)}}" method="post">
-                                          
+                                        <form action="{{route('Agregar-nuevo-Descuentos')}}" method="post">
                                           @csrf
-                                          @method('PUT')
                                         <div class="form-row">
                                             <div class="col">
                                                 <label for="inputLastname">Nombre </label>
-                                            <input type="text" class="form-control" name="nombre" value="{{$medios->nombre}}" minlength="1" maxlength="50"pattern="[A-Za-z.-_,;: ]+" required>
+                                                <input type="text" class="form-control" name="nombre" placeholder="Ingrese nombre de metodo"  minlength="1" maxlength="50"pattern="[A-Za-z.-_,;: ]+" required>
                                             </div>
                                         </div>
                                         <div class="form-row mt-2">
                                             <div class="col-md-6">
-                                                <label for="inputRUT">% Retencion</label>
-                                                <input type="text" class="form-control" id="retencion"   name="retencion" value="{{$medios->retencion}}" required>
+                                                <label for="inputRUT">% Descuento</label>
+                                                <input type="text" class="form-control" id="descuento"   name="descuento" placeholder="Ingrese tasa de descuento"  required>
                                             </div>  
                                         </div>                                  
                                         <div align="center"> 
-					  	                     <input type="submit" class="btn btn-danger btn-block mt-3" name="enviar" value="Actuaizar medio de pago" style='width:500px; height:35px'>
+					  	                     <input type="submit" class="btn btn-danger btn-block mt-3" name="enviar" value="Agregar Descuento por caja" style='width:500px; height:35px'>
                                         </div>
                                     </form>
                                     </div> <!-- end card-body-->
