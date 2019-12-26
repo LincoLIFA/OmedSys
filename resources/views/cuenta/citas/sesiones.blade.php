@@ -75,7 +75,7 @@
                                         <a href="">{{$item2->id}}</a>
                                     </td>
                                     <td>
-                                        {{$item2->events->start}}
+                                      {{ \Carbon\Carbon::parse($item2->events->start)->format('d/m/Y')}} 
                                     </td>
                                     <td>
                                       <a data-toggle="modal" data-target="#sesiones" class="text-success">{{$item2->pacientes->pacidentificacion}}</a>
@@ -112,6 +112,7 @@
                 </div>
                 <!-- /.col -->
             </div>
+            
             <!-- /.row -->
         </section>
         <!-- /.content -->

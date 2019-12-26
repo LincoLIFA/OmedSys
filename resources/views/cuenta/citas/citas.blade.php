@@ -360,7 +360,6 @@ if ($mysqli->connect_errno) {
                                         <th>Fecha</th>
                                         <th>Paciente</th>
                                         <th>Estado</th>
-                                        <th>Met. Confirm.</th>
                                         <th>Validar</th>
                                     </tr>
                                 </thead>
@@ -371,7 +370,7 @@ if ($mysqli->connect_errno) {
                                         <a href="">{{$item2->id}}</a>
                                     </td>
                                     <td>
-                                        {{$item2->events->start}}
+                                      {{ \Carbon\Carbon::parse($item2->events->start)->format('d/m/Y')}} 
                                     </td>
                                                                     
                                     <td>
@@ -380,9 +379,6 @@ if ($mysqli->connect_errno) {
                                       </td>
                                       <td>
                                      {{$item2->estado}}
-                                    </td>
-                                    <td>
-                                        {{$item2->confirmacion}}
                                     </td>
                                     <td>
                                         <div class="row">
@@ -406,6 +402,8 @@ if ($mysqli->connect_errno) {
                 <!-- /.col -->
             </div>
             <!-- /.row -->
+            
         </section>
         <!-- /.content -->
+        
 @endsection

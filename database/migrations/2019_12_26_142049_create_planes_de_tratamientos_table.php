@@ -15,6 +15,13 @@ class CreatePlanesDeTratamientosTable extends Migration
     {
         Schema::create('planes_de_tratamientos', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('nombre');
+            $table->unsignedBigInteger('medico_id'); // Relación con categorias
+            $table->foreign('medico_id')->references('id')->on('especialistas');
+            $table->unsignedBigInteger('especialidades_id'); // Relación con categorias
+            $table->foreign('especialidades_id')->references('id')->on('especialidades');   
+            $table->unsignedBigInteger('aranceles_id'); // Relación con categorias
+            $table->foreign('aranceles_id')->references('id')->on('aranceles');                    
             $table->timestamps();
         });
     }

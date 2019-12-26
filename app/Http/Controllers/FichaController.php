@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App;
 use Illuminate\Support\Facades\DB;
-class CitasController extends Controller
+class FichaController extends Controller
 {
     public function __construct()
     {
@@ -58,24 +58,23 @@ class CitasController extends Controller
         $events = new App\Events;
         $fecha =$request->citfecha;
         $hora =$request->cithora;
-        $hora1 = strtotime ( '+1 hour' , strtotime ($hora) ) ;
+        
 
-        $events->title = "RESERVA";
-        $events->description = "Evento de reserva";
+        $events->title = $request->title;
+        $events->description = $request->description;
         $events->classNames = "No-confirmado";
-        $events->start =  $fecha."T".$hora;
-        $events->end = $fecha."T".$hora1;
+        $events->start =  $fecha+"T"+$hora;
         $events->save();
 
 
 
         $cita = new App\Citas;
-        $cita->events_id =  $events->id;
-        $cita->paciente_id = $request->pacientes_id;
-        $cita->medico_id = $request->especialistas_id;
-        $cita->especialidades_id = $request->citEsp;
-        $cita->estado = $request->citEstado;
-        $cita->observaciones= $request->citObservaciones;
+        $cita->events_id = $request->events_id;
+        $cita->paciente_id = $request->paciente_id;
+        $cita->medico_id = $request->medico_id;
+        $cita->especialidades_id = $request->especialidades_id;
+        $cita->citEstado = $request->citEstado;
+        $cita->citObservaciones = $request->citObservaciones;
         $cita->confirmacion = $request->confirmacion;
         $cita->save();
         $result =  App\Citas::all();
@@ -134,23 +133,27 @@ class CitasController extends Controller
     {
         $citas = App\Citas::findOrfail($id);
         $citas ->delete();
-        
         $result =  App\Citas::all();
         return view('citas.citas',compact('result'));
     }
 
-    public function index_especialista()
+    public function perfil_vista_paciente()
     {
         $id = auth()->user()->id;
         $result = App\Citas::where('medico_id', 1 and 'estado', 'Confirmado')->get();
-        return view('cuenta.citas.citas',compact('result'));
+        return view('cuenta.pacientes.registro',compact('result'));
     }
     
-    public function sesiones_especialista()
+    public function Perfil_paciente_especialista($id)
     {
-        $id = auth()->user()->id;
-        $result = App\Citas::where('medico_id', 1 and 'estado', 'Confirmado')->get();
-        return view('cuenta.citas.sesiones',compact('result'));
+        $results = DB::select('select * from citas join pacientes where citas.paciente_id = pacientes.id');
+        $ficha = App\Fichas::all();
+        $result1 = App\Citas::where('paciente_id', 1)->get();
+        $result2 =  App\Especialistas::all();
+        $result4 =  App\Aranceles::all();
+        $result3 =  App\Especialidades::all();
+        $result  =  App\Pacientes::findOrfail($id);
+      return view('cuenta.fichamedica.fichamedica',compact('ficha','result1','result','result2','result3','result4'));
     
     }
     

@@ -181,8 +181,8 @@ Route::delete('Delete-Aranceles/{id}', 'ArancelesController@destroy')->name('Del
   Route::get('ESP/Sesiones', 'CitasController@sesiones_especialista')->name('Sesiones_ESP');
 
  /*Gestion de pacientes*/
-  Route::get('ESP/Pacientes', 'PacientesController@pacientes_especialista')->name('Pacientes_ESP');
-  Route::get('ESP/Pacientes/1', 'PacientesController@Perfil_paciente_especialista')->name('PerfilP_ESP');
+  Route::get('ESP/Pacientes', 'FichaController@perfil_vista_paciente')->name('Pacientes_ESP');
+  Route::get('ESP/Pacientes/{id}', 'FichaController@Perfil_paciente_especialista')->name('PerfilP_ESP');
 
   
   Route::get('Citas/aggcitas', 'CitasController@create')->name('Agregar-citas-vista');

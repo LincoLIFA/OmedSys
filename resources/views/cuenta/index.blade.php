@@ -128,9 +128,5 @@
     
 } );
   </script>
-<<<<<<< HEAD
-=======
-
->>>>>>> f1a7a2a18a9a8a899d14e5e1bf5038e97d3db4f8
 </body>
 </html>

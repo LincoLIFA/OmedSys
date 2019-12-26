@@ -70,11 +70,6 @@
                     <p>Registro de Pacientes</p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{route ('PerfilP_ESP')}}" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Ficha medica por paciente</p>
-                    </a>
                 </ul>
           </li>
           <li class="nav-item has-treeview ">

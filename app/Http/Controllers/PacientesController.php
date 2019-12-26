@@ -81,12 +81,12 @@ class PacientesController extends Controller
     }
     
     public function showPerfil($id)
-    {        
+    {         $ficha = App\Fichas::all();
             $result =  App\Citas::all();
             $result2 =  App\Especialistas::all();
             $result3 =  App\Especialidades::all();
             $pacientes =  App\Pacientes::findOrfail($id);
-          return view('Perfil.paciente',compact('pacientes','result','result2','result3'));
+          return view('Perfil.paciente',compact('ficha','pacientes','result','result2','result3'));
     }
 
     /**

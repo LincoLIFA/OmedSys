@@ -192,37 +192,7 @@ if ($mysqli->connect_errno) {
 
  <section class="content">       
     <div class="container-fluid">                            
-            <!-- Modal -->
-            <div class="modal fade" id="modalReserva" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Reserva de Cita</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-5 col-form-label">Paciente antiguo</label>
-                                <div class="col-sm-7">
-                                    <a href="{{url('Citas/aggcitas')}}" class="rounded-pill float-right btn btn-primary" >Registrado</a>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-5 col-form-label">Paciente nuevo</label>
-                                <div class="col-sm-7">
-                                    <a href="{{url('Pacientes/New')}}" class="rounded-pill float-right btn btn-primary" >No registrado</a>
-                                </div>
-                            </div>  
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    </div>
-                </div>
-            </div>
+         
         <div class="row my-2">
             <div class="col-12">
                 <!-- Add New Event MODAL -->
@@ -268,7 +238,7 @@ if ($mysqli->connect_errno) {
                                         <p class="font-13 text-white-50">{{$especialistas->mednombres}} {{$especialistas->medapellidos}}</p>
                                         <ul class="mb-0 list-inline text-light">
                                             <li class="list-inline-item mr-3">
-                                                <h5 class="mb-1">{{$especialistas->medespecialidad}}</h5>
+                                                <h5 class="mb-1">{{$especialistas->especialidades->espNombre}}</h5>
                                                 <p class="mb-0 font-13 text-white-50">Especialidad</p>
                                             </li>
                                             <li class="list-inline-item">
@@ -379,7 +349,7 @@ if ($mysqli->connect_errno) {
                                 <!-- end row -->
 
 
-                        <!--<div class="card">
+                    <div class="card">
                                 <div class="card-body">
                                     <h4 class="header-title mb-3">Mis Citas</h4>
                                     <div class="table-responsive">
@@ -402,10 +372,7 @@ if ($mysqli->connect_errno) {
                             <!-- end col -->
 
                         </div>
-        </div>
-            </div>
-                  
-    </div>
+        
  </section>      <!-- end row -->
 
                   

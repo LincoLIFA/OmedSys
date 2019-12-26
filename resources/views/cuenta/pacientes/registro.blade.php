@@ -1,4 +1,4 @@
-@extends('index')
+@extends('cuenta.index')
 @section('card')
 
                    
@@ -23,11 +23,7 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <div class="row mb-2">
-                                <div class="col-sm-4">
-                                    <a href="{{url('Citas/aggcitas')}}" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle mr-2"></i> Crear nueva cita</a>
-                                </div>              
-                            </div>
+                            
                             <table class="table Tablas table-bordered table-striped">
                                 <thead class="thead-light">
                                     <tr>
@@ -38,53 +34,35 @@
                                         <th>Apellidos Materno</th>
                                         <th>Fecha N</th>
                                         <th>Sexo</th>
-                                        <th>E-mail</th>
-                                        <th>Teléfono</th>
-                                        <th>Acción</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach($result as $item)
                                     <tr>
                                         <td>
-                                            <a href="">{{$item->id}}</a>
+                                            <a href="">{{$item->pacientes->id}}</a>
                                         </td>
                                         <td>
-                                            <a href="{{route('PerfilP', $item->id)}}" class="text-success">{{$item->pacidentificacion}} </a>
+                                            <a href="{{route('PerfilP_ESP', $item->pacientes->id)}}" class="text-success">{{$item->pacientes->pacidentificacion}} </a>
                                         </td>
                                         <td>
-                                            {{$item->pacnombre}}
+                                            {{$item->pacientes->pacnombre}} 
                                         </td>
                                         <td>
-                                            {{$item->pacapellidoP}}
+                                            {{$item->pacientes->pacapellidoP}} 
                                         </td>
                                         <td>
-                                            {{$item->pacapellidoM}}
+                                            {{$item->pacientes->pacapellidoM}}
                                         </td>
                                         <td>
-                                            {{$item->pacfechaN}}
+                                            {{$item->pacientes->pacfechaN}}
                                             
                                         </td>
                                         <td>
-                                            {{$item->pacsexo}}
+                                            {{$item->pacientes->pacsexo}}
                                         </td>
-                                        <td>
-                                            {{$item->paccorreo}}
-                                        </td>
-                                        <td>
-                                            {{$item->pactelefono}}
-                                        </td>
-                                        <td>
-                                            <div class="row">
-                                            <a href="{{route('UpdateP', $item->id)}}" class="btn btn-primary mr-1"> <i class="far fa-edit"></i></a>
-                                            <form method="post" action="{{route('DeleteP', $item->id)}}">
-                                                    @method('DELETE') 
-                                                    @csrf
-                                                <button  class="btn btn-primary" type="submit"><i class="far fa-trash-alt"></i></button>
-                                            </form>
-                                            </div>
-                                            
-                                        </td>
+                                       
+                                        
                                         
                                     </tr>
                                     @endforeach()

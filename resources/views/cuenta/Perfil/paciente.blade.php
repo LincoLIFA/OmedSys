@@ -4,16 +4,14 @@
 
 <?php
 $mysqli = new mysqli("localhost", "root", "toor", "laravel");
-
-if ($mysqli->connect_errno) {
+if ($mysqli->connect_errno) { 
     echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
-       
-  $sql=$mysqli->query("select * from `events`  ");
-  	
+  $sql=$mysqli->query("select * from `events` join `citas` join `pacientes` where citas.events_id = events.id and citas.paciente_id = pacientes.id ");
+
+	
+
 ?>
-
-
 
 
 <script type="text/javascript">

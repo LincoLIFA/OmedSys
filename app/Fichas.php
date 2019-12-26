@@ -4,11 +4,17 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PlanesDeTratamientos extends Model
+class Fichas extends Model
 {
-    protected $fillable = [ 'id'  ,'nombre', 'medico_id' , 'especialidades_id' ,  'aranceles_id' ];
-    
-   
+    protected $fillable = [ 'id'  ,'citas_id', 'paciente_id' , 'medico_id' , 'especialidades_id' ,  'aranceles_id' , 'observaciones'];
+    public function citas()
+    {
+        return $this->belongsTo('App\Citas', 'citas_id');
+    }
+    public function pacientes()
+    {
+        return $this->belongsTo('App\Pacientes', 'paciente_id');
+    }
     
     public function especialistas()
     {

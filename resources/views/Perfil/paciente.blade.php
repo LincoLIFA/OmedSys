@@ -309,50 +309,22 @@ if ($mysqli->connect_errno) {
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="header-title mb-3">Historial de Fichas</h4>
-
+                                    @foreach ($ficha as $item)
                                     <div class="inbox-widget">
                                         <div class="inbox-item">
-                                            <div class="inbox-item-img"><img src="assets/images/users/avatar-2.jpg" class="rounded-circle" alt=""></div>
-                                            <p class="inbox-item-author">Tomaslau</p>
-                                            <p class="inbox-item-text">I've finished it! See you so...</p>
-                                            <p class="inbox-item-date">
-                                                <a href="#" class="btn btn-sm btn-link text-info font-13"> Reply </a>
-                                            </p>
-                                        </div>
-                                        <div class="inbox-item">
-                                            <div class="inbox-item-img"><img src="assets/images/users/avatar-3.jpg" class="rounded-circle" alt=""></div>
-                                            <p class="inbox-item-author">Stillnotdavid</p>
-                                            <p class="inbox-item-text">This theme is awesome!</p>
-                                            <p class="inbox-item-date">
-                                                <a href="#" class="btn btn-sm btn-link text-info font-13"> Reply </a>
-                                            </p>
-                                        </div>
-                                        <div class="inbox-item">
-                                            <div class="inbox-item-img"><img src="assets/images/users/avatar-4.jpg" class="rounded-circle" alt=""></div>
-                                            <p class="inbox-item-author">Kurafire</p>
-                                            <p class="inbox-item-text">Nice to meet you</p>
-                                            <p class="inbox-item-date">
-                                                <a href="#" class="btn btn-sm btn-link text-info font-13"> Reply </a>
-                                            </p>
-                                        </div>
-
-                                        <div class="inbox-item">
-                                            <div class="inbox-item-img"><img src="assets/images/users/avatar-5.jpg" class="rounded-circle" alt=""></div>
-                                            <p class="inbox-item-author">Shahedk</p>
-                                            <p class="inbox-item-text">Hey! there I'm available...</p>
-                                            <p class="inbox-item-date">
-                                                <a href="#" class="btn btn-sm btn-link text-info font-13"> Reply </a>
-                                            </p>
-                                        </div>
-                                        <div class="inbox-item">
-                                            <div class="inbox-item-img"><img src="assets/images/users/avatar-6.jpg" class="rounded-circle" alt=""></div>
-                                            <p class="inbox-item-author">Adhamdannaway</p>
-                                            <p class="inbox-item-text">This theme is awesome!</p>
+                                            <div class="inbox-item-img"><img class="profile-user-img img-fluid img-circle"
+                                                        src="{{Storage::url($result->avatar)}}"
+                                                        alt="User profile picture"
+                                                        width="100px" height="100px"></div>
+                                                        <h3 class="timeline-header"><a href="#">{{$result->pacnombre}} {{$result->pacapellidoP}}  {{$result->pacapellidoM}}</a> </h3>
+                                            <p class="inbox-item-author"><span class="bg-red">{{ \Carbon\Carbon::parse($item->created_at)->format('d-m-Y')}}</span></p>
+                                            <p class="inbox-item-text">  {{$item->observaciones}}</p>
                                             <p class="inbox-item-date">
                                                 <a href="#" class="btn btn-sm btn-link text-info font-13"> Reply </a>
                                             </p>
                                         </div>
                                     </div> <!-- end inbox-widget -->
+                                    @endforeach
                                 </div> <!-- end card-body-->
                             </div>
                             </div> <!-- end col-->
@@ -485,6 +457,7 @@ if ($mysqli->connect_errno) {
                                                         
                                                         <th class="all">N° </th>
                                                         <th>Fecha</th>
+                                                        <th>Hora</th>
                                                         <th>Especialista</th>
                                                         <th>Especialidad</th>
                                                         <th>Observaciones</th>
@@ -502,20 +475,21 @@ if ($mysqli->connect_errno) {
                                                         </td>
                                                         
                                                         <td>
-                                                           {{$item->fecha}}
+                                                            {{ \Carbon\Carbon::parse($item->events->start)->format('d-m-Y')}} 
                                                         </td>
                                                         <td>
-                                                           {{$item->empresa}}
+                                                            {{ \Carbon\Carbon::parse($item->events->start)->format('h:i:s A')}} 
                                                         </td>
                                                         <td>
-                                                           {{$item->descuento}}
+                                                           {{$item->especialistas->medidentificacion}}
                                                         </td>
                                                         <td>
-                                                           {{$item->observacion}}
+                                                           {{$item->especialidades->espNombre}}
                                                         </td>
                                                         <td>
-                                                           {{$item->contacto}}
+                                                           {{$item->observaciones}}
                                                         </td>
+                                                       
                                                         <td>
                                                             <div class="row">
                                                             <a href="{{route('Update-convenios', $item->id)}}" class="btn btn-primary mr-1"> <i class="far fa-edit"></i></a>
