@@ -78,6 +78,10 @@
                     							        @endforeach
 						                        </select>
                                             </div>
+                                            <div class="col-md-6">
+                                                <label for="inputEmail">Contraseña</label>
+                                                <input  class="form-control" type="email"  name="medcorreo" placeholder="Ingresa una contraseña para el Especialista" pattern="[A-Za-z0-9.-_,;:@ ]+" required>
+                                            </div>
                                         </div>
 
                                         <div align="center"> 

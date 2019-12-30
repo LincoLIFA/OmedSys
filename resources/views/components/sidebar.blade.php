@@ -32,8 +32,8 @@
         <ul class="nav nav-pills nav-legacy nav-child-indent nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-            <li class="nav-item has-treeview menu-open">
-                <a href="#" class="nav-link active">
+            <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
                 <i class="nav-icon far fa-calendar-alt"></i>
                 <p>
                 Control de Reserva
@@ -42,14 +42,14 @@
                 </a>
                 <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="{{route('Citas')}}" class="nav-link active">
-                    <i class="far fa-circle nav-icon"></i>
+                    <a href="{{route('Citas')}}" class="nav-link">
+                    <i class="nav-icon fas fa-user-friends"></i>
                     <p>Registro de Citas</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('Agregar-citas-vista')}}" class="nav-link active">
-                    <i class="far fa-circle nav-icon"></i>
+                    <a href="{{route('Agregar-citas-vista')}}" class="nav-link">
+                    <i class="nav-icon fas fa-user-edit"></i>
                     <p>Agregar citas</p>
                     </a>
                 </li>
@@ -89,18 +89,18 @@
                 <ul class="nav nav-treeview">
                 <li class="nav-item">
                     <a href="{{route('RegistroP')}}" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                    <i class="nav-icon far fa-address-book"></i>
                     <p>Registro de Pacientes</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{route('AggPacientes')}}" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                    <i class="nav-icon fas fa-user-plus"></i>
                     <p>Agregar Pacientes</p>
                     </a>
                 </ul>
           </li>
-          <li class="nav-item has-treeview menu-open">
+          <li class="nav-item has-treeview">
                 <a href="#" class="nav-link ">
                 <i class="nav-icon fas fa-user-md"></i>
                 <p>
@@ -110,22 +110,22 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{route('RegistroE')}}" class="nav-link active">
-                        <i class="far fa-circle nav-icon"></i>
+                        <a href="{{route('RegistroE')}}" class="nav-link">
+                        <i class="nav-icon fas fa-book-medical"></i>
                         <p>Registro de Especialistas</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('AggEspecialista')}}" class="nav-link active">
-                        <i class="far fa-circle nav-icon"></i>
+                        <a href="{{route('AggEspecialista')}}" class="nav-link">
+                        <i class="nav-icon fas fa-user-plus"></i>
                         <p>Agregar Especialista</p>
                         </a>
                     </li>
                 </ul>     
             </li>
-            <li class="nav-item has-treeview menu-open">
+            <li class="nav-item has-treeview">
                 <a href="#" class="nav-link ">
-                <i class="nav-icon fas fa-clinic-medical"></i>
+                    <i class="nav-icon fas fa-hospital"></i>
                 <p>
                 Áreas Clínicas
                     <i class="right fas fa-angle-left"></i>
@@ -133,14 +133,14 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{route('Registro-especialidades')}}" class="nav-link active">
-                        <i class="far fa-circle nav-icon"></i>
+                        <a href="{{route('Registro-especialidades')}}" class="nav-link">
+                        <i class="nav-icon fas fa-hospital-alt"></i>
                         <p>Registro de áreas</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('AggEspecialidades')}}" class="nav-link active">
-                        <i class="far fa-circle nav-icon"></i>
+                        <a href="{{route('AggEspecialidades')}}" class="nav-link">
+                        <i class="nav-icon fas fa-clinic-medical"></i>
                         <p>Agregar nuevas áreas</p>
                         </a>
                     </li>
