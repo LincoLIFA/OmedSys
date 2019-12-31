@@ -43,13 +43,13 @@
                 <ul class="nav nav-treeview">
                 <li class="nav-item">
                 <a href="{{route ('Citas_ESP')}}" class="nav-link ">
-                    <i class="far fa-circle nav-icon"></i>
+                <i class="nav-icon fas fa-book-medical"></i>
                     <p>Registro de citas agendadas</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{route ('Sesiones_ESP')}}" class="nav-link ">
-                    <i class="far fa-circle nav-icon"></i>
+                    <i class="nav-icon fas fa-user-friends"></i>
                     <p>Sesiones realizadas</p>
                     </a>
                 </li>
@@ -66,7 +66,7 @@
                 <ul class="nav nav-treeview">
                 <li class="nav-item">
                     <a href="{{route ('Pacientes_ESP')}}" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                    <i class="nav-icon far fa-address-book"></i>
                     <p>Registro de Pacientes</p>
                     </a>
                 </li>
@@ -83,13 +83,13 @@
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
                         <a href="#" class="nav-link active">
-                        <i class="far fa-circle nav-icon"></i>
+                        <i class="nav-icon fas fa-address-card"></i>
                         <p>Registro de Planes vigentes</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link active">
-                        <i class="far fa-circle nav-icon"></i>
+                        <i class="nav-icon fas fa-notes-medical"></i>
                         <p>Agregar nuevo Plan</p>
                         </a>
                     </li>
@@ -106,13 +106,13 @@
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
                         <a href="" class="nav-link active">
-                        <i class="far fa-circle nav-icon"></i>
+                        <i class="nav-icon fas fa-file-import"></i>
                         <p>Prestaciones emitidas</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="" class="nav-link active">
-                        <i class="far fa-circle nav-icon"></i>
+                        <i class="nav-icon fas fa-file-invoice-dollar"></i>
                         <p>Estado de pago</p>
                         </a>
                     </li>
