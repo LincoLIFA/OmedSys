@@ -90,8 +90,11 @@
 <script src="{{asset('dashboard/dist/js/adminlte.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('dashboard/dist/js/pages/dashboard.js')}}"></script>
-<!-- AdminLTE for demo purposes -->
+<!-- AdminLTE for demo purposes /srv/http/OmedSys/public/js -->
 <script src="{{asset('dashboard/dist/js/demo.js')}}"></script>
+
+<!-- Verificador de rut -->
+<script src="{{asset('js/jquery.rut.chileno.min.js')}}"></script>
 
 <!-- fullcalendar party JS -->  
 <script src="{{asset('fullcalendar4/packages/core/main.js')}}"></script>
@@ -128,5 +131,14 @@
     
 } );
   </script>
+  <script type="text/javascript">
+    jQuery(document).ready(function($){
+      $('.valid_rut').rut({
+        format_on: 'keyup',
+        
+      });
+
+    });
+    </script>
 </body>
 </html>

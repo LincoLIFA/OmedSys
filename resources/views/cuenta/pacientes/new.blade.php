@@ -40,7 +40,7 @@
                                         <div class="form-row mt-2">
                                             <div class="col-md-6">
                                                 <label for="inputRUT">RUT</label>
-                                                <input type="text" class="form-control" id="rut" required oninput="checkRut(this)" name="pacidentificacion" placeholder="Sin puntos ni guion"  minlength="10" maxlength="10" required>
+                                                <input type="text" class="form-control valid_rut" id="rut" required oninput="checkRut(this)" name="pacidentificacion" placeholder="Sin puntos ni guion"  minlength="10" maxlength="10" required>
                                             </div>  
 					                        <div class="col-md-6">
                                                 <label for="inputDATE">Fecha de nacimiento</label>
