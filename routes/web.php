@@ -194,7 +194,14 @@ Route::delete('Delete-Aranceles/{id}', 'ArancelesController@destroy')->name('Del
 /*fin de gestion de citas*/
 
 
-
+/* planes de tratamientos */ 
+Route::get('Aranceles/Aranceles', 'ArancelesController@index')->name('Registro-Aranceles');
+Route::get('Aranceles/AggAranceles', 'ArancelesController@create')->name('Agregar-Aranceles');
+Route::get('Aranceles/actAranceles{id}', 'ArancelesController@edit')->name('Update-Aranceles');
+Route::post('/Agregar-Aranceles', 'ArancelesController@store')->name('Agregar-nuevo-Aranceles');
+Route::put('Actualizar-Aranceles/{id}', 'ArancelesController@update')->name('Actualizar-Aranceles');
+Route::delete('Delete-Aranceles/{id}', 'ArancelesController@destroy')->name('Delete-Aranceles');
+/* fin de planes de tratamientos */ 
 
 
 
