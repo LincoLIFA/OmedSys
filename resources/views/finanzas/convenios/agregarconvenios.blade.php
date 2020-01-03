@@ -11,7 +11,7 @@
                                         
                 </div>
 
-                <h4 class="page-title">Agregar nuevos Convenios </h4>
+                <h4 class="page-title">Agregar nuevo Convenio </h4>
         </div>
 
 <!-- fin de caebcera de sección -->
@@ -56,7 +56,7 @@
                                             </div>
                                         </div>                                 
                                         <div align="center"> 
-					  	                <input type="submit" class="btn btn-danger btn-block mt-3" name="enviar" value="Agregar registro de paciente" style='width:500px; height:35px'>
+					  	                <input type="submit" class="btn btn-danger btn-block mt-3" name="enviar" value="Agregar Convenio" style='width:500px; height:35px'>
                                         </div>
                                     </form>
 

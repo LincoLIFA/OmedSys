@@ -29,7 +29,7 @@
                                              <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                   <label for="inputDate">Fecha</label>
-                                                  <input type="date" class="form-control" name="citfecha" placeholder="Fecha" value=""required/>
+                                                  <input type="date" class="form-control Fecha" name="citfecha" placeholder="Fecha" value=""required/>
                                                 <small id="emailHelp" class="form-text text-muted">Debe escoger un día</small>
                                                 </div>
                                                 <div class="form-group col-md-6">
@@ -75,7 +75,7 @@
                     							        </select> 
                                             </div>
                     						    <div class="form-group col-md-6">
-                                                    <label for="inputPassword">Metodo Confirmacion</label>
+                                                    <label for="inputPassword">Metodo Confirmación</label>
                                                       <select name="confirmacion"  class="custom-select mr-sm-1" required>
                     							        <option value="Whatsapp">Whatsapp</option>
                     							        <option value="Telefono">Telefono</option>

@@ -23,7 +23,7 @@
                         <div class="card-body">
                             <div class="row mb-2">
                                 <div class="col-sm-4">
-                                    <a href="{{url('Citas/aggcitas')}}" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle mr-2"></i> Crear nueva cita</a>
+                                    <a href="{{url('Especialidades/New')}}" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle mr-2"></i> Crear Nueva Área</a>
                                 </div>              
                             </div>
                             <table class="table Tablas table-bordered table-striped">

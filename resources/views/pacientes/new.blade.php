@@ -32,7 +32,7 @@
                                                 <input type="text" class="form-control" name="pacapellidoP" placeholder="Ingrese sus apellidos"  minlength="1" maxlength="50"pattern="[A-Za-z.-_,;: ]+" required>
                                             </div>
                                             <div class="col">
-                                                <label for="inputLastname">Apellido Materno</label>cd
+                                                <label for="inputLastname">Apellido Materno</label>
                                                 <input type="text" class="form-control" name="pacapellidoM" placeholder="Ingrese sus apellidos"  minlength="1" maxlength="50"pattern="[A-Za-z.-_,;: ]+" required>
                                             </div>
                                         </div>
@@ -74,7 +74,7 @@
                                         </div>
                                         
                                         <div align="center"> 
-					  	                <input type="submit" class="btn btn-danger btn-block mt-3" name="enviar" value="Agregar registro de paciente" style='width:500px; height:35px'>
+					  	                <input type="submit" class="btn btn-danger btn-block mt-3" name="enviar" value="Agregar Paciente" style='width:500px; height:35px'>
                                         </div>
                                     </form>
                                     </div> <!-- end card body-->
