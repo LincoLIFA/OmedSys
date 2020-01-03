@@ -17,7 +17,7 @@
                                              <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                   <label for="inputDate">Fecha</label>
-                                                  <input type="date" class="form-control" name="citfecha" placeholder="Fecha" value=" {{ \Carbon\Carbon::parse($cita->events->start)->format('d/m/Y')}}"required/>
+                                                  <input type="date" class="form-control Fecha" name="citfecha" placeholder="Fecha" value=" {{ \Carbon\Carbon::parse($cita->events->start)->format('d/m/Y')}}"required/>
                                                 <small id="emailHelp" class="form-text text-muted">Debe escoger un día</small>
                                                 </div>
                                                 <div class="form-group col-md-6">
