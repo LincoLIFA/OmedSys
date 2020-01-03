@@ -2,7 +2,7 @@
 @section('card')
 
 <?php
-$mysqli = new mysqli("localhost","root","", "laravel");
+$mysqli = new mysqli("localhost","root","toor", "laravel");
 if ($mysqli->connect_errno) { 
     echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
@@ -203,7 +203,7 @@ if ($mysqli->connect_errno) {
                 <div class="card-body">
                   <!-- the events -->
                   <div id="external-events">
-                    <div class="external-event bg-success">Lunch</div>
+                    <div class="external-event Suspender bg-success">Lunch</div>
                     <div class="external-event bg-warning">Go home</div>
                     <div class="external-event bg-info">Do homework</div>
                     <div class="external-event bg-primary">Work on UI design</div>
@@ -397,7 +397,7 @@ if ($mysqli->connect_errno) {
                                         <a href="">{{$item2->id}}</a>
                                     </td>
                                     <td>
-                                        {{ \Carbon\Carbon::parse($item2->events->start)->format('d/m/Y')}} 
+                                        {{ \Carbon\Carbon::parse($item2->events->start)->format('d-m-Y')}} 
                                     </td>
                                                                     
                                     <td>
