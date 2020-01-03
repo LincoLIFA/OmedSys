@@ -204,7 +204,9 @@ Route::delete('Delete-Aranceles/{id}', 'ArancelesController@destroy')->name('Del
 
 
 
-
+Route::get('plan', function () {
+        return view('cuenta.plan_de_tratamiento.registro');
+  });
 
 
 
