@@ -35,7 +35,7 @@
 					                    <div class="form-row">
                                             <div class="col-md-6">
                                             <label for="inputRUT">RUT</label>
-                                            <input type="text" class="form-control" id="rutmed"  name="rut_med" placeholder="Sin puntos ni guion" required oninput="checkRut(this)"  minlength="10" maxlength="10" required>
+                                            <input type="text" class="form-control valid_rut" id="rutmed"  name="rut_med" placeholder="Sin puntos ni guion" required oninput="checkRut(this)"  minlength="10" maxlength="10" required>
                                         </div>
 
                                         <div class="col-md-6">
@@ -63,7 +63,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="inputLastname">N°de celular</label>
-                                                <input type="numeric" class="form-control" name="medtelefono" placeholder="Numero de celular" value="+569" minlength="13" maxlength="13" pattern="[0-9.-_,;: ]+" required>
+                                                <input type="numeric" class="form-control" name="medtelefono" placeholder="Numero de celular" value="569" minlength="11" maxlength="11" pattern="[0-9.-_,;: ]+" required>
                                                 <small id="telefonoHelp" class="form-text text-muted">Nota: solo debes ingresar los 8 digitos de tu numero de celular</small>
                                             </div>
                                         </div>    
@@ -100,56 +100,7 @@
                     </div> <!-- container -->
                      
 
-                    <script>
-                            function checkRut(rutmed) {
-                                // Despejar Puntos
-                                var valor = rutmed.value.replace('.','');
-                                // Despejar Guión
-                                valor = valor.replace('-','');
-                                
-                                // Aislar Cuerpo y Dígito Verificador
-                                cuerpo = valor.slice(0,-1); 
-                                dv = valor.slice(-1).toUpperCase();
-                                
-                                // Formatear RUN
-                                rutmed.value = cuerpo + '-'+ dv
-                                
-                                // Si no cumple con el mínimo ej. (n.nnn.nnn)
-                                if(cuerpo.length < 7) { rutmed.setCustomValidity("RUT Incompleto"); return false;}
-                                
-                                // Calcular Dígito Verificador
-                                suma = 0;
-                                multiplo = 2;
-                                
-                                // Para cada dígito del Cuerpo
-                                for(i=1;i<=cuerpo.length;i++) {
-                                
-                                    // Obtener su Producto con el Múltiplo Correspondiente
-                                    index = multiplo * valor.charAt(cuerpo.length - i);
-                                    
-                                    // Sumar al Contador General
-                                    suma = suma + index;
-                                    
-                                    // Consolidar Múltiplo dentro del rango [2,7]
-                                    if(multiplo < 7) { multiplo = multiplo + 1; } else { multiplo = 2; }
-                              
-                                }
-                                
-                                // Calcular Dígito Verificador en base al Módulo 11
-                                dvEsperado = 11 - (suma % 11);
-                                
-                                // Casos Especiales (0 y K)
-                                dv = (dv == 'K')?10:dv;
-                                dv = (dv == 0)?11:dv;
-                                
-                                // Validar que el Cuerpo coincide con su Dígito Verificador
-                                if(dvEsperado != dv) { rutmed.setCustomValidity("RUT Inválido"); return false; }
-                                
-                                // Si todo sale bien, eliminar errores (decretar que es válido)
-                                rutmed.setCustomValidity('');
-                            }
-                            </script>
-                                        
+                   
                                 
                            
 
