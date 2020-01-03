@@ -94,7 +94,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('Agregar-nuevo-Descuentos')}}" class="nav-link">
+                    <a href="{{route('Agregar-Descuentos')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Agregar nuevo Descuento</p>
                     </a>

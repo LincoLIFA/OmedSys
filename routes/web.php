@@ -199,9 +199,13 @@ Route::delete('Delete-Aranceles/{id}', 'ArancelesController@destroy')->name('Del
 
 
 
+Route::get('pago', function () {
+        return view('cuenta.prestaciones.pago');
+  });
 
-
-
+Route::get('prestaciones', function () {
+        return view('cuenta.Prestaciones.registro');
+  });
 
 
 Route::get('plan', function () {
