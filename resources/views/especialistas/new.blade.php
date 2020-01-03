@@ -11,7 +11,7 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1>Ingreso de especialistas </h1>
+        <h1>Ingreso de Especialistas </h1>
       </div>
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
@@ -85,7 +85,7 @@
                                         </div>
 
                                         <div align="center"> 
-                                        <input type="submit" class="btn btn-danger btn-block mt-3" name="enviar" value="Ingresar nuevo especialista" style='width:500px; height:35px'>
+                                        <input type="submit" class="btn btn-danger btn-block mt-3" name="enviar" value="Ingresar Nuevo Especialista" style='width:500px; height:35px'>
                                     </div>
 
 					                   </form>  

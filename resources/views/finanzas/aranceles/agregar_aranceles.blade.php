@@ -33,7 +33,7 @@
                                         </div>
                                         <div class="form-row">
                                             <div class="col-md-6">
-                                                <label for="inputLastname">precio </label>
+                                                <label for="inputLastname">Precio </label>
                                                 <input type="text" class="form-control" name="precios" placeholder="Ingrese valor del procedimiento"  minlength="1" maxlength="50"pattern="[A-Za-z.-_,;: ]+" required>
                                             </div>
                                         </div>

@@ -38,7 +38,7 @@
                     <div class="card-body">
                       <strong><i class="fas fa-user-cog mr-1"></i>Distribucion de permisos</strong>
                       <p class="text-muted">
-                       OmedSys permite la maniplacion de un administrador de la plataforma con acceso a todo el sistema.
+                       OmedSys permite la manipulación de un administrador de la plataforma con acceso a todo el sistema.
                       </p>
                       <hr>
                     </div>

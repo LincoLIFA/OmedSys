@@ -33,12 +33,12 @@
                                         </div>
                                         <div class="form-row mt-2">
                                             <div class="col-md-6">
-                                                <label for="inputRUT">% Retencion</label>
+                                                <label for="inputRUT">% Retención</label>
                                                 <input type="text" class="form-control" id="retencion"   name="retencion" placeholder="Ingrese tasa de retencion"  required>
                                             </div>  
                                         </div>                                  
                                         <div align="center"> 
-					  	                     <input type="submit" class="btn btn-danger btn-block mt-3" name="enviar" value="Agregar registro de paciente" style='width:500px; height:35px'>
+					  	                     <input type="submit" class="btn btn-danger btn-block mt-3" name="enviar" value="Agregar Medio de Pago" style='width:500px; height:35px'>
                                         </div>
                                     </form>
                                     </div> <!-- end card-body-->
