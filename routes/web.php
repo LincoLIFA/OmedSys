@@ -195,12 +195,12 @@ Route::delete('Delete-Aranceles/{id}', 'ArancelesController@destroy')->name('Del
 
 
 /* planes de tratamientos */ 
-Route::get('Aranceles/Aranceles', 'ArancelesController@index')->name('Registro-Aranceles');
-Route::get('Aranceles/AggAranceles', 'ArancelesController@create')->name('Agregar-Aranceles');
-Route::get('Aranceles/actAranceles{id}', 'ArancelesController@edit')->name('Update-Aranceles');
-Route::post('/Agregar-Aranceles', 'ArancelesController@store')->name('Agregar-nuevo-Aranceles');
-Route::put('Actualizar-Aranceles/{id}', 'ArancelesController@update')->name('Actualizar-Aranceles');
-Route::delete('Delete-Aranceles/{id}', 'ArancelesController@destroy')->name('Delete-Aranceles');
+Route::get('Planes/planes', 'PlanesDeTratamientosController@index')->name('Registro-Planes');
+Route::get('Planes/AggPlanes', 'PlanesDeTratamientosController@create')->name('Agregar-Planes');
+Route::get('Planes/actPlanes{id}', 'PlanesDeTratamientosController@edit')->name('Update-Planes');
+Route::post('Planes-Planes', 'PlanesDeTratamientosController@store')->name('Agregar-nuevo-Planes');
+Route::put('Planes-Planes/{id}', 'PlanesDeTratamientosController@update')->name('Actualizar-Planes');
+Route::delete('Delete-Planes/{id}', 'PlanesDeTratamientosController@destroy')->name('Delete-Planes');
 /* fin de planes de tratamientos */ 
 
 

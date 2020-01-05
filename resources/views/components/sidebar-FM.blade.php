@@ -82,7 +82,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="#" class="nav-link active">
+                        <a href="{{route ('Registro-Planes')}}" class="nav-link active">
                         <i class="nav-icon fas fa-address-card"></i>
                         <p>Registro de Planes vigentes</p>
                         </a>

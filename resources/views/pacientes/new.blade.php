@@ -44,7 +44,7 @@
                                             </div>  
 					                        <div class="col-md-6">
                                                 <label for="inputDATE">Fecha de nacimiento</label>
-                                                <input type="date" class="form-control"  name="pacfechaN" pattern="[A-Za-z0-9.-_,;: ]+" required>
+                                                <input type="date" class="form-control Fecha-Nacimiento"  name="pacfechaN" pattern="[A-Za-z0-9.-_,;: ]+" required>
                                              </div> 
                                         </div> 
 

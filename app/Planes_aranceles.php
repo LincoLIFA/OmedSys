@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class planes_aranceles extends Model
+class Planes_aranceles extends Model
 {
 
 

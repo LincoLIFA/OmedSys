@@ -2,11 +2,12 @@
 @section('card')
 
 <?php
-$mysqli = new mysqli("localhost","root","", "laravel");
+$mysqli = new mysqli("localhost","root","toor", "laravel");
 if ($mysqli->connect_errno) { 
     echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
-  $sql=$mysqli->query("select * from `events` join `citas` where citas.events_id = events.id");
+  $sql=$mysqli->query("select * from `events` ");
+  
 
 	
 
@@ -69,6 +70,7 @@ if ($mysqli->connect_errno) {
             classNames:"<?php echo $fila['classNames'];?>",
             description:"<?php echo $fila['description'];?>",
           },
+          
           <?php } ?>
         
     
@@ -134,13 +136,17 @@ if ($mysqli->connect_errno) {
  
   
   new Draggable(containerEl, {
-      itemSelector: '.Suspender',
+      itemSelector: '.external-event',
       eventData: function(eventEl) {
         return {
+          
           title: eventEl.innerText,
            duration: '02:00',
-            classNames:'bloquear',
-            
+           classNames: eventEl.innerText,
+           backgroundColor: window.getComputedStyle( eventEl ,null).getPropertyValue('background-color'),
+          borderColor: window.getComputedStyle( eventEl ,null).getPropertyValue('background-color'),
+          textColor: window.getComputedStyle( eventEl ,null).getPropertyValue('color'),
+        
           
           
         }
@@ -162,8 +168,21 @@ if ($mysqli->connect_errno) {
    #external-events .fc-event {
     cursor: move;
   }
-  .bloquear{
-  background:#fa5c7c;
+  .Colacion{
+  background:#28a745;
+}
+
+.Suspencion{
+  background:#dc3545;
+}
+
+.Actividades{
+  background:#007bff;
+}
+
+
+.Bloqueo{
+  background:#ffc107;
 }
 
     .No-confirmado{
@@ -171,7 +190,7 @@ if ($mysqli->connect_errno) {
     }
     
     .Confirmado{
-     background:#0acf97;
+     background:#28a745;
     }
     
 
@@ -198,54 +217,24 @@ if ($mysqli->connect_errno) {
             <div class="sticky-top mb-3">
               <div class="card">
                 <div class="card-header">
-                  <h4 class="card-title">Draggable Events</h4>
+                  <h4 class="card-title">Eventos Rapidos</h4>
                 </div>
                 <div class="card-body">
                   <!-- the events -->
                   <div id="external-events">
-                    <div class="external-event Suspender bg-success">Lunch</div>
-                    <div class="external-event bg-warning">Go home</div>
-                    <div class="external-event bg-info">Do homework</div>
-                    <div class="external-event bg-primary">Work on UI design</div>
-                    <div class="external-event bg-danger">Sleep tight</div>
+                    <div class="external-event Suspender bg-success">Colacion</div>
+                    <div class="external-event Suspender bg-danger">Suspencion</div>
+                    <div class="external-event Suspender bg-warning">Bloqueo</div>
+                    <div class="external-event Suspender bg-primary">Actividades</div>
                     <div class="checkbox">
-                      <label for="drop-remove">
-                        <input type="checkbox" id="drop-remove">
-                        remove after drop
-                      </label>
+                      
                     </div>
                   </div>
                 </div>
                 <!-- /.card-body -->
               </div>
               <!-- /.card -->
-              <div class="card">
-                <div class="card-header">
-                  <h3 class="card-title">Create Event</h3>
-                </div>
-                <div class="card-body">
-                  <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
-                    <!--<button type="button" id="color-chooser-btn" class="btn btn-info btn-block dropdown-toggle" data-toggle="dropdown">Color <span class="caret"></span></button>-->
-                    <ul class="fc-color-picker" id="color-chooser">
-                      <li><a class="text-primary" href="#"><i class="fas fa-square"></i></a></li>
-                      <li><a class="text-warning" href="#"><i class="fas fa-square"></i></a></li>
-                      <li><a class="text-success" href="#"><i class="fas fa-square"></i></a></li>
-                      <li><a class="text-danger" href="#"><i class="fas fa-square"></i></a></li>
-                      <li><a class="text-muted" href="#"><i class="fas fa-square"></i></a></li>
-                    </ul>
-                  </div>
-                  <!-- /btn-group -->
-                  <div class="input-group">
-                    <input id="new-event" type="text" class="form-control" placeholder="Event Title">
-
-                    <div class="input-group-append">
-                      <button id="add-new-event" type="button" class="btn btn-primary">Add</button>
-                    </div>
-                    <!-- /btn-group -->
-                  </div>
-                  <!-- /input-group -->
-                </div>
-              </div>
+              
             </div>
           </div>
           <!-- /.col -->

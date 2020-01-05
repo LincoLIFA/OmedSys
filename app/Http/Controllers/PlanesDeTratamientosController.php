@@ -22,7 +22,7 @@ class PlanesDeTratamientosController extends Controller
    public function index()
    {
         $result =  App\PlanesDeTratamientos::all();
-        return view('cuenta.plane_de_tratamiento.registro',compact('result'));
+        return view('cuenta.plan_de_tratamiento.registro',compact('result'));
    }
 
    /**
@@ -37,7 +37,7 @@ class PlanesDeTratamientosController extends Controller
         $result3 =  App\Especialidades::all();
         $result4 =  App\Aranceles::all();
 
-        return view('cuenta.plane_de_tratamiento.new',compact('result'));
+        return view('cuenta.plan_de_tratamiento.new',compact('result','result2','result3','result4'));
    }
 
    /**
@@ -58,12 +58,12 @@ class PlanesDeTratamientosController extends Controller
        $planes_id=$planes->id;
        $aranceles_id=$request->aranceles;
        foreach($aranceles_id as $id){
-           $ids= new App\planes_aranceles;
-           $ids->planes_id=$planes_id;
-           $ids->aranceles_id=$id;
+           $ids= new App\Planes_aranceles;
+           $ids->planes_id=$planes->id;
+           $ids->aranceles_id=$id[1];
            $ids->save();
        }
-       return view('cuenta.plane_de_tratamiento.registro',compact('result'));
+       return view('cuenta.plan_de_tratamiento.registro',compact('result'));
    }
 
    /**

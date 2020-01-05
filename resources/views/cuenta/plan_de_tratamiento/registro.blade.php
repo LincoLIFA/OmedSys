@@ -25,51 +25,70 @@
                         <div class="card-body">
                         <div class="row mb-2">
                             <div class="col-sm-4">
-                            <a href="{{url('Especialidades/New')}}" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle mr-2"></i> Agregar Nuevo Plan</a>
+                            <a href="{{route('Agregar-Planes')}}" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle mr-2"></i> Agregar Nuevo Plan</a>
                             </div>              
                             </div>
                             
                             <table class="table Tablas table-bordered table-striped">
                                 <thead class="thead-light">
                                     <tr>
-                                        <th class="all">#ID</th>
+                                        <th class="all">Nª</th>
                                         <th>Nombre del Plan</th>
                                         <th>Nombre Especialista</th>
                                         <th>Especialidad</th>
                                         <th>Arancel</th>
+                                        <th>Action</th>
                                                             
                                     </tr>
                                  </thead>
                                  <tbody>
-                                     <td> </td> 
-                                     <td> </td> 
-                                     <td> </td> 
-                                     <td> </td> 
-                                     <td
-                                     <button type="button" class="btn btn-primary mr-1" data-toggle="modal" data-target="#exampleModal">
-                                     </button>
+                                     @foreach ($result as $item)
+                                         <tr>
+                                    
+                                     <td> <a href="">{{$item->id}}</a> </td> 
+                                     <td> {{$item->nombre}}</td> 
+                                     <td> {{$item->especialistas->medidentificacion}}</td>
+                                     <td> {{$item->especialidades->espNombre}}</td>
+                                     <td> 
+                                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#plan-{{$item->id}}"> Ver Procedimientos</button>
+                                   
                                  <!-- Modal --> 
-                                      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                      <div class="modal-dialog" role="document">
-                                      <div class="modal-content">
-                                      <div class="modal-header">
-                                      <h5 class="modal-title" id="exampleModalLabel">Aranceles</h5>
-                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
-                                      </button>
-                                      </div>
-                                      <div class="modal-body">
-                                          ...
-                                    </div>
-                                    <div class="modal-footer">
-                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                   <button type="button" class="btn btn-primary">Guardar</button>
-                               </div>
-                           </div>
-                        </div>
-                        </div>
-</td>
                                 
+                                    <div class="modal fade" id="plan-{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="{{$item->id}}-Plan" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Aranceles {{$item->nombre}}</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                  
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                 </td>
+                                 <td>
+                                    <div class="row">
+                                        <a href="{{route('Actualizar-Planes', $item->id)}}" class="btn btn-primary mr-1"> <i class="far fa-edit"></i></a>
+                                        <form method="post" action="{{route('Delete-Planes', $item->id)}}">
+                                            @method('DELETE') 
+                                            @csrf
+                                            <button  class="btn btn-primary" type="submit"><i class="far fa-trash-alt"></i></button>
+                                        </form>
+                                    </div>  
+                                </td> 
+                            </tr>
+                        @endforeach
+                                 </tbody>
+
                             </table>
                         </div>
                          <!-- /.card-body -->

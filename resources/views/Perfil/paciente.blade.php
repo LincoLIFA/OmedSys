@@ -313,10 +313,10 @@ if ($mysqli->connect_errno) {
                                     <div class="inbox-widget">
                                         <div class="inbox-item">
                                             <div class="inbox-item-img"><img class="profile-user-img img-fluid img-circle"
-                                                        src="{{Storage::url($result->avatar)}}"
+                                                        src="{{Storage::url($pacientes->avatar)}}"
                                                         alt="User profile picture"
                                                         width="100px" height="100px"></div>
-                                                        <h3 class="timeline-header"><a href="#">{{$result->pacnombre}} {{$result->pacapellidoP}}  {{$result->pacapellidoM}}</a> </h3>
+                                                        <h3 class="timeline-header"><a href="#">{{$pacientes->pacnombre}} {{$pacientes->pacapellidoP}}  {{$pacientes->pacapellidoM}}</a> </h3>
                                             <p class="inbox-item-author"><span class="bg-red">{{ \Carbon\Carbon::parse($item->created_at)->format('d-m-Y')}}</span></p>
                                             <p class="inbox-item-text">  {{$item->observaciones}}</p>
                                             <p class="inbox-item-date">

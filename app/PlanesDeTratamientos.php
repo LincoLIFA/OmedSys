@@ -18,9 +18,6 @@ class PlanesDeTratamientos extends Model
     {
         return $this->belongsTo('App\Especialidades', 'especialidades_id');
     }
-    public function aranceles()
-    {
-        return $this->belongsTo('App\Aranceles', 'aranceles_id');
-    }
+    
     
 }
