@@ -11,6 +11,8 @@
 |
 */
 
+URL::forceRootUrl('http://mi.dominio/Proyecto/public');
+
 Route::get('/', function () {
     return view('auth.login');
 });
