@@ -23,9 +23,9 @@ class CitasController extends Controller
      */
     public function index()
     {
-        
+        $sql = App\Events::all();
       $result =  App\Citas::all();
-        return view('citas.citas',compact('result'));
+        return view('citas.citas',compact('result' , 'sql'));
     }
     
 
@@ -119,7 +119,24 @@ class CitasController extends Controller
     public function update(Request $request, $id)
     {
         $citas = App\Citas::findOrfail($id);
-        $citas->update($request->all());
+        $events =  App\Events::where('events.id','citas.events_id');
+
+        $fecha =$request->citfecha;
+        $hora =$request->cithora;
+        $hora1 = strtotime ( '+1 hour' , strtotime ($hora) ) ;
+
+        $events->start =  $fecha."T".$hora;
+        $events->end = $fecha."T".$hora1;
+        $events->update();
+
+        $cita->events_id =  $events->id;
+        $cita->paciente_id = $request->pacientes_id;
+        $cita->medico_id = $request->especialistas_id;
+        $cita->especialidades_id = $request->citEsp;
+        $cita->estado = $request->citEstado;
+        $cita->observaciones= $request->citObservaciones;
+        $cita->confirmacion = $request->confirmacion;
+        $citas->update();
         $result =  App\Citas::all();
         return view('citas.citas',compact('result'));
     }

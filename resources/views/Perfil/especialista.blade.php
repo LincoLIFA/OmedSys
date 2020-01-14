@@ -1,17 +1,13 @@
 @extends('index')
 @section('card')
 
-
-
 <?php
- $mysqli = new mysqli("localhost", "root", "", "laravel");
-if ($mysqli->connect_errno) {
-    echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-}
-       
-$sql=$mysqli->query("select * from `events` join `citas` join `especialistas` where citas.events_id = events.id  and citas.medico_id =  '{$especialistas->id}' ");
-	
+$mysqli = DB::connection();
+$sql = App\Citas::where('medico_id', $especialistas->id)->get();
 ?>
+
+
+
 
 
 

@@ -109,7 +109,7 @@
                                                       <div class="row">
                                                           <div class="col-md-12">
 
-                                                              <form class="my-2" action="{{route ('AgregarC')}}" method="POST">
+                                                              <form class="my-2" action="{{route ('Agregar-nuevo-Planes')}}" method="POST">
                                                                   @method('POST') 
                                                                    @csrf
                                                                 <div class="form-row col-md-10">

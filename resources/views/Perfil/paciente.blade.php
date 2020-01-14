@@ -1,20 +1,10 @@
 @extends('index')
 @section('card')
 
-
 <?php
-$mysqli = new mysqli("localhost", "root", "", "laravel");
-
-if ($mysqli->connect_errno) {
-    echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-}
-       
-  $sql=$mysqli->query("select * from `events`  ");
-  	
+$mysqli = DB::connection();
+$sql = App\Citas::where('paciente_id', $pacientes->id)->get();
 ?>
-
-
-
 
 <script type="text/javascript">
     $(document).ready( function () {
@@ -328,9 +318,6 @@ if ($mysqli->connect_errno) {
                                 </div> <!-- end card-body-->
                             </div>
                             </div> <!-- end col-->
-
-
-
                             <!-- Modal -->
                             <div class="modal fade" id="crear-ficha" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -346,9 +333,6 @@ if ($mysqli->connect_errno) {
                                 <form class="my-2" action="{{route ('AgregarC')}}" method="POST">
                                                @method('POST') 
                                                 @csrf
-                                             
-                                              
-                    						
                                             <div class="form-group">
                     						    <div class="form-group row">
                                                     <label for="inputPassword" class="col-sm-2 col-form-label">Profesional</label>
@@ -357,7 +341,6 @@ if ($mysqli->connect_errno) {
                     							        <option value="Seleccione un profesional">Seleccione un profesional</option>
                     							        @foreach ($result2 as $mostrar)
                     							        <option value="{{$mostrar->id}}">{{$mostrar->medidentificacion}}</option>
-                    							        
                     							        @endforeach
                     							        </select>
                                                     </div>
@@ -382,9 +365,7 @@ if ($mysqli->connect_errno) {
                                             </div>
                                             <input type="submit" name="enviar" class="btn btn-danger btn-block" value="Ingresar registro de reserva">
                     					</form>
-                        
-
-
+                    
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

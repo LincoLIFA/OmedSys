@@ -22,7 +22,8 @@ class PlanesDeTratamientosController extends Controller
    public function index()
    {
         $result =  App\PlanesDeTratamientos::all();
-        return view('cuenta.plan_de_tratamiento.registro',compact('result'));
+        $planes_aranceles = App\Planes_aranceles::all();
+        return view('cuenta.plan_de_tratamiento.registro',compact('result' ,'planes_aranceles'));
    }
 
    /**
@@ -57,13 +58,15 @@ class PlanesDeTratamientosController extends Controller
 
        $planes_id=$planes->id;
        $aranceles_id=$request->aranceles;
-       foreach($aranceles_id as $id){
+       foreach($aranceles_id as $id => $value){
            $ids= new App\Planes_aranceles;
            $ids->planes_id=$planes->id;
-           $ids->aranceles_id=$id[1];
+           $ids->aranceles_id=$value;
            $ids->save();
        }
-       return view('cuenta.plan_de_tratamiento.registro',compact('result'));
+       $result =  App\PlanesDeTratamientos::all();
+       $planes_aranceles = App\Planes_aranceles::all();
+       return view('cuenta.plan_de_tratamiento.registro',compact('result' ,'planes_aranceles'));
    }
 
    /**

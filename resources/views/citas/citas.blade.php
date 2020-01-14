@@ -2,15 +2,8 @@
 @section('card')
 
 <?php
-$mysqli = new mysqli("localhost","root","toor", "laravel");
-if ($mysqli->connect_errno) { 
-    echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-}
-  $sql=$mysqli->query("select * from `events` ");
-  
-
-	
-
+$mysqli = DB::connection();
+$sql =  App\Events::all();
 ?>
 
    <!-- Script de fullcalendar -->
@@ -59,8 +52,7 @@ if ($mysqli->connect_errno) {
         events:[
         <?php
         foreach ($sql as $fila)
-        {
-            
+        {        
         ?>
           {
             id:"<?php echo $fila['id'];?>",
@@ -255,7 +247,6 @@ if ($mysqli->connect_errno) {
     </section>
     <!-- /.content -->
 
-
                     <div class="container-fluid">         
                                         <!-- Modal -->
                                         <div class="modal fade" id="modalReserva" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -387,11 +378,9 @@ if ($mysqli->connect_errno) {
                                     </td>
                                     <td>
                                         {{ \Carbon\Carbon::parse($item2->events->start)->format('d-m-Y')}} 
-                                    </td>
-                                                                    
+                                    </td>                        
                                     <td>
-                                        {{$item2->pacientes->pacnombre}}  {{$item2->pacientes->pacapellidoP}} 
-                                    
+                                       {{$item2->pacientes->pacnombre}}   {{$item2->pacientes->pacapellidoP}} 
                                     </td>
                                     <td>
                                         {{$item2->pacientes->pactelefono}}
