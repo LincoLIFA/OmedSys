@@ -37,6 +37,8 @@
   <link  href="{{asset('fullcalendar4/packages/list/main.css')}}" rel="stylesheet"/>
   <link  href="{{asset('fullcalendar4/packages/timeline/main.min.css')}}" rel='stylesheet' />
   <link  href="{{asset('fullcalendar4/packages/resource-timeline/main.min.css')}}" rel='stylesheet' />
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
+
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -62,6 +64,7 @@
 <!-- jQuery UI 1.11.4 -->
 <script src="{{asset('dashboard/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
@@ -185,5 +188,13 @@
 
     });
     </script>
+     </script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+    $('.Select2').select2();
+    });
+    </script>
+
+
 </body>
 </html>

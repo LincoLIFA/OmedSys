@@ -43,7 +43,7 @@
                     						<div class="form-row">
                     						    <div class="form-group col-md-6">
                                                     <label for="inputPassword">Paciente</label> 
-                                                      <select name="pacientes_id"  class="custom-select mr-sm-1" required>
+                                                      <select name="pacientes_id"  class="Select2 custom-select mr-sm-1" required>
                     							        <option value="Seleccione un paciente">Seleccione un paciente</option>
                     							        @foreach ($result2 as $mostrar)
                     							        <option value="{{$mostrar->id}}">{{$mostrar->pacnombre}} {{$mostrar->pacapellidoP}} </option>
@@ -54,7 +54,7 @@
 
                     						    <div class="form-group col-md-6">
                                                     <label for="inputPassword">Profesional</label>
-                                                      <select name="especialistas_id"  class="custom-select mr-sm-1" required>
+                                                      <select name="especialistas_id"  class="Select2 custom-select mr-sm-1" required>
                     							        <option value="Seleccione un profesional">Seleccione un profesional</option>
                     							        @foreach ($result3 as $mostrar)
                     							        <option value="{{$mostrar->id}}">{{$mostrar->medidentificacion}}</option>
@@ -67,7 +67,7 @@
                                     <div class="form-row">
                     						          <div class="form-group col-md-6">
                                                     <label for="inputPassword">Especialidad</label>
-                                                      <select name="citEsp"  class="custom-select mr-sm-1" required>
+                                                      <select name="citEsp"  class="Select2 custom-select mr-sm-1" required>
                     							        <option value="Seleccione una especialidad">Seleccione una especialidad</option>
                     							         @foreach ($result4 as $mostrar)
                     							        <option value="{{$mostrar->id}}">{{$mostrar->espNombre}}</option>
