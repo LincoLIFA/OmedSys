@@ -19,4 +19,5 @@ class Planes_aranceles extends Model
     {
         return $this->belongsTo('App\Aranceles', 'aranceles_id');
     }
+    
 }

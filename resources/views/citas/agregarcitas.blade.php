@@ -29,7 +29,7 @@
                                              <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                   <label for="inputDate">Fecha</label>
-                                                  <input type="date" class="form-control Fecha" name="citfecha" placeholder="Fecha" value=""required/>
+                                                  <input type="date" class=" form-control" name="citfecha" value="" required/>
                                                 <small id="emailHelp" class="form-text text-muted">Debe escoger un día</small>
                                                 </div>
                                                 <div class="form-group col-md-6">
@@ -76,7 +76,7 @@
                                             </div>
                     						    <div class="form-group col-md-6">
                                                     <label for="inputPassword">Metodo Confirmación</label>
-                                                      <select name="confirmacion"  class="custom-select mr-sm-1" required>
+                                                      <select name="confirmacion"  class="Select2 custom-select mr-sm-1" required>
                     							        <option value="Whatsapp">Whatsapp</option>
                     							        <option value="Telefono">Telefono</option>
                     							        <option value="E-mail">E-mail</option>
@@ -87,7 +87,7 @@
                                             <div class="form-row">
                                               <div class="from-group col-md-6">
                                                 <label for="exampleInputEmail1">Estado de Cita </label required>
-                                               <select name="citEstado" class="custom-select mr-sm-1">
+                                               <select name="citEstado" class="Select2 custom-select mr-sm-1">
                                             	<option value="Nulo">Seleccione Estado de la cita</option>
                                             	<option value="No-confirmado">No confirmado</option>
                                             	<option value="Confirmado">Confirmado</option>  

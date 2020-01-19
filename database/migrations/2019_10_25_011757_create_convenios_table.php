@@ -18,7 +18,7 @@ class CreateConveniosTable extends Migration
             $table->string('fecha');
             $table->string('empresa');
             $table->string('descuento');
-            $table->string('observacion');
+            $table->string('observacion')->nullable();
             $table->string('contacto');
             $table->timestamps();
         });

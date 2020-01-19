@@ -17,4 +17,5 @@ class Aranceles extends Model
     {
         return $this->belongsTo('App\Especialidades', 'especialidades_id');
     }
+   
 }

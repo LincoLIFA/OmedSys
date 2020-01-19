@@ -24,18 +24,21 @@
                                           @csrf
                                 
                                           <div class="form-row col-md-10">
-                                             <div class="form-group">
-                                             <label for="inputDate">Fecha </label>
-                                             <input type="text" readonly class="form-control-plaintext"  name="citfecha" placeholder="Fecha" value="{{Carbon\Carbon::now()->format('d-m-Y')}}"required/>
                                              
-                                             </div>
-                                            
+                                            <div class="col-md-3" >
+                                              <label for="inputDate">Fecha </label>
+                                            </div>
+                                            <div class="col-md-7">
+                                              <label for="now">{{Carbon\Carbon::now()->format('d-m-Y')}}</label>
+                                            </div>
                                            </div>
-                                            <div class="form-row col-md-10">
-                                                <div class="form-group">
-                                                    <label for="inputDate">Nombre del Plan </label>
-                                                    <input type="text"  class="form-control"  name="nombre" placeholder="Ingrese el nombre" required/>
-                                                </div>                                           
+                                            <div class="form-row col-md-12 my-3">
+                                              <div class="col-md-3">
+                                                <label for="inputDate">Nombre del Plan </label>
+                                              </div>
+                                              <div class="col-md-9">
+                                                <input type="text"  class="form-control"  name="nombre" placeholder="Ingrese el nombre" required/>
+                                              </div>                                   
                                             </div>
                                            
                              
@@ -64,11 +67,12 @@
                                   <label for="inputPassword">Procediminetos</label>
                                   </br>
                                     @foreach ($result4 as $mostrar)
-                                
-                                      <label class="form-check-label" for="defaultCheck1">
-                                        <input class="form-check-input" type="checkbox" value="{{$mostrar->id}}" name="aranceles[]" id="ckeck">
-                                      {{$mostrar->procedimientos}}  
-                                      </label></br>
+                                      <div class="form-group">
+                                          <div class="custom-control custom-switch">
+                                              <input type="checkbox" class="custom-control-input" value="{{$mostrar->id}}"  name="aranceles[]"  id="customSwitch{{$mostrar->id}}">
+                                              <label class="custom-control-label" for="customSwitch{{$mostrar->id}}">{{$mostrar->procedimientos}}</label>
+                                          </div>
+                                      </div>
                                       @endforeach
                                     </div>
                                 

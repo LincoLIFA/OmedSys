@@ -17,9 +17,9 @@ class CreatePlanesDeTratamientosTable extends Migration
             $table->bigIncrements('id');
             $table->string('nombre');
             $table->unsignedBigInteger('medico_id'); // Relación con categorias
-            $table->foreign('medico_id')->references('id')->on('especialistas');
+            $table->foreign('medico_id')->references('id')->on('especialistas')->onDelete('cascade');
             $table->unsignedBigInteger('especialidades_id'); // Relación con categorias
-            $table->foreign('especialidades_id')->references('id')->on('especialidades');                  
+            $table->foreign('especialidades_id')->references('id')->on('especialidades')->onDelete('cascade');                  
             $table->timestamps();
         });
     }

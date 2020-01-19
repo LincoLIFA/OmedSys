@@ -111,7 +111,8 @@ class ArancelesController extends Controller
    public function destroy($id)
    {
        $aranceles = App\Aranceles::findOrfail($id);
-       $aranceles ->delete();
+       $aranceles -> delete();
+       
        // vista
        $result =  App\Aranceles::all();
        return view('finanzas.aranceles.aranceles',compact('result'));

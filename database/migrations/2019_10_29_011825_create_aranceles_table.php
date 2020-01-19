@@ -17,11 +17,12 @@ class CreateArancelesTable extends Migration
             $table->bigIncrements('id');
             $table->string('procedimientos');
             $table->integer('precios');
-            $table->string('comentarios');
+            $table->string('comentarios')->nullable();
             $table->unsignedBigInteger('medico_id'); // Relación con categorias
-            $table->foreign('medico_id')->references('id')->on('especialistas');
+            $table->foreign('medico_id')->references('id')->on('especialistas')->onDelete('cascade');
             $table->unsignedBigInteger('especialidades_id'); // Relación con categorias
-            $table->foreign('especialidades_id')->references('id')->on('especialidades');
+            $table->foreign('especialidades_id')->references('id')->on('especialidades')->onDelete('cascade');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

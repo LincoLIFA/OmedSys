@@ -16,9 +16,9 @@ class CreatePlanesArancelesTable extends Migration
         Schema::create('planes_aranceles', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('planes_id'); // Relación con categorias
-            $table->foreign('planes_id')->references('id')->on('planes_de_tratamientos');
+            $table->foreign('planes_id')->references('id')->on('planes_de_tratamientos')->onDelete('cascade');
             $table->unsignedBigInteger('aranceles_id'); // Relación con categorias
-            $table->foreign('aranceles_id')->references('id')->on('aranceles');
+            $table->foreign('aranceles_id')->references('id')->on('aranceles')->onDelete('cascade');
             $table->timestamps();
         });
     }

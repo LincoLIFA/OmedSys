@@ -52,7 +52,7 @@
                                         <div class="form-row mt-2">
                                             <div class="col-md-6">
                                                 <label for="cbx_SEX">Sexo</label>
-                                                <select class="form-control" name="pacsexo">
+                                                <select class="Select2 form-control" name="pacsexo">
                                                     <option value="Seleccione Sexo">Seleccione Sexo</option>
                                                     <option value="Femenino">Femenino</option>
                                                     <option value="Masculino">Masculino</option>       

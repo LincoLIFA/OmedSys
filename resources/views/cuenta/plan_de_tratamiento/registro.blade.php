@@ -74,7 +74,6 @@
                                                      <div class="row">
                                                      <div class="col-md-2">{{$key->aranceles->id}}</div>
                                                      <div class="col-md-10"><label for="aranceles">{{$key->aranceles->procedimientos}}</label></div>
-                                                         
                                                     </div>
                                                     @endif()
                                                   @endforeach()
@@ -92,7 +91,7 @@
                                  </td>
                                  <td>
                                     <div class="row">
-                                        <a href="{{route('Actualizar-Planes', $item->id)}}" class="btn btn-primary mr-1"> <i class="far fa-edit"></i></a>
+                                        <a href="{{route('Update-Planes', $item->id)}}" class="btn btn-primary mr-1"> <i class="far fa-edit"></i></a>
                                         <form method="post" action="{{route('Delete-Planes', $item->id)}}">
                                             @method('DELETE') 
                                             @csrf

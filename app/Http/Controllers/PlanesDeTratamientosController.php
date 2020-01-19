@@ -54,7 +54,6 @@ class PlanesDeTratamientosController extends Controller
        $planes->medico_id = $request->medico_id;
        $planes->especialidades_id = $request->especialidades_id;
        $planes->save();
-       $result =  App\PlanesDeTratamientos::all();
 
        $planes_id=$planes->id;
        $aranceles_id=$request->aranceles;
@@ -88,13 +87,12 @@ class PlanesDeTratamientosController extends Controller
     */
    public function edit($id)
    {    
-    
-    $result =  App\Especialistas::all();
-    $result2 =  App\Especialidades::all();
-    $result3 =  App\Aranceles::all();
-    $result4 =  App\planes_aranceles::all();
-        $planes = App\PlanesDeTratamientos::findOrfail($id);
-      return view('cuenta.plane_de_tratamiento.registro',compact('planes','result','result2','result3','result4'));
+     $result =  App\Especialistas::all();
+     $result2 =  App\Especialidades::all();
+     $result3 =  App\Aranceles::all();
+     $result4 =  App\Planes_aranceles::all();
+     $planes = App\PlanesDeTratamientos::findOrfail($id);
+      return view('cuenta.plan_de_tratamiento.update',compact('planes','result','result2','result3','result4'));
     
    }
    
@@ -113,18 +111,63 @@ class PlanesDeTratamientosController extends Controller
        $planes = App\PlanesDeTratamientos::findOrfail($id);
        $planes ->update($request->all());
 
+       $planes_id=$planes->id;
+       $aranceles_id=$request->nuevosAranceles;
+       if(!is_null($aranceles_id)){
+            foreach($aranceles_id as $id => $value){
+                $ids= new App\Planes_aranceles;
+                $ids->planes_id=$planes->id;
+                $ids->aranceles_id=$value;
+                $ids->save();
+            }
+        }
+        $arancelesD_id=$request->aranceles;
+         if(!is_null($arancelesD_id)){
+            foreach($arancelesD_id as $id => $value){
+                $ids= new App\Planes_aranceles;
+                $ids->planes_id=$planes->id;
+                $ids->aranceles_id=$value;
+                $ids->delete();
+            }
+        }
+
+
    // vista
-       $result =  App\PlanesDeTratamientos::all();
-       return view('cuenta.plane_de_tratamiento.registro',compact('result'));
+        $result =  App\PlanesDeTratamientos::all();
+        $planes_aranceles = App\Planes_aranceles::all();
+        return view('cuenta.plan_de_tratamiento.registro',compact('result' ,'planes_aranceles'));
    }
 
    
    public function destroy($id)
    {
-       $aranceles = App\Aranceles::findOrfail($id);
-       $aranceles ->delete();
+        $planes = App\PlanesDeTratamientos::findOrfail($id);
+        $planes ->delete();
        // vista
-       $result =  App\Aranceles::all();
-       return view('finanzas.aranceles.aranceles',compact('result'));
+       $result =  App\PlanesDeTratamientos::all();
+        $planes_aranceles = App\Planes_aranceles::all();
+        return view('cuenta.plan_de_tratamiento.registro',compact('result' ,'planes_aranceles'));
    }
+
+   public function destroyAranceles(Request $request, $id)
+   { 
+    $planes = App\PlanesDeTratamientos::findOrfail($id);
+    $planes_id=$planes->id;
+     $arancelesD_id=$request->aranceles;
+      if(!is_null($arancelesD_id)){
+         foreach($arancelesD_id as $id => $value){
+             $ids = App\Planes_aranceles::where('planes_id' , $planes_id);
+             $ids->planes_id=$planes->id;
+             $ids->aranceles_id=$value;
+             $ids->delete();
+         }
+     }
+
+       // vista
+       $result =  App\PlanesDeTratamientos::all();
+       $planes_aranceles = App\Planes_aranceles::all();
+       return view('cuenta.plan_de_tratamiento.registro',compact('result' ,'planes_aranceles'));
+   }
+
+
 }

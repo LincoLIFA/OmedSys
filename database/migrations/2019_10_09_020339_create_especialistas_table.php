@@ -30,12 +30,8 @@ class CreateEspecialistasTable extends Migration
             $table->string('medidentificacion');
             $table->string('mednombres');
             $table->string('medapellidos');
-
             $table->unsignedBigInteger('especialidades_id'); // Relación con categorias
-            $table->foreign('especialidades_id')->references('id')->on('especialidades');
-
-           
-
+            $table->foreign('especialidades_id')->references('id')->on('especialidades')->onDelete('cascade');
             $table->string('medtelefono');
             $table->string('medcorreo');
             $table->timestamps();

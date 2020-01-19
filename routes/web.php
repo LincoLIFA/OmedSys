@@ -203,6 +203,7 @@ Route::get('Planes/actPlanes{id}', 'PlanesDeTratamientosController@edit')->name(
 Route::post('Planes-Planes', 'PlanesDeTratamientosController@store')->name('Agregar-nuevo-Planes');
 Route::put('Planes-Planes/{id}', 'PlanesDeTratamientosController@update')->name('Actualizar-Planes');
 Route::delete('Delete-Planes/{id}', 'PlanesDeTratamientosController@destroy')->name('Delete-Planes');
+Route::delete('Delete-Aranceles-planes/{id}', 'PlanesDeTratamientosController@destroyAranceles')->name('Delete-Planes-Aranceles');
 /* fin de planes de tratamientos */ 
 
 

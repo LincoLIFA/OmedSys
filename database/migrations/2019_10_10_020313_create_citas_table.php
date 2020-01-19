@@ -16,15 +16,15 @@ class CreateCitasTable extends Migration
             
             $table->bigIncrements('id');
             $table->unsignedBigInteger('events_id'); // Relación con categorias
-            $table->foreign('events_id')->references('id')->on('events');
+            $table->foreign('events_id')->references('id')->on('events')->onDelete('cascade');
             $table->unsignedBigInteger('paciente_id'); // Relación con categorias
-            $table->foreign('paciente_id')->references('id')->on('pacientes');
+            $table->foreign('paciente_id')->references('id')->on('pacientes')->onDelete('cascade');
             $table->unsignedBigInteger('medico_id'); // Relación con categorias
-            $table->foreign('medico_id')->references('id')->on('especialistas');
+            $table->foreign('medico_id')->references('id')->on('especialistas')->onDelete('cascade');
             $table->unsignedBigInteger('especialidades_id'); // Relación con categorias
-            $table->foreign('especialidades_id')->references('id')->on('especialidades');                    
+            $table->foreign('especialidades_id')->references('id')->on('especialidades')->onDelete('cascade');                    
             $table->string('estado');
-            $table->string('observaciones');
+            $table->string('observaciones')->nullable();
             $table->string('confirmacion');
             $table->timestamps();
 

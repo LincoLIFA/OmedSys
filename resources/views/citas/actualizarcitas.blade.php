@@ -17,7 +17,7 @@
                                              <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                   <label for="inputDate">Fecha</label>
-                                                  <input type="date" class="form-control Fecha" name="citfecha" placeholder="Fecha" value=" {{ \Carbon\Carbon::parse($cita->events->start)->format('d-m-Y')}}"required/>
+                                                  <input type="text" class="Date form-control" name="citfecha"  value="{{ \Carbon\Carbon::parse($cita->events->start)->format('d/m/Y')}}" required/>
                                                 <small id="emailHelp" class="form-text text-muted">Debe escoger un día</small>
                                                 </div>
                                                 <div class="form-group col-md-6">
@@ -32,7 +32,7 @@
                     						    <div class="form-group row">
                                                     <label for="inputPassword" class="col-sm-2 col-form-label">Paciente</label>
                                                     <div class="col-sm-10">
-                                                      <select name="citPaciente"  class="custom-select mr-sm-1" required>
+                                                      <select name="citPaciente"  class="Select2 custom-select mr-sm-1" required>
                     							        <option value="{{$cita->pacientes->id}}">{{$cita->pacientes->pacnombre}}</option>
                     							        @foreach ($result as $mostrar)
                     							        <option value="{{$mostrar->id}}">{{$mostrar->pacnombre}}</option>
@@ -47,7 +47,7 @@
                     						    <div class="form-group row">
                                                     <label for="inputPassword" class="col-sm-2 col-form-label">Profesional</label>
                                                     <div class="col-sm-10">
-                                                      <select name="citMedico"  class="custom-select mr-sm-1" required>
+                                                      <select name="citMedico"  class="Select2 custom-select mr-sm-1" required>
                     							        <option value="{{$cita->especialistas->id}}">{{$cita->especialistas->medidentificacion}}</option>
                     							        @foreach ($result2 as $mostrar)
                     							        <option value="{{$mostrar->id}}">{{$mostrar->medidentificacion}}</option>
@@ -61,7 +61,7 @@
                     						    <div class="form-group row">
                                                     <label for="inputPassword" class="col-sm-2 col-form-label">Especialidad</label>
                                                     <div class="col-sm-10">
-                                                      <select name="citEsp"  class="custom-select mr-sm-1" required>
+                                                      <select name="citEsp"  class="Select2 custom-select mr-sm-1" required>
                     							        <option value="{{$cita->especialidades->id}}">{{$cita->especialidades->espNombre}}</option>
                     							         @foreach ($result3 as $mostrar)
                     							        <option value="{{$mostrar->espNombre}}">{{$mostrar->espNombre}}</option>
@@ -74,7 +74,7 @@
                     						    <div class="form-group row">
                                                     <label for="inputPassword" class="col-sm-2 col-form-label">Metodo Confirmacion</label>
                                                     <div class="col-sm-10">
-                                                      <select name="confirmacion"  class="custom-select mr-sm-1" required>
+                                                      <select name="confirmacion"  class="Select2 custom-select mr-sm-1" required>
                                                         <     
                                                         <option value="Whatsapp">Whatsapp</option>
                                                         <option value="Telefono">Telefono</option>
@@ -85,7 +85,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Estado de Cita </label required>
-                                               <select name="estado" class="custom-select mr-sm-1">
+                                               <select name="estado" class="Select2 custom-select mr-sm-1">
                                             	<option value="{{$cita->estado}}">{{$cita->estado}}</option>
                                             	<option value="No-confirmado">No confirmado</option>
                                             	<option value="Confirmado">Confirmado</option>  

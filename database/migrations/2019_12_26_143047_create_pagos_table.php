@@ -17,16 +17,16 @@ class CreatePagosTable extends Migration
             $table->bigIncrements('id');
             $table->string('nombre');
             $table->unsignedBigInteger('prestaciones_id'); // Relación con categorias
-            $table->foreign('prestaciones_id')->references('id')->on('prestaciones');
+            $table->foreign('prestaciones_id')->references('id')->on('prestaciones')->onDelete('cascade');
             $table->unsignedBigInteger('descuentos_id'); // Relación con categorias
-            $table->foreign('descuentos_id')->references('id')->on('descuentos_por_cajas');   
+            $table->foreign('descuentos_id')->references('id')->on('descuentos_por_cajas')->onDelete('cascade');   
             $table->unsignedBigInteger('medios_id'); // Relación con categorias
-            $table->foreign('medios_id')->references('id')->on('opciones_de_pagos');
+            $table->foreign('medios_id')->references('id')->on('opciones_de_pagos')->onDelete('cascade');
             $table->unsignedBigInteger('convenios_id'); // Relación con categorias
-            $table->foreign('convenios_id')->references('id')->on('convenios');  
-            $table->integer('iva');
+            $table->foreign('convenios_id')->references('id')->on('convenios')->onDelete('cascade');  
+            $table->integer('iva')->nullable();
             $table->integer('total');
-            $table->integer('abono');
+            $table->integer('abono')->nullable();
             $table->timestamps();
         });
     }

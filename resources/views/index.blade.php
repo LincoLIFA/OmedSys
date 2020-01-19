@@ -31,15 +31,35 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <!-- fullcalendar party css -->
-  <link  href="{{asset('fullcalendar4/packages/core/main.css')}}" rel="stylesheet"/>
-  <link  href="{{asset('fullcalendar4/packages/daygrid/main.css')}}" rel="stylesheet"/>
-  <link  href="{{asset('fullcalendar4/packages/timegrid/main.css')}}" rel="stylesheet"/>
-  <link  href="{{asset('fullcalendar4/packages/list/main.css')}}" rel="stylesheet"/>
-  <link  href="{{asset('fullcalendar4/packages/timeline/main.min.css')}}" rel='stylesheet' />
-  <link  href="{{asset('fullcalendar4/packages/resource-timeline/main.min.css')}}" rel='stylesheet' />
-  <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
+  <link  href="{{asset('dashboard/plugins/fullcalendar4/packages/core/main.css')}}" rel="stylesheet"/>
+  <link  href="{{asset('dashboard/plugins/fullcalendar4/packages/daygrid/main.css')}}" rel="stylesheet"/>
+  <link  href="{{asset('dashboard/plugins/fullcalendar4/packages/timegrid/main.css')}}" rel="stylesheet"/>
+  <link  href="{{asset('dashboard/plugins/fullcalendar4/packages/list/main.css')}}" rel="stylesheet"/>
+  <link  href="{{asset('dashboard/plugins/fullcalendar4/packages/timeline/main.min.css')}}" rel='stylesheet' />
+  <link  href="{{asset('dashboard/plugins/fullcalendar4/packages/resource-timeline/main.min.css')}}" rel='stylesheet' />
+
+  <!-- Select 2 css -->
+  <link rel="stylesheet" href="{{asset('dashboard/plugins/select2/css/select2.css')}}">
+
+  <!-- datatables  css -->
+  <link rel="stylesheet" href="{{asset('dashboard/plugins/datatables/datatables.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('dashboard/plugins/datatables/DataTables-1.10.20/css/dataTables.bootstrap4.css')}}"/>
+  <link rel="stylesheet" type="text/css" href="{{asset('dashboard/plugins/datatables/AutoFill-2.3.4/css/autoFill.bootstrap4.min.css')}}"/>
+  <link rel="stylesheet" type="text/css" href="{{asset('dashboard/plugins/datatables/Buttons-1.6.1/css/buttons.bootstrap4.css')}}"/>
+  <link rel="stylesheet" type="text/css" href="{{asset('dashboard/plugins/datatables/Responsive-2.2.3/css/responsive.bootstrap4.css')}}"/>
+  <link rel="stylesheet" type="text/css" href="{{asset('dashboard/plugins/datatables/RowGroup-1.1.1/css/rowGroup.bootstrap4.css')}}"/>
+  <link rel="stylesheet" type="text/css" href="{{asset('dashboard/plugins/datatables/RowReorder-1.2.6/css/rowReorder.bootstrap4.css')}}"/>
+  <link rel="stylesheet" type="text/css" href="{{asset('dashboard/plugins/datatables/Scroller-2.0.1/css/scroller.bootstrap4.css')}}"/>
+  <link rel="stylesheet" type="text/css" href="{{asset('dashboard/plugins/datatables/SearchPanes-1.0.1/css/searchPanes.bootstrap4.css')}}"/>
+  <link rel="stylesheet" type="text/css" href="{{asset('dashboard/plugins/datatables/Select-1.3.1/css/select.bootstrap4.css')}}"/>
+  
+  <!-- multiselect jquery css --> 
+  <link rel="stylesheet" href="{{asset('dashboard/plugins/multiselect/css/multi-select.css')}}">
+  <link rel="stylesheet" href="{{asset('dashboard/plugins/multiselect/css/multi-select.dev.css')}}">
+  <link rel="stylesheet" href="{{asset('dashboard/plugins/multiselect/css/multi-select.dist.css')}}">
 
 
+ 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -58,16 +78,10 @@
 <!-- ./wrapper -->
 <!-- jQuery -->
 <script src="{{asset('dashboard/plugins/jquery/jquery.min.js')}}"></script>
-<!-- DataTables -->
-<script src="{{asset('dashboard/plugins/datatables/jquery.dataTables.js')}}"></script>
-<script src="{{asset('dashboard/plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
+
 <!-- jQuery UI 1.11.4 -->
 <script src="{{asset('dashboard/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
-<script>
-  $.widget.bridge('uibutton', $.ui.button)
-</script>
+
 <!-- Bootstrap 4 -->
 <script src="{{asset('dashboard/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
@@ -75,9 +89,6 @@
 <script src="{{asset('dashboard/plugins/chart.js/Chart.min.js')}}"></script>
 <!-- Sparkline -->
 <script src="{{asset('dashboard/plugins/sparklines/sparkline.js')}}"></script>
-<!-- JQVMap -->
-<script src="{{asset('dashboard/plugins/jqvmap/jquery.vmap.min.js')}}"></script>
-<script src="{{asset('dashboard/plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
 <!-- jQuery Knob Chart -->
 <script src="{{asset('dashboard/plugins/jquery-knob/jquery.knob.min.js')}}"></script>
 <!-- daterangepicker -->
@@ -91,33 +102,45 @@
 <script src="{{asset('dashboard/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('dashboard/dist/js/adminlte.js')}}"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{asset('dashboard/dist/js/pages/dashboard.js')}}"></script>
-<!-- AdminLTE for demo purposes /srv/http/OmedSys/public/js -->
-<script src="{{asset('dashboard/dist/js/demo.js')}}"></script>
 
 <!-- Verificador de rut -->
 <script src="{{asset('js/jquery.rut.chileno.min.js')}}"></script>
 
+<!-- multiselect jquery js -->
+<script src="{{asset('dashboard/plugins/multiselect/js/jquery.multi-select.js')}}"></script>
+
+<!-- select2 -->
+<script src="{{asset('dashboard/plugins/select2/js/select2.js')}}"></script>
+
+<!-- DataTables -->
+<script src="{{asset('dashboard/plugins/datatables/datatables.min.js')}}"></script>
+
+<script type="text/javascript" src="{{asset('dashboard/plugins/datatables/pdfmake-0.1.36/pdfmake.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('dashboard/plugins/datatables/DataTables-1.10.20/js/jquery.dataTables.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('dashboard/plugins/datatables/Buttons-1.6.1/js/dataTables.buttons.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('dashboard/plugins/datatables/Buttons-1.6.1/js/buttons.colVis.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('dashboard/plugins/datatables/Buttons-1.6.1/js/buttons.flash.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('dashboard/plugins/datatables/Buttons-1.6.1/js/buttons.html5.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('dashboard/plugins/datatables/Buttons-1.6.1/js/buttons.print.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('dashboard/plugins/datatables/Responsive-2.2.3/js/dataTables.responsive.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('dashboard/plugins/datatables/RowGroup-1.1.1/js/dataTables.rowGroup.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('dashboard/plugins/datatables/RowReorder-1.2.6/js/dataTables.rowReorder.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('dashboard/plugins/datatables/Scroller-2.0.1/js/dataTables.scroller.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('dashboard/plugins/datatables/SearchPanes-1.0.1/js/dataTables.searchPanes.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('dashboard/plugins/datatables/Select-1.3.1/js/dataTables.select.min.js')}}"></script>
+
+
 <!-- fullcalendar party JS -->  
-<script src="{{asset('fullcalendar4/packages/core/main.js')}}"></script>
-  <script src="{{asset('fullcalendar4/packages/interaction/main.js')}}"></script>
-  <script src="{{asset('fullcalendar4/packages/daygrid/main.js')}}"></script>
-  <script src="{{asset('fullcalendar4/packages/timegrid/main.min.js')}}"></script>
-  <script src="{{asset('fullcalendar4/packages/list/main.js')}}"></script>
-  <script src="{{asset('fullcalendar4/packages/timeline/main.min.js')}}"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/es.js" integrity="sha256-bETP3ndSBCorObibq37vsT+l/vwScuAc9LRJIQyb068=" crossorigin="anonymous"></script>
-  <script src="{{asset('fullcalendar4/packages/resource-common/main.js')}}"></script>
-  <script src="{{asset('fullcalendar4/packages/resource-timeline/main.js')}}"></script>  
+  <script src="{{asset('dashboard/plugins/fullcalendar4/packages/core/main.js')}}"></script>
+  <script src="{{asset('dashboard/plugins/fullcalendar4/packages/interaction/main.js')}}"></script>
+  <script src="{{asset('dashboard/plugins/fullcalendar4/packages/daygrid/main.js')}}"></script>
+  <script src="{{asset('dashboard/plugins/fullcalendar4/packages/timegrid/main.min.js')}}"></script>
+  <script src="{{asset('dashboard/plugins/fullcalendar4/packages/list/main.js')}}"></script>
+  <script src="{{asset('dashboard/plugins/fullcalendar4/packages/timeline/main.min.js')}}"></script>
+  <script src="{{asset('dashboard/plugins/fullcalendar4/packages/resource-common/main.js')}}"></script>
+  <script src="{{asset('dashboard/plugins/fullcalendar4/packages/resource-timeline/main.js')}}"></script>  
 
   
-  <script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>  
-  <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.flash.min.js"></script>  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>  
-  <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>  
-  <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>  
 
   <script>
     var myDate = $('.Fecha');
@@ -191,9 +214,20 @@
      </script>
   <script type="text/javascript">
     $(document).ready(function() {
-    $('.Select2').select2();
+    $('.Select2').select2({
+      theme: "classic"
+    });
     });
     </script>
+    <script>
+   
+      $(function() {
+        $('.Date').datepicker({
+        locale: 'es',
+        theme: "bootstrap"
+          });
+      });
+</script>
 
 
 </body>
