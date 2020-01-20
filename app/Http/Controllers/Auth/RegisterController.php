@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
-use Spatie\Permission\Traits\HasRoles;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Spatie\Permission\Traits\HasRoles;
 
 
 class RegisterController extends Controller
