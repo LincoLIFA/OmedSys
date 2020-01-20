@@ -3,14 +3,16 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Spatie\Permission\Traits\HasRoles;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Spatie\Permission\Traits\HasRoles;
+
 
 class RegisterController extends Controller
 {
+    use HasRoles;
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -68,7 +70,8 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-        ]);
-        $user->assignRole('admin');
+            
+        ]);  
+        $user->assignRole('Especialista');
     }
 }

@@ -64,7 +64,7 @@
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
-@include('components.nav')
+@include('components.navFM')
 @include('components.sidebar-FM')
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">

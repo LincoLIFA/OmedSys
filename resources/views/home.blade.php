@@ -9,14 +9,16 @@
 
                 <div class="card-body">
                     <h1>tu rol es: </h1>
-                    @if(@Auth::user()->hasRole('admin'))
+                    @if(@Auth::user()->hasRole('Admin'))
                         <h2>Eres un admin</h2>
+
                     
                         @else                    
                         <h2>No eres admin</h2>
+                       
                     @endif
                     
-                        
+                    
                     
                         
 
